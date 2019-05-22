@@ -56,7 +56,8 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Location = new System.Drawing.Point(4, 10);
+            this.pictureBox2.Image = global::SistemaProjeto_iTutor.Properties.Resources.report;
+            this.pictureBox2.Location = new System.Drawing.Point(6, 8);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(32, 32);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -77,6 +78,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = global::SistemaProjeto_iTutor.Properties.Resources.pdf;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(214, 292);
             this.button2.Name = "button2";
@@ -148,6 +150,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::SistemaProjeto_iTutor.Properties.Resources.eraser;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(130, 292);
             this.button1.Name = "button1";

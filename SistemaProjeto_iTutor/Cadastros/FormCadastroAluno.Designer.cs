@@ -141,6 +141,7 @@
             // btnCadastrar
             // 
             this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrar.Image = global::SistemaProjeto_iTutor.Properties.Resources.circularplusbutton_121982;
             this.btnCadastrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCadastrar.Location = new System.Drawing.Point(132, 293);
             this.btnCadastrar.Name = "btnCadastrar";
@@ -153,6 +154,7 @@
             // btnLimpar
             // 
             this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpar.Image = global::SistemaProjeto_iTutor.Properties.Resources.eraser;
             this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLimpar.Location = new System.Drawing.Point(23, 293);
             this.btnLimpar.Name = "btnLimpar";
@@ -234,6 +236,7 @@
             // btnAtualizar
             // 
             this.btnAtualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtualizar.Image = global::SistemaProjeto_iTutor.Properties.Resources.refreshingcurvearrows_121971__1_1;
             this.btnAtualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAtualizar.Location = new System.Drawing.Point(330, 374);
             this.btnAtualizar.Name = "btnAtualizar";
@@ -246,6 +249,7 @@
             // btnDeletar
             // 
             this.btnDeletar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeletar.Image = global::SistemaProjeto_iTutor.Properties.Resources.garbage;
             this.btnDeletar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDeletar.Location = new System.Drawing.Point(184, 374);
             this.btnDeletar.Name = "btnDeletar";
@@ -258,6 +262,7 @@
             // btnAlterar
             // 
             this.btnAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlterar.Image = global::SistemaProjeto_iTutor.Properties.Resources.edit_2_;
             this.btnAlterar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAlterar.Location = new System.Drawing.Point(43, 374);
             this.btnAlterar.Name = "btnAlterar";

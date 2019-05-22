@@ -30,10 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroAula));
             this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
@@ -60,6 +58,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -71,18 +71,6 @@
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(310, 21);
             this.comboBox6.TabIndex = 69;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(322, 440);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(85, 34);
-            this.button2.TabIndex = 68;
-            this.button2.Text = "Limpar";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // label15
             // 
@@ -103,18 +91,6 @@
             this.label14.Size = new System.Drawing.Size(102, 16);
             this.label14.TabIndex = 66;
             this.label14.Text = "VALOR TOTAL: ";
-            // 
-            // button1
-            // 
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(413, 439);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 35);
-            this.button1.TabIndex = 65;
-            this.button1.Text = "Agendar";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // textBox4
             // 
@@ -360,7 +336,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::SistemaProjeto_iTutor.Properties.Resources.clipboard;
-            this.pictureBox2.Location = new System.Drawing.Point(5, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(10, 14);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(32, 32);
@@ -379,16 +355,42 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Agendar Aula Particular";
             // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Image = global::SistemaProjeto_iTutor.Properties.Resources.save;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(330, 444);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(85, 34);
+            this.button4.TabIndex = 96;
+            this.button4.Text = "Agendar";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = global::SistemaProjeto_iTutor.Properties.Resources.eraser;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(421, 444);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(78, 34);
+            this.button2.TabIndex = 95;
+            this.button2.Text = "Limpar";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // FormCadastroAula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(513, 490);
-            this.Controls.Add(this.comboBox6);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.button2);
+            this.Controls.Add(this.comboBox6);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.comboBox5);
@@ -428,10 +430,8 @@
         #endregion
 
         private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox comboBox5;
@@ -458,5 +458,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button2;
     }
 }
