@@ -29,9 +29,12 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.colunaNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaCheckBox = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
@@ -55,9 +58,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.colunaNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaCheckBox = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -76,6 +76,25 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // colunaNome
+            // 
+            this.colunaNome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colunaNome.HeaderText = "Nome";
+            this.colunaNome.Name = "colunaNome";
+            // 
+            // colunaTipo
+            // 
+            this.colunaTipo.HeaderText = "Tipo";
+            this.colunaTipo.Name = "colunaTipo";
+            // 
+            // colunaCheckBox
+            // 
+            this.colunaCheckBox.HeaderText = "Validado";
+            this.colunaCheckBox.Name = "colunaCheckBox";
+            this.colunaCheckBox.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colunaCheckBox.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colunaCheckBox.Width = 50;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
@@ -85,16 +104,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(791, 52);
             this.panel2.TabIndex = 17;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Location = new System.Drawing.Point(5, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 12;
-            this.pictureBox2.TabStop = false;
             // 
             // label1
             // 
@@ -107,6 +116,16 @@
             this.label1.Size = new System.Drawing.Size(188, 19);
             this.label1.TabIndex = 13;
             this.label1.Text = "Solicitações Pendentes";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Location = new System.Drawing.Point(5, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
             // 
             // maskedTextBox4
             // 
@@ -325,25 +344,6 @@
             this.label4.TabIndex = 160;
             this.label4.Text = "Matérias";
             // 
-            // colunaNome
-            // 
-            this.colunaNome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colunaNome.HeaderText = "Nome";
-            this.colunaNome.Name = "colunaNome";
-            // 
-            // colunaTipo
-            // 
-            this.colunaTipo.HeaderText = "Tipo";
-            this.colunaTipo.Name = "colunaTipo";
-            // 
-            // colunaCheckBox
-            // 
-            this.colunaCheckBox.HeaderText = "Validado";
-            this.colunaCheckBox.Name = "colunaCheckBox";
-            this.colunaCheckBox.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colunaCheckBox.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colunaCheckBox.Width = 50;
-            // 
             // FormSolicitacoesPendentes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -375,6 +375,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dataGridView1);
             this.Name = "FormSolicitacoesPendentes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormSolicitacoesPendentes";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);

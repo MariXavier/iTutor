@@ -146,6 +146,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel2);
             this.Name = "FormGerenciarPermissoes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormGerenciarPermissoes";
             this.Load += new System.EventHandler(this.FormGerenciarPermissoes_Load);
             this.panel2.ResumeLayout(false);

@@ -172,6 +172,7 @@
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.button1);
             this.Name = "FormRelatorio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormRelatorio";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SistemaProjeto_iTutor.Relatorios;
+using SistemaProjeto_iTutor.Cadastros;
 
 namespace SistemaProjeto_iTutor
 {
@@ -22,7 +24,42 @@ namespace SistemaProjeto_iTutor
 			FormLogin flogin = new FormLogin(); /*aparecerá a tela de login e só mostra a principal quando sair desta*/
 			flogin.ShowDialog();
 		}
-	
-	}
+
+        private void btnSolicitacoesPendentes_Click(object sender, EventArgs e)
+        {
+            FormSolicitacoesPendentes formSolicitacao = new FormSolicitacoesPendentes();
+            formSolicitacao.ShowDialog();
+        }
+
+        private void btnDeptoFinanceiro_Click(object sender, EventArgs e)
+        {
+            FormRelatorio formRelatorio = new FormRelatorio();
+            formRelatorio.ShowDialog();
+        }
+
+        private void btnCadastrarProfessor_Click(object sender, EventArgs e)
+        {
+            FormCadastroProfessor formProfessor = new FormCadastroProfessor();
+            formProfessor.ShowDialog();
+        }
+
+        private void btnGerenciarCadastros_Click(object sender, EventArgs e)
+        {
+            FormGerenciarPermissoes formPermissao = new FormGerenciarPermissoes();
+            formPermissao.ShowDialog();
+        }
+
+        private void btnAgendamentoAulas_Click(object sender, EventArgs e)
+        {
+            FormCadastroAula formAula = new FormCadastroAula();
+            formAula.ShowDialog();
+        }
+
+        private void btnAlunos_Click(object sender, EventArgs e)
+        {
+            FormCadastroAluno formAluno = new FormCadastroAluno();
+            formAluno.ShowDialog();
+        }
+    }
 	
 }

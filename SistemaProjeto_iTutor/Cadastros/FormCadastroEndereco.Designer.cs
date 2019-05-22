@@ -325,6 +325,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel2);
             this.Name = "FormCadastroEndereco";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCadastroEndereco";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);

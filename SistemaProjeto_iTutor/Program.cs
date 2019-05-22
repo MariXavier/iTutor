@@ -16,7 +16,7 @@ namespace SistemaProjeto_iTutor
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new SistemaProjeto_iTutor.Cadastros.FormCadastroAula());
+			Application.Run(new FormMenu());
 		}
 	}
 }

@@ -127,6 +127,9 @@
     <EmbeddedResource Include="Cadastros\FormCadastroProfessor.resx">
       <DependentUpon>FormCadastroProfessor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAgendamento.resx">
+      <DependentUpon>FormAgendamento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormGerenciarPermissoes.resx">
       <DependentUpon>FormGerenciarPermissoes.cs</DependentUpon>
     </EmbeddedResource>
