@@ -63,6 +63,116 @@ namespace SistemaProjeto_iTutor.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1497619898_jd24_85173 {
+            get {
+                object obj = ResourceManager.GetObject("1497619898-jd24_85173", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1497619898_jd24_85173__1_ {
+            get {
+                object obj = ResourceManager.GetObject("1497619898-jd24_85173 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3643745_human_man_people_person_profile_113435 {
+            get {
+                object obj = ResourceManager.GetObject("3643745-human-man-people-person-profile_113435", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3643747_friend_group_people_peoples_team_113434__1_ {
+            get {
+                object obj = ResourceManager.GetObject("3643747-friend-group-people-peoples-team_113434 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3643749_edit_pen_pencil_write_writing_113397 {
+            get {
+                object obj = ResourceManager.GetObject("3643749-edit-pen-pencil-write-writing_113397", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3643749_edit_pen_pencil_write_writing_1133971 {
+            get {
+                object obj = ResourceManager.GetObject("3643749-edit-pen-pencil-write-writing_1133971", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3643757_computer_desktop_monitor_pc_personal_113441 {
+            get {
+                object obj = ResourceManager.GetObject("3643757-computer-desktop-monitor-pc-personal_113441", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3643763_list_mark_menu_option_sign_113447 {
+            get {
+                object obj = ResourceManager.GetObject("3643763-list-mark-menu-option-sign_113447", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3643772_archive_archives_document_folder_open_113445__1_ {
+            get {
+                object obj = ResourceManager.GetObject("3643772-archive-archives-document-folder-open_113445 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3643779_clock_hour_ticker_time_times_113446 {
+            get {
+                object obj = ResourceManager.GetObject("3643779-clock-hour-ticker-time-times_113446", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3643784_bell_notification_notify_reminder_ring_113451__1_ {
+            get {
+                object obj = ResourceManager.GetObject("3643784-bell-notification-notify-reminder-ring_113451 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bigcancelsymbol_121964 {
             get {
                 object obj = ResourceManager.GetObject("bigcancelsymbol_121964", resourceCulture);
@@ -96,6 +206,16 @@ namespace SistemaProjeto_iTutor.Properties {
         internal static System.Drawing.Bitmap clipboard {
             get {
                 object obj = ResourceManager.GetObject("clipboard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap coins_stacks_money_icon_icons_com_56191 {
+            get {
+                object obj = ResourceManager.GetObject("coins-stacks-money_icon-icons.com_56191", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

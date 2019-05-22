@@ -368,6 +368,17 @@
     </None>
     <None Include="Connected Services\WSCorreios\configuration.svcinfo" />
     <None Include="Connected Services\WSCorreios\configuration91.svcinfo" />
+    <None Include="Resources\3643784-bell-notification-notify-reminder-ring_113451 %281%29.png" />
+    <None Include="Resources\3643772-archive-archives-document-folder-open_113445 %281%29.png" />
+    <None Include="Resources\3643779-clock-hour-ticker-time-times_113446.png" />
+    <None Include="Resources\3643749-edit-pen-pencil-write-writing_113397.png" />
+    <None Include="Resources\3643763-list-mark-menu-option-sign_113447.png" />
+    <None Include="Resources\1497619898-jd24_85173.png" />
+    <None Include="Resources\1497619898-jd24_85173 %281%29.png" />
+    <None Include="Resources\3643745-human-man-people-person-profile_113435.png" />
+    <None Include="Resources\3643747-friend-group-people-peoples-team_113434 %281%29.png" />
+    <None Include="Resources\3643757-computer-desktop-monitor-pc-personal_113441.png" />
+    <None Include="Resources\3643749-edit-pen-pencil-write-writing_1133971.png" />
     <Content Include="Resources\bigcancelsymbol_121964.png" />
     <None Include="Resources\save1.png" />
     <None Include="Resources\report1.png" />
@@ -391,6 +402,7 @@
     <None Include="Resources\bigcancelsymbol_1219641.png" />
     <Content Include="Resources\circularplusbutton_121982.png" />
     <Content Include="Resources\clipboard.png" />
+    <None Include="Resources\coins-stacks-money_icon-icons.com_56191.png" />
     <Content Include="Resources\create.png" />
     <Content Include="Resources\delete.png" />
     <Content Include="Resources\edit%282%29.png" />
