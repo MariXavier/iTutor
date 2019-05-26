@@ -50,6 +50,8 @@
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.btnDeletar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -123,6 +125,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.label16);
             this.panel1.Controls.Add(this.btnCadastrar);
             this.panel1.Controls.Add(this.btnLimpar);
             this.panel1.Controls.Add(this.mskTelefone);
@@ -176,7 +180,7 @@
             // txtEndereco
             // 
             this.txtEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEndereco.Location = new System.Drawing.Point(23, 174);
+            this.txtEndereco.Location = new System.Drawing.Point(23, 183);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(236, 22);
             this.txtEndereco.TabIndex = 6;
@@ -184,7 +188,7 @@
             // txtNomeResponsavel
             // 
             this.txtNomeResponsavel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomeResponsavel.Location = new System.Drawing.Point(23, 100);
+            this.txtNomeResponsavel.Location = new System.Drawing.Point(23, 118);
             this.txtNomeResponsavel.Name = "txtNomeResponsavel";
             this.txtNomeResponsavel.Size = new System.Drawing.Size(236, 22);
             this.txtNomeResponsavel.TabIndex = 5;
@@ -192,7 +196,7 @@
             // txtNomeAluno
             // 
             this.txtNomeAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomeAluno.Location = new System.Drawing.Point(23, 28);
+            this.txtNomeAluno.Location = new System.Drawing.Point(23, 61);
             this.txtNomeAluno.Name = "txtNomeAluno";
             this.txtNomeAluno.Size = new System.Drawing.Size(236, 22);
             this.txtNomeAluno.TabIndex = 4;
@@ -209,7 +213,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 158);
+            this.label3.Location = new System.Drawing.Point(20, 167);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 2;
@@ -218,7 +222,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 84);
+            this.label2.Location = new System.Drawing.Point(20, 102);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 13);
             this.label2.TabIndex = 1;
@@ -227,7 +231,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 12);
+            this.label1.Location = new System.Drawing.Point(20, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 0;
@@ -271,6 +275,23 @@
             this.btnAlterar.Text = "ALTERAR";
             this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAlterar.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(82, 11);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 100;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(20, 11);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(56, 16);
+            this.label16.TabIndex = 99;
+            this.label16.Text = "ID Aluno";
             // 
             // FormCadastroAluno
             // 
@@ -320,5 +341,7 @@
         private System.Windows.Forms.Button btnAtualizar;
         private System.Windows.Forms.Button btnDeletar;
         private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label16;
     }
 }
