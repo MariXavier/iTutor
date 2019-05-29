@@ -52,8 +52,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
+            this.colunaAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaRua = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaBairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -62,7 +64,7 @@
             // txtEstado
             // 
             this.txtEstado.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEstado.Location = new System.Drawing.Point(617, 292);
+            this.txtEstado.Location = new System.Drawing.Point(617, 259);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(96, 22);
             this.txtEstado.TabIndex = 15;
@@ -70,7 +72,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(383, 237);
+            this.textBox1.Location = new System.Drawing.Point(383, 204);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(162, 22);
             this.textBox1.TabIndex = 9;
@@ -79,7 +81,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(380, 218);
+            this.label3.Location = new System.Drawing.Point(380, 185);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 16);
             this.label3.TabIndex = 8;
@@ -88,6 +90,11 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colunaAluno,
+            this.colunaRua,
+            this.colunaNumero,
+            this.colunaBairro});
             this.dataGridView1.Location = new System.Drawing.Point(12, 84);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(355, 355);
@@ -149,7 +156,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(380, 116);
+            this.label2.Location = new System.Drawing.Point(380, 83);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 16);
             this.label2.TabIndex = 0;
@@ -158,14 +165,14 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(383, 135);
+            this.comboBox1.Location = new System.Drawing.Point(383, 102);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(228, 21);
             this.comboBox1.TabIndex = 1;
             // 
             // mskCEP
             // 
-            this.mskCEP.Location = new System.Drawing.Point(617, 135);
+            this.mskCEP.Location = new System.Drawing.Point(617, 102);
             this.mskCEP.Mask = "00000-000";
             this.mskCEP.Name = "mskCEP";
             this.mskCEP.Size = new System.Drawing.Size(96, 20);
@@ -177,7 +184,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(614, 275);
+            this.label9.Location = new System.Drawing.Point(614, 242);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(49, 16);
             this.label9.TabIndex = 14;
@@ -186,7 +193,7 @@
             // txtCidade
             // 
             this.txtCidade.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCidade.Location = new System.Drawing.Point(383, 292);
+            this.txtCidade.Location = new System.Drawing.Point(383, 259);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(228, 22);
             this.txtCidade.TabIndex = 13;
@@ -195,7 +202,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(380, 275);
+            this.label8.Location = new System.Drawing.Point(380, 242);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(48, 16);
             this.label8.TabIndex = 12;
@@ -204,7 +211,7 @@
             // txtBairro
             // 
             this.txtBairro.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBairro.Location = new System.Drawing.Point(551, 237);
+            this.txtBairro.Location = new System.Drawing.Point(551, 204);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(162, 22);
             this.txtBairro.TabIndex = 11;
@@ -213,7 +220,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(548, 218);
+            this.label7.Location = new System.Drawing.Point(548, 185);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(42, 16);
             this.label7.TabIndex = 10;
@@ -222,7 +229,7 @@
             // txtNumero
             // 
             this.txtNumero.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumero.Location = new System.Drawing.Point(617, 182);
+            this.txtNumero.Location = new System.Drawing.Point(617, 149);
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(96, 22);
             this.txtNumero.TabIndex = 7;
@@ -231,7 +238,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(614, 165);
+            this.label6.Location = new System.Drawing.Point(614, 132);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(22, 16);
             this.label6.TabIndex = 6;
@@ -240,7 +247,7 @@
             // txtRua
             // 
             this.txtRua.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRua.Location = new System.Drawing.Point(383, 182);
+            this.txtRua.Location = new System.Drawing.Point(383, 149);
             this.txtRua.Name = "txtRua";
             this.txtRua.Size = new System.Drawing.Size(228, 22);
             this.txtRua.TabIndex = 5;
@@ -249,7 +256,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(380, 165);
+            this.label5.Location = new System.Drawing.Point(380, 132);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(31, 16);
             this.label5.TabIndex = 4;
@@ -259,7 +266,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(614, 116);
+            this.label4.Location = new System.Drawing.Point(614, 83);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 16);
             this.label4.TabIndex = 2;
@@ -299,30 +306,35 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Cadastro de Endereço";
             // 
-            // textBox2
+            // colunaAluno
             // 
-            this.textBox2.Location = new System.Drawing.Point(442, 84);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 100;
+            this.colunaAluno.HeaderText = "Aluno";
+            this.colunaAluno.Name = "colunaAluno";
+            this.colunaAluno.ReadOnly = true;
             // 
-            // label16
+            // colunaRua
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(380, 84);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(56, 16);
-            this.label16.TabIndex = 99;
-            this.label16.Text = "ID Aluno";
+            this.colunaRua.HeaderText = "Rua";
+            this.colunaRua.Name = "colunaRua";
+            this.colunaRua.ReadOnly = true;
+            // 
+            // colunaNumero
+            // 
+            this.colunaNumero.HeaderText = "Nº";
+            this.colunaNumero.Name = "colunaNumero";
+            this.colunaNumero.ReadOnly = true;
+            // 
+            // colunaBairro
+            // 
+            this.colunaBairro.HeaderText = "Bairro";
+            this.colunaBairro.Name = "colunaBairro";
+            this.colunaBairro.ReadOnly = true;
             // 
             // FormCadastroEndereco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 451);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label16);
             this.Controls.Add(this.txtEstado);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
@@ -382,7 +394,9 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaAluno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaRua;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaNumero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaBairro;
     }
 }

@@ -183,6 +183,46 @@ namespace SistemaProjeto_iTutor.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cancel {
+            get {
+                object obj = ResourceManager.GetObject("cancel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cancel_music {
+            get {
+                object obj = ResourceManager.GetObject("cancel-music", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cancel_music__1_ {
+            get {
+                object obj = ResourceManager.GetObject("cancel-music (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap check {
+            get {
+                object obj = ResourceManager.GetObject("check", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap checklist_102320 {
             get {
                 object obj = ResourceManager.GetObject("checklist_102320", resourceCulture);
@@ -323,6 +363,16 @@ namespace SistemaProjeto_iTutor.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap hourglass {
+            get {
+                object obj = ResourceManager.GetObject("hourglass", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap house {
             get {
                 object obj = ResourceManager.GetObject("house", resourceCulture);
@@ -396,6 +446,36 @@ namespace SistemaProjeto_iTutor.Properties {
         internal static System.Drawing.Bitmap linha5 {
             get {
                 object obj = ResourceManager.GetObject("linha5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap loupe {
+            get {
+                object obj = ResourceManager.GetObject("loupe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap magnifier {
+            get {
+                object obj = ResourceManager.GetObject("magnifier", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap magnifier__1_ {
+            get {
+                object obj = ResourceManager.GetObject("magnifier (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -486,6 +566,16 @@ namespace SistemaProjeto_iTutor.Properties {
         internal static System.Drawing.Bitmap save {
             get {
                 object obj = ResourceManager.GetObject("save", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap schedule {
+            get {
+                object obj = ResourceManager.GetObject("schedule", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

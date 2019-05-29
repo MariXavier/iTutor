@@ -16,5 +16,15 @@ namespace SistemaProjeto_iTutor.Cadastros
         {
             InitializeComponent();
         }
+
+        private void txtEndereco_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormCadastroAluno_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
