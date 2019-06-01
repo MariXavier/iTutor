@@ -21,8 +21,8 @@ namespace SistemaProjeto_iTutor
 
 		private void FormMenu_Load(object sender, EventArgs e)
 		{
-			FormLogin flogin = new FormLogin(); /*aparecerá a tela de login e só mostra a principal quando sair desta*/
-			flogin.ShowDialog();
+			//FormLogin flogin = new FormLogin(); /*aparecerá a tela de login e só mostra a principal quando sair desta*/
+			//flogin.ShowDialog();
 		}
 
         private void btnSolicitacoesPendentes_Click(object sender, EventArgs e)
