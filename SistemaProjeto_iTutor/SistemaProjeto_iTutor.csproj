@@ -72,6 +72,12 @@
     <Compile Include="Cadastros\FormCadastroProfessor.Designer.cs">
       <DependentUpon>FormCadastroProfessor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cadastros\FormCadastroUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\FormCadastroUsuario.Designer.cs">
+      <DependentUpon>FormCadastroUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\WSCorreios\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -126,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cadastros\FormCadastroProfessor.resx">
       <DependentUpon>FormCadastroProfessor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\FormCadastroUsuario.resx">
+      <DependentUpon>FormCadastroUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAgendamento.resx">
       <DependentUpon>FormAgendamento.cs</DependentUpon>
