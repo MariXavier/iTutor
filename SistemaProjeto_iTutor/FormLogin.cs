@@ -29,6 +29,7 @@ namespace SistemaProjeto_iTutor
             comando.Parameters.AddWithValue("@usuario", txtUsuario.Text);
             comando.Parameters.AddWithValue("@senha", txtSenha.Text);
             conexao.Open();
+            
             SqlDataReader consulta = comando.ExecuteReader(CommandBehavior.CloseConnection);
             if (!consulta.Read())
             {
@@ -37,13 +38,28 @@ namespace SistemaProjeto_iTutor
             }
             else
             {
+                consulta.Close();
+                conexao.Open();
+                
+                comando.CommandText = "SELECT levelPermissao FROM usuario WHERE usuario = '" + txtUsuario.Text + "' and senha = '" + txtSenha.Text + "'";
+                SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                DataTable tabela = new DataTable();
+                adaptador.Fill(tabela);
+                
+                //string lvl = tabela.Rows[0]["levelPermissao"].ToString();
+                //int levelPermissao = Convert.ToInt32(lvl);
+                
+                Autenticacao.levelPermissao = Convert.ToInt32(tabela.Rows[0]["levelPermissao"].ToString());
+                
+                //Autenticacao.levelPermissao = Convert.ToInt32(consulta.GetValue(3));
+
                 Limpar.limparComponentes(this);
-                Autenticacao.levelPermissao = Convert.ToInt32(consulta.GetValue(3));
                 FormMenu formMenu = new FormMenu();
                 formMenu.ShowDialog();
+                
             }
-
             conexao.Close();
+
         }
     }
 }
