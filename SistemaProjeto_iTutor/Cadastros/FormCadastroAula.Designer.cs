@@ -49,9 +49,9 @@
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboDisciplina = new System.Windows.Forms.ComboBox();
+            this.cbDisciplina = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboProfessor = new System.Windows.Forms.ComboBox();
+            this.cbProfessor = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -59,7 +59,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnAgendar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbAluno = new System.Windows.Forms.ComboBox();
+            this.lbNovoEndereco = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -67,9 +68,9 @@
             // comboEndereço
             // 
             this.comboEndereço.FormattingEnabled = true;
-            this.comboEndereço.Location = new System.Drawing.Point(12, 135);
+            this.comboEndereço.Location = new System.Drawing.Point(185, 135);
             this.comboEndereço.Name = "comboEndereço";
-            this.comboEndereço.Size = new System.Drawing.Size(310, 21);
+            this.comboEndereço.Size = new System.Drawing.Size(271, 21);
             this.comboEndereço.TabIndex = 69;
             // 
             // lblValorTotal
@@ -114,17 +115,18 @@
             // comboStatusAula
             // 
             this.comboStatusAula.FormattingEnabled = true;
-            this.comboStatusAula.Location = new System.Drawing.Point(264, 239);
+            this.comboStatusAula.Location = new System.Drawing.Point(253, 239);
             this.comboStatusAula.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboStatusAula.Name = "comboStatusAula";
-            this.comboStatusAula.Size = new System.Drawing.Size(234, 21);
+            this.comboStatusAula.Size = new System.Drawing.Size(245, 21);
             this.comboStatusAula.TabIndex = 62;
+            this.comboStatusAula.SelectedIndexChanged += new System.EventHandler(this.comboStatusAula_SelectedIndexChanged);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(261, 219);
+            this.label12.Location = new System.Drawing.Point(250, 220);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(93, 16);
             this.label12.TabIndex = 61;
@@ -172,7 +174,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(329, 115);
+            this.label9.Location = new System.Drawing.Point(9, 117);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(55, 16);
             this.label9.TabIndex = 56;
@@ -182,7 +184,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(11, 117);
+            this.label8.Location = new System.Drawing.Point(184, 117);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(63, 16);
             this.label8.TabIndex = 55;
@@ -190,7 +192,7 @@
             // 
             // txtTelefone
             // 
-            this.txtTelefone.Location = new System.Drawing.Point(330, 135);
+            this.txtTelefone.Location = new System.Drawing.Point(11, 136);
             this.txtTelefone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(168, 20);
@@ -264,14 +266,16 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(149, 26);
             this.dateTimePicker1.TabIndex = 48;
             // 
-            // comboDisciplina
+            // cbDisciplina
             // 
-            this.comboDisciplina.FormattingEnabled = true;
-            this.comboDisciplina.Location = new System.Drawing.Point(185, 88);
-            this.comboDisciplina.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboDisciplina.Name = "comboDisciplina";
-            this.comboDisciplina.Size = new System.Drawing.Size(137, 21);
-            this.comboDisciplina.TabIndex = 47;
+            this.cbDisciplina.FormattingEnabled = true;
+            this.cbDisciplina.Location = new System.Drawing.Point(185, 88);
+            this.cbDisciplina.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbDisciplina.Name = "cbDisciplina";
+            this.cbDisciplina.Size = new System.Drawing.Size(137, 21);
+            this.cbDisciplina.TabIndex = 47;
+            this.cbDisciplina.SelectedIndexChanged += new System.EventHandler(this.cbDisciplina_SelectedIndexChanged);
+            this.cbDisciplina.Click += new System.EventHandler(this.cbDisciplina_Click);
             // 
             // label4
             // 
@@ -283,14 +287,14 @@
             this.label4.TabIndex = 46;
             this.label4.Text = "Disciplina";
             // 
-            // comboProfessor
+            // cbProfessor
             // 
-            this.comboProfessor.FormattingEnabled = true;
-            this.comboProfessor.Location = new System.Drawing.Point(329, 88);
-            this.comboProfessor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboProfessor.Name = "comboProfessor";
-            this.comboProfessor.Size = new System.Drawing.Size(169, 21);
-            this.comboProfessor.TabIndex = 45;
+            this.cbProfessor.FormattingEnabled = true;
+            this.cbProfessor.Location = new System.Drawing.Point(329, 88);
+            this.cbProfessor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbProfessor.Name = "cbProfessor";
+            this.cbProfessor.Size = new System.Drawing.Size(169, 21);
+            this.cbProfessor.TabIndex = 45;
             // 
             // label2
             // 
@@ -372,21 +376,34 @@
             this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLimpar.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // cbAluno
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 88);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(167, 21);
-            this.comboBox1.TabIndex = 97;
+            this.cbAluno.FormattingEnabled = true;
+            this.cbAluno.Location = new System.Drawing.Point(12, 88);
+            this.cbAluno.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbAluno.Name = "cbAluno";
+            this.cbAluno.Size = new System.Drawing.Size(167, 21);
+            this.cbAluno.TabIndex = 97;
+            // 
+            // lbNovoEndereco
+            // 
+            this.lbNovoEndereco.AutoSize = true;
+            this.lbNovoEndereco.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNovoEndereco.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lbNovoEndereco.Location = new System.Drawing.Point(462, 137);
+            this.lbNovoEndereco.Name = "lbNovoEndereco";
+            this.lbNovoEndereco.Size = new System.Drawing.Size(36, 16);
+            this.lbNovoEndereco.TabIndex = 98;
+            this.lbNovoEndereco.Text = "Novo";
+            this.lbNovoEndereco.Click += new System.EventHandler(this.lbNovoEndereco_Click);
             // 
             // FormCadastroAula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(513, 469);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.lbNovoEndereco);
+            this.Controls.Add(this.cbAluno);
             this.Controls.Add(this.btnAgendar);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.comboEndereço);
@@ -409,9 +426,9 @@
             this.Controls.Add(this.dateTimePicker3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboDisciplina);
+            this.Controls.Add(this.cbDisciplina);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboProfessor);
+            this.Controls.Add(this.cbProfessor);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel2);
@@ -419,6 +436,7 @@
             this.Name = "FormCadastroAula";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agendamento de Aulas";
+            this.Load += new System.EventHandler(this.FormCadastroAula_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -449,9 +467,9 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboDisciplina;
+        private System.Windows.Forms.ComboBox cbDisciplina;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboProfessor;
+        private System.Windows.Forms.ComboBox cbProfessor;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
@@ -459,6 +477,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAgendar;
         private System.Windows.Forms.Button btnLimpar;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbAluno;
+        private System.Windows.Forms.Label lbNovoEndereco;
     }
 }
