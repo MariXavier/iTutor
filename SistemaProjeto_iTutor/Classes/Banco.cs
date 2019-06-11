@@ -12,6 +12,7 @@ namespace SistemaProjeto_iTutor.Classes
         {
 
             //return "server=DESKTOP-EBQVT0A\\SQLEXPRESS;database=iTutor;UID=sa;password=123456";
+            //return "server=LAPTOP-RRGSDFI2\\SQLEXPRESS;database=iTutor;UID=sa;password=123456";
             return "server=DESKTOP-O714ESL\\SQLEXPRESS;database=sandBox;UID=sa;password=123456";
         }
     }
