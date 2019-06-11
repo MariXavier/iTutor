@@ -26,5 +26,10 @@ namespace SistemaProjeto_iTutor.Cadastros
         {
 
         }
+
+        private void FormCadastroProfessor_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

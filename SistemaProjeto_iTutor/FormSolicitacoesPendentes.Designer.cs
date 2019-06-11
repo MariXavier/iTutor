@@ -34,6 +34,7 @@
             this.colunaCheckBox = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
@@ -50,12 +51,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -114,6 +114,16 @@
             this.label1.Size = new System.Drawing.Size(188, 19);
             this.label1.TabIndex = 13;
             this.label1.Text = "Solicitações Pendentes";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Location = new System.Drawing.Point(5, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
             // 
             // maskedTextBox4
             // 
@@ -260,15 +270,6 @@
             this.label2.TabIndex = 136;
             this.label2.Text = "Nome";
             // 
-            // comboBox2
-            // 
-            this.comboBox2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(347, 102);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(131, 24);
-            this.comboBox2.TabIndex = 160;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -318,23 +319,21 @@
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // pictureBox2
+            // textBox2
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Location = new System.Drawing.Point(5, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 12;
-            this.pictureBox2.TabStop = false;
+            this.textBox2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(348, 104);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(134, 22);
+            this.textBox2.TabIndex = 162;
             // 
             // FormSolicitacoesPendentes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(752, 407);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -396,7 +395,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaTipo;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colunaCheckBox;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }

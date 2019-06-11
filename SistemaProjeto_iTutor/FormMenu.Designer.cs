@@ -37,9 +37,6 @@
             this.btnAgendamentoAulas = new System.Windows.Forms.Button();
             this.btnDeptoFinanceiro = new System.Windows.Forms.Button();
             this.btnGerenciarCadastros = new System.Windows.Forms.Button();
-            this.btnAulasAgendadas = new System.Windows.Forms.Button();
-            this.btnConsultarCadastros = new System.Windows.Forms.Button();
-            this.btnSolicitacoesPendentes = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -83,7 +80,7 @@
             this.btnAlunos.Font = new System.Drawing.Font("Microsoft Tai Le", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAlunos.Image = global::SistemaProjeto_iTutor.Properties.Resources._3643747_friend_group_people_peoples_team_113434__1_;
             this.btnAlunos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAlunos.Location = new System.Drawing.Point(328, 460);
+            this.btnAlunos.Location = new System.Drawing.Point(31, 214);
             this.btnAlunos.Name = "btnAlunos";
             this.btnAlunos.Size = new System.Drawing.Size(268, 74);
             this.btnAlunos.TabIndex = 26;
@@ -97,7 +94,7 @@
             this.btnCadastrarProfessor.Font = new System.Drawing.Font("Microsoft Tai Le", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrarProfessor.Image = global::SistemaProjeto_iTutor.Properties.Resources._3643745_human_man_people_person_profile_113435;
             this.btnCadastrarProfessor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCadastrarProfessor.Location = new System.Drawing.Point(31, 460);
+            this.btnCadastrarProfessor.Location = new System.Drawing.Point(31, 312);
             this.btnCadastrarProfessor.Name = "btnCadastrarProfessor";
             this.btnCadastrarProfessor.Size = new System.Drawing.Size(268, 74);
             this.btnCadastrarProfessor.TabIndex = 25;
@@ -111,7 +108,7 @@
             this.btnAgendamentoAulas.Font = new System.Drawing.Font("Microsoft Tai Le", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgendamentoAulas.Image = global::SistemaProjeto_iTutor.Properties.Resources._3643749_edit_pen_pencil_write_writing_1133971;
             this.btnAgendamentoAulas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgendamentoAulas.Location = new System.Drawing.Point(328, 354);
+            this.btnAgendamentoAulas.Location = new System.Drawing.Point(328, 214);
             this.btnAgendamentoAulas.Name = "btnAgendamentoAulas";
             this.btnAgendamentoAulas.Size = new System.Drawing.Size(268, 74);
             this.btnAgendamentoAulas.TabIndex = 23;
@@ -125,11 +122,11 @@
             this.btnDeptoFinanceiro.Font = new System.Drawing.Font("Microsoft Tai Le", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeptoFinanceiro.Image = global::SistemaProjeto_iTutor.Properties.Resources.coins_stacks_money_icon_icons_com_56191;
             this.btnDeptoFinanceiro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeptoFinanceiro.Location = new System.Drawing.Point(31, 354);
+            this.btnDeptoFinanceiro.Location = new System.Drawing.Point(31, 113);
             this.btnDeptoFinanceiro.Name = "btnDeptoFinanceiro";
             this.btnDeptoFinanceiro.Size = new System.Drawing.Size(268, 74);
             this.btnDeptoFinanceiro.TabIndex = 22;
-            this.btnDeptoFinanceiro.Text = "Depto. Financeiro";
+            this.btnDeptoFinanceiro.Text = "Relatórios";
             this.btnDeptoFinanceiro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDeptoFinanceiro.UseVisualStyleBackColor = true;
             this.btnDeptoFinanceiro.Click += new System.EventHandler(this.btnDeptoFinanceiro_Click);
@@ -139,54 +136,14 @@
             this.btnGerenciarCadastros.Font = new System.Drawing.Font("Microsoft Tai Le", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGerenciarCadastros.Image = global::SistemaProjeto_iTutor.Properties.Resources._3643757_computer_desktop_monitor_pc_personal_113441;
             this.btnGerenciarCadastros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGerenciarCadastros.Location = new System.Drawing.Point(328, 244);
+            this.btnGerenciarCadastros.Location = new System.Drawing.Point(328, 113);
             this.btnGerenciarCadastros.Name = "btnGerenciarCadastros";
             this.btnGerenciarCadastros.Size = new System.Drawing.Size(268, 74);
             this.btnGerenciarCadastros.TabIndex = 21;
-            this.btnGerenciarCadastros.Text = "Gerenc. de Permissões";
+            this.btnGerenciarCadastros.Text = "Utilitários";
             this.btnGerenciarCadastros.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGerenciarCadastros.UseVisualStyleBackColor = true;
             this.btnGerenciarCadastros.Click += new System.EventHandler(this.btnGerenciarCadastros_Click);
-            // 
-            // btnAulasAgendadas
-            // 
-            this.btnAulasAgendadas.Font = new System.Drawing.Font("Microsoft Tai Le", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAulasAgendadas.Image = global::SistemaProjeto_iTutor.Properties.Resources._3643779_clock_hour_ticker_time_times_113446;
-            this.btnAulasAgendadas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAulasAgendadas.Location = new System.Drawing.Point(31, 244);
-            this.btnAulasAgendadas.Name = "btnAulasAgendadas";
-            this.btnAulasAgendadas.Size = new System.Drawing.Size(268, 74);
-            this.btnAulasAgendadas.TabIndex = 20;
-            this.btnAulasAgendadas.Text = "Aulas Agendadas";
-            this.btnAulasAgendadas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAulasAgendadas.UseVisualStyleBackColor = true;
-            // 
-            // btnConsultarCadastros
-            // 
-            this.btnConsultarCadastros.Font = new System.Drawing.Font("Microsoft Tai Le", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultarCadastros.Image = global::SistemaProjeto_iTutor.Properties.Resources._3643772_archive_archives_document_folder_open_113445__1_;
-            this.btnConsultarCadastros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConsultarCadastros.Location = new System.Drawing.Point(328, 133);
-            this.btnConsultarCadastros.Name = "btnConsultarCadastros";
-            this.btnConsultarCadastros.Size = new System.Drawing.Size(268, 74);
-            this.btnConsultarCadastros.TabIndex = 19;
-            this.btnConsultarCadastros.Text = "Consultar Cadastros";
-            this.btnConsultarCadastros.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnConsultarCadastros.UseVisualStyleBackColor = true;
-            // 
-            // btnSolicitacoesPendentes
-            // 
-            this.btnSolicitacoesPendentes.Font = new System.Drawing.Font("Microsoft Tai Le", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSolicitacoesPendentes.Image = global::SistemaProjeto_iTutor.Properties.Resources._3643784_bell_notification_notify_reminder_ring_113451__1_;
-            this.btnSolicitacoesPendentes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSolicitacoesPendentes.Location = new System.Drawing.Point(31, 133);
-            this.btnSolicitacoesPendentes.Name = "btnSolicitacoesPendentes";
-            this.btnSolicitacoesPendentes.Size = new System.Drawing.Size(268, 74);
-            this.btnSolicitacoesPendentes.TabIndex = 18;
-            this.btnSolicitacoesPendentes.Text = "Solicitações Pendentes";
-            this.btnSolicitacoesPendentes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSolicitacoesPendentes.UseVisualStyleBackColor = true;
-            this.btnSolicitacoesPendentes.Click += new System.EventHandler(this.btnSolicitacoesPendentes_Click);
             // 
             // pictureBox1
             // 
@@ -210,15 +167,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(627, 574);
+            this.ClientSize = new System.Drawing.Size(627, 411);
             this.Controls.Add(this.btnAlunos);
             this.Controls.Add(this.btnCadastrarProfessor);
             this.Controls.Add(this.btnAgendamentoAulas);
             this.Controls.Add(this.btnDeptoFinanceiro);
             this.Controls.Add(this.btnGerenciarCadastros);
-            this.Controls.Add(this.btnAulasAgendadas);
-            this.Controls.Add(this.btnConsultarCadastros);
-            this.Controls.Add(this.btnSolicitacoesPendentes);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox3);
@@ -243,9 +197,6 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.PictureBox pictureBox1;
-		private System.Windows.Forms.Button btnSolicitacoesPendentes;
-		private System.Windows.Forms.Button btnConsultarCadastros;
-		private System.Windows.Forms.Button btnAulasAgendadas;
 		private System.Windows.Forms.Button btnGerenciarCadastros;
 		private System.Windows.Forms.Button btnDeptoFinanceiro;
 		private System.Windows.Forms.Button btnAgendamentoAulas;

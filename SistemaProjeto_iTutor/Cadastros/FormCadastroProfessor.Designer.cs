@@ -63,6 +63,10 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txtEmailProfessor = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -410,11 +414,52 @@
             this.txtEmailProfessor.Size = new System.Drawing.Size(247, 22);
             this.txtEmailProfessor.TabIndex = 111;
             // 
+            // textBox5
+            // 
+            this.textBox5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(565, 328);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(140, 22);
+            this.textBox5.TabIndex = 182;
+            this.textBox5.UseSystemPasswordChar = true;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(562, 309);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(45, 16);
+            this.label15.TabIndex = 181;
+            this.label15.Text = "Senha";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(333, 328);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(226, 22);
+            this.textBox4.TabIndex = 180;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(330, 309);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(52, 16);
+            this.label16.TabIndex = 179;
+            this.label16.Text = "Usuário";
+            // 
             // FormCadastroProfessor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(723, 436);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.comboFormacaoProfessor);
             this.Controls.Add(this.label2);
@@ -450,6 +495,7 @@
             this.Name = "FormCadastroProfessor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Professores";
+            this.Load += new System.EventHandler(this.FormCadastroProfessor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -496,5 +542,9 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtEmailProfessor;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label16;
     }
 }

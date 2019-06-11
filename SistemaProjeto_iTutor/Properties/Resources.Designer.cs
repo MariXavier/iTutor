@@ -173,6 +173,16 @@ namespace SistemaProjeto_iTutor.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap access {
+            get {
+                object obj = ResourceManager.GetObject("access", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bigcancelsymbol_121964 {
             get {
                 object obj = ResourceManager.GetObject("bigcancelsymbol_121964", resourceCulture);
@@ -496,6 +506,16 @@ namespace SistemaProjeto_iTutor.Properties {
         internal static System.Drawing.Bitmap medical_history_1_ {
             get {
                 object obj = ResourceManager.GetObject("medical-history(1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap paper_plane {
+            get {
+                object obj = ResourceManager.GetObject("paper-plane", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

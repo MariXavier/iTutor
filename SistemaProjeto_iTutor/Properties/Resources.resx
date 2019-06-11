@@ -157,9 +157,6 @@
   <data name="linha3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\linha3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cancel-music" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cancel-music.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="loupe" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\loupe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -171,6 +168,9 @@
   </data>
   <data name="system_102355" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\system_102355.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="paper-plane" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\paper-plane.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cancel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,6 +190,9 @@
   <data name="linha1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\linha1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="world_102345 (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\world_102345 (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="file(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\file(1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -205,14 +208,11 @@
   <data name="3643757-computer-desktop-monitor-pc-personal_113441" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3643757-computer-desktop-monitor-pc-personal_113441.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="folder_102333" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\folder_102333.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="3643749-edit-pen-pencil-write-writing_113397" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3643749-edit-pen-pencil-write-writing_113397.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="find_102325" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\find_102325.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cancel-music (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cancel-music (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="refreshingcurvearrows_121971 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\refreshingcurvearrows_121971 (1)2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -247,11 +247,14 @@
   <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1497619898-jd24_85173 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1497619898-jd24_85173 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cancel-music" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cancel-music.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="linha4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\linha4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="medical-history" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medical-history1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconfinder_user-group-new_23632" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconfinder_user-group-new_236321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -265,11 +268,14 @@
   <data name="3643745-human-man-people-person-profile_113435" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3643745-human-man-people-person-profile_113435.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="world_102345 (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\world_102345 (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1497619898-jd24_85173 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1497619898-jd24_85173 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="medical-history" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\medical-history1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pdf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pdf1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="folder_102333" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\folder_102333.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="save" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\save1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -286,10 +292,10 @@
   <data name="rating_102349 (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rating_102349 (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pdf" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pdf1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="find_102325" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\find_102325.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cancel-music (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cancel-music (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="access" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\access.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

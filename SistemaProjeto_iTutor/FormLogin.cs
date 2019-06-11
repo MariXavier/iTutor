@@ -1,4 +1,5 @@
-﻿using SistemaProjeto_iTutor.Classes;
+﻿using SistemaProjeto_iTutor.Cadastros;
+using SistemaProjeto_iTutor.Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,7 +26,7 @@ namespace SistemaProjeto_iTutor
             SqlCommand comando = new SqlCommand();
             comando.Connection = conexao;
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "select * from usuario where usuario = @usuario and senha = @senha";
+            comando.CommandText = "select * from usuario where usuario = @usuario and senha = @senha and statusCadastro=0";
             comando.Parameters.AddWithValue("@usuario", txtUsuario.Text);
             comando.Parameters.AddWithValue("@senha", txtSenha.Text);
             conexao.Open();
@@ -35,21 +36,33 @@ namespace SistemaProjeto_iTutor
             {
 
                 MessageBox.Show("Usuário ou senha inválido");
+                Limpar.limparComponentes(this);
             }
             else
             {
                 consulta.Close();
                 conexao.Open();
                 
-                comando.CommandText = "SELECT levelPermissao FROM usuario WHERE usuario = '" + txtUsuario.Text + "' and senha = '" + txtSenha.Text + "'";
+                comando.CommandText = "SELECT levelPermissao, fkprofessor, fkaluno FROM usuario WHERE usuario = '" + txtUsuario.Text + "' and senha = '" + txtSenha.Text + "'";
                 SqlDataAdapter adaptador = new SqlDataAdapter(comando);
                 DataTable tabela = new DataTable();
                 adaptador.Fill(tabela);
-                
+
                 //string lvl = tabela.Rows[0]["levelPermissao"].ToString();
                 //int levelPermissao = Convert.ToInt32(lvl);
+
                 
+
                 Autenticacao.levelPermissao = Convert.ToInt32(tabela.Rows[0]["levelPermissao"].ToString());
+
+                if(Autenticacao.levelPermissao == 1) //professor
+                {
+                    Autenticacao.pkProfessorLogado = Convert.ToInt32(tabela.Rows[0]["fkProfessor"].ToString());
+                }
+                else if(Autenticacao.levelPermissao == 2) //aluno
+                {
+                    Autenticacao.pkAlunoLogado = Convert.ToInt32(tabela.Rows[0]["fkAluno"].ToString());
+                }
                 
                 //Autenticacao.levelPermissao = Convert.ToInt32(consulta.GetValue(3));
 
@@ -60,6 +73,12 @@ namespace SistemaProjeto_iTutor
             }
             conexao.Close();
 
+        }
+
+        private void lbPrimeiroAcesso_Click(object sender, EventArgs e)
+        {
+            FormCadastroPrimeiroAcesso primeiroAcesso = new FormCadastroPrimeiroAcesso();
+            primeiroAcesso.ShowDialog();
         }
     }
 }

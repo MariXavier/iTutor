@@ -32,7 +32,7 @@ namespace SistemaProjeto_iTutor.Cadastros
                     txtCidade.Text = resposta.cidade;
                     txtEstado.Text = resposta.uf;
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     MessageBox.Show("CEP não localizado");
                 }

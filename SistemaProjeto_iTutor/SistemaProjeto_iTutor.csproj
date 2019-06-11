@@ -66,6 +66,12 @@
     <Compile Include="Cadastros\FormCadastroEndereco.Designer.cs">
       <DependentUpon>FormCadastroEndereco.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cadastros\FormCadastroPrimeiroAcesso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\FormCadastroPrimeiroAcesso.Designer.cs">
+      <DependentUpon>FormCadastroPrimeiroAcesso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cadastros\FormCadastroProfessor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,7 @@
     <Compile Include="Cadastros\FormCadastroUsuario.Designer.cs">
       <DependentUpon>FormCadastroUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes\AdaptarParametros.cs" />
     <Compile Include="Classes\Autenticacao.cs" />
     <Compile Include="Classes\Banco.cs" />
     <Compile Include="Classes\Limpar.cs" />
@@ -132,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cadastros\FormCadastroEndereco.resx">
       <DependentUpon>FormCadastroEndereco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\FormCadastroPrimeiroAcesso.resx">
+      <DependentUpon>FormCadastroPrimeiroAcesso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cadastros\FormCadastroProfessor.resx">
       <DependentUpon>FormCadastroProfessor.cs</DependentUpon>
@@ -395,6 +405,7 @@
     <None Include="Resources\3643747-friend-group-people-peoples-team_113434 %281%29.png" />
     <None Include="Resources\3643757-computer-desktop-monitor-pc-personal_113441.png" />
     <None Include="Resources\3643749-edit-pen-pencil-write-writing_1133971.png" />
+    <None Include="Resources\access.png" />
     <Content Include="Resources\bigcancelsymbol_121964.png" />
     <None Include="Resources\save1.png" />
     <None Include="Resources\report1.png" />
@@ -439,6 +450,7 @@
     <None Include="Resources\magnifier %281%29.png" />
     <Content Include="Resources\medical-history%281%29.png" />
     <Content Include="Resources\medical-history.png" />
+    <None Include="Resources\paper-plane.png" />
     <Content Include="Resources\pdf.png" />
     <Content Include="Resources\refreshingcurvearrows_121971 %281%29.png" />
     <Content Include="Resources\refreshingcurvearrows_121971 %281%291.png" />

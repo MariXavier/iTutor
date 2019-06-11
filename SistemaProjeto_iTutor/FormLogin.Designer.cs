@@ -41,6 +41,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbPrimeiroAcesso = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -176,11 +177,23 @@
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
+            // lbPrimeiroAcesso
+            // 
+            this.lbPrimeiroAcesso.AutoSize = true;
+            this.lbPrimeiroAcesso.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPrimeiroAcesso.Location = new System.Drawing.Point(389, 420);
+            this.lbPrimeiroAcesso.Name = "lbPrimeiroAcesso";
+            this.lbPrimeiroAcesso.Size = new System.Drawing.Size(81, 13);
+            this.lbPrimeiroAcesso.TabIndex = 13;
+            this.lbPrimeiroAcesso.Text = "Primeiro acesso";
+            this.lbPrimeiroAcesso.Click += new System.EventHandler(this.lbPrimeiroAcesso_Click);
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(483, 475);
+            this.Controls.Add(this.lbPrimeiroAcesso);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -220,5 +233,6 @@
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.PictureBox pictureBox2;
 		private System.Windows.Forms.PictureBox pictureBox3;
-	}
+        private System.Windows.Forms.Label lbPrimeiroAcesso;
+    }
 }
