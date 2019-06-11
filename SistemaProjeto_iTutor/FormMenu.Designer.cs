@@ -47,7 +47,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(527, 46);
+            this.label2.Location = new System.Drawing.Point(435, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 13);
             this.label2.TabIndex = 14;
@@ -58,7 +58,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 23F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label1.Location = new System.Drawing.Point(452, 12);
+            this.label1.Location = new System.Drawing.Point(360, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 39);
             this.label1.TabIndex = 13;
@@ -82,7 +82,7 @@
             this.btnAlunos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAlunos.Location = new System.Drawing.Point(31, 123);
             this.btnAlunos.Name = "btnAlunos";
-            this.btnAlunos.Size = new System.Drawing.Size(268, 74);
+            this.btnAlunos.Size = new System.Drawing.Size(219, 74);
             this.btnAlunos.TabIndex = 26;
             this.btnAlunos.Text = "Aluno";
             this.btnAlunos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -94,9 +94,9 @@
             this.btnCadastrarProfessor.Font = new System.Drawing.Font("Microsoft Tai Le", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrarProfessor.Image = global::SistemaProjeto_iTutor.Properties.Resources._3643745_human_man_people_person_profile_113435;
             this.btnCadastrarProfessor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCadastrarProfessor.Location = new System.Drawing.Point(337, 123);
+            this.btnCadastrarProfessor.Location = new System.Drawing.Point(290, 123);
             this.btnCadastrarProfessor.Name = "btnCadastrarProfessor";
-            this.btnCadastrarProfessor.Size = new System.Drawing.Size(268, 74);
+            this.btnCadastrarProfessor.Size = new System.Drawing.Size(219, 74);
             this.btnCadastrarProfessor.TabIndex = 25;
             this.btnCadastrarProfessor.Text = "Professor";
             this.btnCadastrarProfessor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -108,9 +108,9 @@
             this.btnAgendamentoAulas.Font = new System.Drawing.Font("Microsoft Tai Le", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgendamentoAulas.Image = global::SistemaProjeto_iTutor.Properties.Resources._3643749_edit_pen_pencil_write_writing_1133971;
             this.btnAgendamentoAulas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgendamentoAulas.Location = new System.Drawing.Point(337, 221);
+            this.btnAgendamentoAulas.Location = new System.Drawing.Point(290, 221);
             this.btnAgendamentoAulas.Name = "btnAgendamentoAulas";
-            this.btnAgendamentoAulas.Size = new System.Drawing.Size(268, 74);
+            this.btnAgendamentoAulas.Size = new System.Drawing.Size(219, 74);
             this.btnAgendamentoAulas.TabIndex = 23;
             this.btnAgendamentoAulas.Text = "Agend. de Aulas";
             this.btnAgendamentoAulas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -124,7 +124,7 @@
             this.btnDeptoFinanceiro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDeptoFinanceiro.Location = new System.Drawing.Point(31, 221);
             this.btnDeptoFinanceiro.Name = "btnDeptoFinanceiro";
-            this.btnDeptoFinanceiro.Size = new System.Drawing.Size(268, 74);
+            this.btnDeptoFinanceiro.Size = new System.Drawing.Size(219, 74);
             this.btnDeptoFinanceiro.TabIndex = 22;
             this.btnDeptoFinanceiro.Text = "Relatórios";
             this.btnDeptoFinanceiro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -138,26 +138,25 @@
             this.btnGerenciarCadastros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGerenciarCadastros.Location = new System.Drawing.Point(31, 315);
             this.btnGerenciarCadastros.Name = "btnGerenciarCadastros";
-            this.btnGerenciarCadastros.Size = new System.Drawing.Size(268, 74);
+            this.btnGerenciarCadastros.Size = new System.Drawing.Size(219, 74);
             this.btnGerenciarCadastros.TabIndex = 21;
             this.btnGerenciarCadastros.Text = "Utilitários";
             this.btnGerenciarCadastros.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGerenciarCadastros.UseVisualStyleBackColor = true;
-            this.btnGerenciarCadastros.Click += new System.EventHandler(this.btnGerenciarCadastros_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::SistemaProjeto_iTutor.Properties.Resources.linha5;
             this.pictureBox1.Location = new System.Drawing.Point(-18, 34);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(399, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(293, 50);
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::SistemaProjeto_iTutor.Properties.Resources.system_102355;
-            this.pictureBox3.Location = new System.Drawing.Point(564, 12);
+            this.pictureBox3.Location = new System.Drawing.Point(472, 14);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(51, 57);
             this.pictureBox3.TabIndex = 15;
@@ -167,7 +166,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(639, 419);
+            this.ClientSize = new System.Drawing.Size(540, 419);
             this.Controls.Add(this.btnAlunos);
             this.Controls.Add(this.btnCadastrarProfessor);
             this.Controls.Add(this.btnAgendamentoAulas);

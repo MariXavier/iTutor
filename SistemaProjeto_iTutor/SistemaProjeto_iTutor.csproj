@@ -72,12 +72,6 @@
     <Compile Include="Cadastros\FormCadastroProfessor.Designer.cs">
       <DependentUpon>FormCadastroProfessor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cadastros\FormCadastroUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Cadastros\FormCadastroUsuario.Designer.cs">
-      <DependentUpon>FormCadastroUsuario.cs</DependentUpon>
-    </Compile>
     <Compile Include="Classes\Autenticacao.cs" />
     <Compile Include="Classes\Banco.cs" />
     <Compile Include="Classes\Limpar.cs" />
@@ -85,18 +79,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="FormAgendamento.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormAgendamento.Designer.cs">
-      <DependentUpon>FormAgendamento.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormGerenciarPermissoes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormGerenciarPermissoes.Designer.cs">
-      <DependentUpon>FormGerenciarPermissoes.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
@@ -109,12 +91,6 @@
     </Compile>
     <Compile Include="FormMenu.Designer.cs">
       <DependentUpon>FormMenu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormSolicitacoesPendentes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormSolicitacoesPendentes.Designer.cs">
-      <DependentUpon>FormSolicitacoesPendentes.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -136,23 +112,11 @@
     <EmbeddedResource Include="Cadastros\FormCadastroProfessor.resx">
       <DependentUpon>FormCadastroProfessor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cadastros\FormCadastroUsuario.resx">
-      <DependentUpon>FormCadastroUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormAgendamento.resx">
-      <DependentUpon>FormAgendamento.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormGerenciarPermissoes.resx">
-      <DependentUpon>FormGerenciarPermissoes.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormSolicitacoesPendentes.resx">
-      <DependentUpon>FormSolicitacoesPendentes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
