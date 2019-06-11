@@ -26,12 +26,6 @@ namespace SistemaProjeto_iTutor
             //flogin.ShowDialog();
 		}
 
-        private void btnSolicitacoesPendentes_Click(object sender, EventArgs e)
-        {
-            FormSolicitacoesPendentes formSolicitacao = new FormSolicitacoesPendentes();
-            formSolicitacao.ShowDialog();
-        }
-
         private void btnDeptoFinanceiro_Click(object sender, EventArgs e)
         {
             FormRelatorio formRelatorio = new FormRelatorio();
@@ -44,11 +38,6 @@ namespace SistemaProjeto_iTutor
             formProfessor.ShowDialog();
         }
 
-        private void btnGerenciarCadastros_Click(object sender, EventArgs e)
-        {
-            FormGerenciarPermissoes formPermissao = new FormGerenciarPermissoes();
-            formPermissao.ShowDialog();
-        }
 
         private void btnAgendamentoAulas_Click(object sender, EventArgs e)
         {
