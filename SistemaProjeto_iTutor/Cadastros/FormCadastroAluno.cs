@@ -206,9 +206,12 @@ namespace SistemaProjeto_iTutor.Cadastros
             conexao.Close();
             Limpar.limparComponentes(this);
 
+            /* =========================================================             
+               FAZER O DELETE SETAR O USUARIO COM STATUS 999 TAMBÉM
+            =========================================================  */
 
         }
-        
+
     }
 
    
