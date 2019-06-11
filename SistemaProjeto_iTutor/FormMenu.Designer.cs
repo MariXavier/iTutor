@@ -143,7 +143,7 @@
             this.btnGerenciarCadastros.Text = "Utilitários";
             this.btnGerenciarCadastros.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGerenciarCadastros.UseVisualStyleBackColor = true;
-            this.btnGerenciarCadastros.Click += new System.EventHandler(this.btnGerenciarCadastros_Click);
+            
             // 
             // pictureBox1
             // 
