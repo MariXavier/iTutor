@@ -184,6 +184,7 @@ namespace SistemaProjeto_iTutor.Cadastros
             query.Parameters.AddWithValue("@senha", txtSenha.Text);
             query.ExecuteNonQuery();
             conexao.Close();
+            FormCadastroAluno_Load(null, null);
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -196,20 +197,19 @@ namespace SistemaProjeto_iTutor.Cadastros
 
             query.CommandText = "UPDATE aluno SET statusCadastro = 999 where pkAluno = @pkAluno";
             query.Parameters.AddWithValue("@pkAluno", pkAluno);
+            query.ExecuteNonQuery();
+
+            query.CommandText = "UPDATE usuario SET statusCadastro = 999 where fkAluno = @pkAluno";
+
             int cont = query.ExecuteNonQuery();
 
             if (cont > 0)   {  MessageBox.Show("Removido com sucesso"); }
             else            { MessageBox.Show("Erro ao remover"); }
-    
-            dgvAluno.Update();
-            dgvAluno.Refresh();
+
+
+            FormCadastroAluno_Load(null, null);
             conexao.Close();
             Limpar.limparComponentes(this);
-
-            /* =========================================================             
-               FAZER O DELETE SETAR O USUARIO COM STATUS 999 TAMBÉM
-            =========================================================  */
-
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -267,6 +267,10 @@ namespace SistemaProjeto_iTutor.Cadastros
             query.Parameters.AddWithValue("@levelPermissao", 2);
             query.CommandText = "INSERT INTO usuario (usuario, senha, levelPermissao, dataCriacao, solicitacaoAprovada, statusCadastro,fkAluno, fkProfessor) VALUES (@usuario, @senha, @levelPermissao, @dataCriacao, @solicitacaoAprovada, @statusCadastro,@fkAluno, @fkProfessor)";
             query.ExecuteNonQuery();
+
+            FormCadastroAluno_Load(null, null);
+            conexao.Close();
+        
         }
     }
 

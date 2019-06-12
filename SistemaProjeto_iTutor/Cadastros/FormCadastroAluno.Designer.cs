@@ -121,7 +121,7 @@
             this.txtNomeResponsavel.Location = new System.Drawing.Point(502, 149);
             this.txtNomeResponsavel.Name = "txtNomeResponsavel";
             this.txtNomeResponsavel.Size = new System.Drawing.Size(257, 22);
-            this.txtNomeResponsavel.TabIndex = 22;
+            this.txtNomeResponsavel.TabIndex = 3;
             // 
             // txtNomeAluno
             // 
@@ -129,7 +129,7 @@
             this.txtNomeAluno.Location = new System.Drawing.Point(387, 100);
             this.txtNomeAluno.Name = "txtNomeAluno";
             this.txtNomeAluno.Size = new System.Drawing.Size(270, 22);
-            this.txtNomeAluno.TabIndex = 21;
+            this.txtNomeAluno.TabIndex = 0;
             // 
             // label1
             // 
@@ -158,7 +158,7 @@
             this.txtDataNascimento.Mask = "00/00/0000";
             this.txtDataNascimento.Name = "txtDataNascimento";
             this.txtDataNascimento.Size = new System.Drawing.Size(96, 22);
-            this.txtDataNascimento.TabIndex = 116;
+            this.txtDataNascimento.TabIndex = 1;
             // 
             // txtCPF
             // 
@@ -167,7 +167,7 @@
             this.txtCPF.Mask = "000.000.000-00";
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(105, 22);
-            this.txtCPF.TabIndex = 119;
+            this.txtCPF.TabIndex = 2;
             // 
             // label10
             // 
@@ -205,7 +205,7 @@
             this.txtRua.Location = new System.Drawing.Point(469, 201);
             this.txtRua.Name = "txtRua";
             this.txtRua.Size = new System.Drawing.Size(236, 22);
-            this.txtRua.TabIndex = 122;
+            this.txtRua.TabIndex = 5;
             this.txtRua.TextChanged += new System.EventHandler(this.txtEndereco_TextChanged);
             // 
             // label7
@@ -224,7 +224,7 @@
             this.txtNumero.Location = new System.Drawing.Point(711, 201);
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(48, 22);
-            this.txtNumero.TabIndex = 124;
+            this.txtNumero.TabIndex = 6;
             // 
             // txtCEP
             // 
@@ -233,7 +233,7 @@
             this.txtCEP.Mask = "00000-000";
             this.txtCEP.Name = "txtCEP";
             this.txtCEP.Size = new System.Drawing.Size(76, 22);
-            this.txtCEP.TabIndex = 131;
+            this.txtCEP.TabIndex = 4;
             // 
             // label8
             // 
@@ -251,7 +251,7 @@
             this.txtBairro.Location = new System.Drawing.Point(387, 251);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(137, 22);
-            this.txtBairro.TabIndex = 126;
+            this.txtBairro.TabIndex = 7;
             // 
             // label9
             // 
@@ -269,7 +269,7 @@
             this.txtCidade.Location = new System.Drawing.Point(530, 251);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(147, 22);
-            this.txtCidade.TabIndex = 128;
+            this.txtCidade.TabIndex = 8;
             // 
             // label11
             // 
@@ -287,7 +287,7 @@
             this.txtEstado.Location = new System.Drawing.Point(683, 251);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(76, 22);
-            this.txtEstado.TabIndex = 130;
+            this.txtEstado.TabIndex = 9;
             // 
             // label12
             // 
@@ -307,7 +307,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(429, 346);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(78, 34);
-            this.btnSalvar.TabIndex = 137;
+            this.btnSalvar.TabIndex = 13;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSalvar.UseVisualStyleBackColor = true;
@@ -321,7 +321,7 @@
             this.btnAlterar.Location = new System.Drawing.Point(513, 346);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(78, 34);
-            this.btnAlterar.TabIndex = 136;
+            this.btnAlterar.TabIndex = 14;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAlterar.UseVisualStyleBackColor = true;
@@ -335,7 +335,7 @@
             this.btnLimpar.Location = new System.Drawing.Point(597, 346);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(78, 34);
-            this.btnLimpar.TabIndex = 135;
+            this.btnLimpar.TabIndex = 15;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLimpar.UseVisualStyleBackColor = true;
@@ -349,7 +349,7 @@
             this.btnExcluir.Location = new System.Drawing.Point(681, 346);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(78, 34);
-            this.btnExcluir.TabIndex = 134;
+            this.btnExcluir.TabIndex = 16;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExcluir.UseVisualStyleBackColor = true;
@@ -381,7 +381,7 @@
             this.txtUsuario.Location = new System.Drawing.Point(500, 301);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(147, 22);
-            this.txtUsuario.TabIndex = 140;
+            this.txtUsuario.TabIndex = 11;
             // 
             // label14
             // 
@@ -399,7 +399,7 @@
             this.txtSenha.Location = new System.Drawing.Point(653, 301);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(106, 22);
-            this.txtSenha.TabIndex = 142;
+            this.txtSenha.TabIndex = 12;
             // 
             // txtTelefone
             // 
@@ -408,7 +408,7 @@
             this.txtTelefone.Mask = "(00)000000000";
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(105, 22);
-            this.txtTelefone.TabIndex = 143;
+            this.txtTelefone.TabIndex = 10;
             // 
             // FormCadastroAluno
             // 

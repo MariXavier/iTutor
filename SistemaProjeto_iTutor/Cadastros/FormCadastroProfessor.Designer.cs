@@ -32,8 +32,7 @@
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.colunaNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvProfessor = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,16 +43,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.maskedCelProfessor = new System.Windows.Forms.MaskedTextBox();
-            this.txtEndereco = new System.Windows.Forms.TextBox();
-            this.maskedTelProfessor = new System.Windows.Forms.MaskedTextBox();
+            this.txtRua = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.maskedCpfProfessor = new System.Windows.Forms.MaskedTextBox();
+            this.txtCPFProfessor = new System.Windows.Forms.MaskedTextBox();
             this.txtNumProfessor = new System.Windows.Forms.TextBox();
-            this.maskedCepProfessor = new System.Windows.Forms.MaskedTextBox();
+            this.txtCEPProfessor = new System.Windows.Forms.MaskedTextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.maskedNascProfessor = new System.Windows.Forms.MaskedTextBox();
+            this.txtNascimentoProfessor = new System.Windows.Forms.MaskedTextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtBairroProfessor = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -67,7 +63,8 @@
             this.label15 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProfessor)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -124,21 +121,13 @@
             this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExcluir.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvProfessor
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colunaNome});
-            this.dataGridView1.Location = new System.Drawing.Point(15, 71);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(299, 353);
-            this.dataGridView1.TabIndex = 62;
-            // 
-            // colunaNome
-            // 
-            this.colunaNome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colunaNome.HeaderText = "Nome";
-            this.colunaNome.Name = "colunaNome";
+            this.dgvProfessor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProfessor.Location = new System.Drawing.Point(15, 71);
+            this.dgvProfessor.Name = "dgvProfessor";
+            this.dgvProfessor.Size = new System.Drawing.Size(299, 353);
+            this.dgvProfessor.TabIndex = 62;
             // 
             // panel2
             // 
@@ -177,7 +166,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(573, 262);
+            this.label14.Location = new System.Drawing.Point(455, 263);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(133, 16);
             this.label14.TabIndex = 122;
@@ -187,9 +176,9 @@
             // 
             this.comboFormacaoProfessor.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboFormacaoProfessor.FormattingEnabled = true;
-            this.comboFormacaoProfessor.Location = new System.Drawing.Point(576, 281);
+            this.comboFormacaoProfessor.Location = new System.Drawing.Point(458, 282);
             this.comboFormacaoProfessor.Name = "comboFormacaoProfessor";
-            this.comboFormacaoProfessor.Size = new System.Drawing.Size(129, 24);
+            this.comboFormacaoProfessor.Size = new System.Drawing.Size(247, 24);
             this.comboFormacaoProfessor.TabIndex = 121;
             // 
             // label2
@@ -237,35 +226,17 @@
             this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(412, 113);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 16);
+            this.label5.Size = new System.Drawing.Size(31, 16);
             this.label5.TabIndex = 99;
-            this.label5.Text = "Endereço";
+            this.label5.Text = "Rua";
             // 
-            // maskedCelProfessor
+            // txtRua
             // 
-            this.maskedCelProfessor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedCelProfessor.Location = new System.Drawing.Point(459, 282);
-            this.maskedCelProfessor.Mask = "(00) 9 0000-0000";
-            this.maskedCelProfessor.Name = "maskedCelProfessor";
-            this.maskedCelProfessor.Size = new System.Drawing.Size(107, 22);
-            this.maskedCelProfessor.TabIndex = 118;
-            // 
-            // txtEndereco
-            // 
-            this.txtEndereco.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEndereco.Location = new System.Drawing.Point(415, 130);
-            this.txtEndereco.Name = "txtEndereco";
-            this.txtEndereco.Size = new System.Drawing.Size(190, 22);
-            this.txtEndereco.TabIndex = 100;
-            // 
-            // maskedTelProfessor
-            // 
-            this.maskedTelProfessor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTelProfessor.Location = new System.Drawing.Point(333, 283);
-            this.maskedTelProfessor.Mask = "(00)0000-0000";
-            this.maskedTelProfessor.Name = "maskedTelProfessor";
-            this.maskedTelProfessor.Size = new System.Drawing.Size(108, 22);
-            this.maskedTelProfessor.TabIndex = 117;
+            this.txtRua.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRua.Location = new System.Drawing.Point(415, 130);
+            this.txtRua.Name = "txtRua";
+            this.txtRua.Size = new System.Drawing.Size(190, 22);
+            this.txtRua.TabIndex = 100;
             // 
             // label6
             // 
@@ -277,14 +248,14 @@
             this.label6.TabIndex = 101;
             this.label6.Text = "Nº";
             // 
-            // maskedCpfProfessor
+            // txtCPFProfessor
             // 
-            this.maskedCpfProfessor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedCpfProfessor.Location = new System.Drawing.Point(333, 230);
-            this.maskedCpfProfessor.Mask = "000.000.000-00";
-            this.maskedCpfProfessor.Name = "maskedCpfProfessor";
-            this.maskedCpfProfessor.Size = new System.Drawing.Size(108, 22);
-            this.maskedCpfProfessor.TabIndex = 116;
+            this.txtCPFProfessor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCPFProfessor.Location = new System.Drawing.Point(333, 230);
+            this.txtCPFProfessor.Mask = "000.000.000-00";
+            this.txtCPFProfessor.Name = "txtCPFProfessor";
+            this.txtCPFProfessor.Size = new System.Drawing.Size(108, 22);
+            this.txtCPFProfessor.TabIndex = 116;
             // 
             // txtNumProfessor
             // 
@@ -294,14 +265,14 @@
             this.txtNumProfessor.Size = new System.Drawing.Size(87, 22);
             this.txtNumProfessor.TabIndex = 102;
             // 
-            // maskedCepProfessor
+            // txtCEPProfessor
             // 
-            this.maskedCepProfessor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedCepProfessor.Location = new System.Drawing.Point(334, 130);
-            this.maskedCepProfessor.Mask = "00000-000";
-            this.maskedCepProfessor.Name = "maskedCepProfessor";
-            this.maskedCepProfessor.Size = new System.Drawing.Size(76, 22);
-            this.maskedCepProfessor.TabIndex = 115;
+            this.txtCEPProfessor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCEPProfessor.Location = new System.Drawing.Point(334, 130);
+            this.txtCEPProfessor.Mask = "00000-000";
+            this.txtCEPProfessor.Name = "txtCEPProfessor";
+            this.txtCEPProfessor.Size = new System.Drawing.Size(76, 22);
+            this.txtCEPProfessor.TabIndex = 115;
             // 
             // label7
             // 
@@ -313,24 +284,14 @@
             this.label7.TabIndex = 103;
             this.label7.Text = "Bairro";
             // 
-            // label13
+            // txtNascimentoProfessor
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(456, 266);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(48, 16);
-            this.label13.TabIndex = 113;
-            this.label13.Text = "Celular";
-            // 
-            // maskedNascProfessor
-            // 
-            this.maskedNascProfessor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedNascProfessor.Location = new System.Drawing.Point(618, 88);
-            this.maskedNascProfessor.Mask = "00/00/0000";
-            this.maskedNascProfessor.Name = "maskedNascProfessor";
-            this.maskedNascProfessor.Size = new System.Drawing.Size(87, 22);
-            this.maskedNascProfessor.TabIndex = 114;
+            this.txtNascimentoProfessor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNascimentoProfessor.Location = new System.Drawing.Point(618, 88);
+            this.txtNascimentoProfessor.Mask = "00/00/0000";
+            this.txtNascimentoProfessor.Name = "txtNascimentoProfessor";
+            this.txtNascimentoProfessor.Size = new System.Drawing.Size(87, 22);
+            this.txtNascimentoProfessor.TabIndex = 114;
             // 
             // label12
             // 
@@ -451,11 +412,21 @@
             this.label16.TabIndex = 179;
             this.label16.Text = "Usuário";
             // 
+            // txtTelefone
+            // 
+            this.txtTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefone.Location = new System.Drawing.Point(334, 283);
+            this.txtTelefone.Mask = "(00)000000000";
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(105, 22);
+            this.txtTelefone.TabIndex = 183;
+            // 
             // FormCadastroProfessor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(723, 436);
+            this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.textBox4);
@@ -467,16 +438,13 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.maskedCelProfessor);
-            this.Controls.Add(this.txtEndereco);
-            this.Controls.Add(this.maskedTelProfessor);
+            this.Controls.Add(this.txtRua);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.maskedCpfProfessor);
+            this.Controls.Add(this.txtCPFProfessor);
             this.Controls.Add(this.txtNumProfessor);
-            this.Controls.Add(this.maskedCepProfessor);
+            this.Controls.Add(this.txtCEPProfessor);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.maskedNascProfessor);
+            this.Controls.Add(this.txtNascimentoProfessor);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.txtBairroProfessor);
             this.Controls.Add(this.label8);
@@ -490,13 +458,13 @@
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnExcluir);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvProfessor);
             this.Controls.Add(this.panel2);
             this.Name = "FormCadastroProfessor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Professores";
             this.Load += new System.EventHandler(this.FormCadastroProfessor_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProfessor)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -511,8 +479,7 @@
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnExcluir;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colunaNome;
+        private System.Windows.Forms.DataGridView dgvProfessor;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -523,16 +490,13 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.MaskedTextBox maskedCelProfessor;
-        private System.Windows.Forms.TextBox txtEndereco;
-        private System.Windows.Forms.MaskedTextBox maskedTelProfessor;
+        private System.Windows.Forms.TextBox txtRua;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.MaskedTextBox maskedCpfProfessor;
+        private System.Windows.Forms.MaskedTextBox txtCPFProfessor;
         private System.Windows.Forms.TextBox txtNumProfessor;
-        private System.Windows.Forms.MaskedTextBox maskedCepProfessor;
+        private System.Windows.Forms.MaskedTextBox txtCEPProfessor;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.MaskedTextBox maskedNascProfessor;
+        private System.Windows.Forms.MaskedTextBox txtNascimentoProfessor;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtBairroProfessor;
         private System.Windows.Forms.Label label8;
@@ -546,5 +510,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.MaskedTextBox txtTelefone;
     }
 }
