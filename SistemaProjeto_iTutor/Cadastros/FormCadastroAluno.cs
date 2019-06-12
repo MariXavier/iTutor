@@ -212,6 +212,62 @@ namespace SistemaProjeto_iTutor.Cadastros
 
         }
 
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            DateTime localDate = DateTime.Now;
+
+            string diaHoraAtual = localDate.ToString();
+            string diaAtual = diaHoraAtual.Substring(0, 2);
+            string mesAtual = diaHoraAtual.Substring(3, 2);
+            string anoAtual = diaHoraAtual.Substring(6, 4);
+            string horaAtual = diaHoraAtual.Substring(11, 8);
+
+            diaHoraAtual = anoAtual + "-" + mesAtual + "-" + diaAtual + " " + horaAtual;
+
+            SqlConnection conexao = new SqlConnection(Banco.enderecoBanco());
+            SqlCommand query = new SqlCommand();
+
+            query.Connection = conexao;
+            conexao.Open();
+
+            query.Parameters.AddWithValue("@nome", txtNomeAluno.Text);
+            query.Parameters.AddWithValue("@dataNascimento", AdaptarParametros.adaptarDataNascimento(txtDataNascimento.Text));
+            query.Parameters.AddWithValue("@cpf", AdaptarParametros.adaptarCPF(txtCPF.Text));
+            query.Parameters.AddWithValue("@statusCadastro", 0);
+            query.Parameters.AddWithValue("@telefone", AdaptarParametros.adaptarTelefone(txtTelefone.Text));
+
+            query.Parameters.AddWithValue("@cep", AdaptarParametros.adaptarCEP(txtCEP.Text));
+            query.Parameters.AddWithValue("@rua", txtRua.Text);
+            query.Parameters.AddWithValue("@numero", txtNumero.Text);
+            query.Parameters.AddWithValue("@bairro", txtBairro.Text);
+            query.Parameters.AddWithValue("@cidade", txtCidade.Text);
+            query.Parameters.AddWithValue("@estado", txtEstado.Text);
+
+            query.Parameters.AddWithValue("@usuario", txtUsuario.Text);
+            query.Parameters.AddWithValue("@senha", txtSenha.Text);
+            query.Parameters.AddWithValue("@dataCriacao", diaHoraAtual);
+            query.Parameters.AddWithValue("@solicitacaoAprovada", 1);
+            
+            query.CommandText = "INSERT INTO aluno (nome, dataNascimento, cpf, statusCadastro, telefone) values (@nome, @dataNascimento, @cpf, @statusCadastro, @telefone)";
+            query.ExecuteNonQuery();
+
+            query.CommandText = "SELECT pkAluno FROM aluno WHERE cpf = '" + AdaptarParametros.adaptarCPF(txtCPF.Text) + "'";
+            DataTable tabela = new DataTable();
+            SqlDataAdapter adaptador = new SqlDataAdapter(query);
+            adaptador.Fill(tabela);
+            query.ExecuteNonQuery();
+
+            int pkAluno = Convert.ToInt32(tabela.Rows[0]["pkAluno"].ToString());
+            query.Parameters.AddWithValue("@fkProfessor", DBNull.Value);
+            query.Parameters.AddWithValue("@fkAluno", pkAluno);
+
+            query.CommandText = "INSERT INTO endereco (cep, rua, numero, bairro, cidade, estado, statusCadastro, fkAluno, fkProfessor) VALUES (@cep, @rua, @numero, @bairro, @cidade, @estado, @statusCadastro, @fkAluno, @fkProfessor)";
+            query.ExecuteNonQuery();
+
+            query.Parameters.AddWithValue("@levelPermissao", 2);
+            query.CommandText = "INSERT INTO usuario (usuario, senha, levelPermissao, dataCriacao, solicitacaoAprovada, statusCadastro,fkAluno, fkProfessor) VALUES (@usuario, @senha, @levelPermissao, @dataCriacao, @solicitacaoAprovada, @statusCadastro,@fkAluno, @fkProfessor)";
+            query.ExecuteNonQuery();
+        }
     }
 
    
