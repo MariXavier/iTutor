@@ -27,11 +27,15 @@ namespace SistemaProjeto_iTutor.Cadastros
             {
                 lbFormacaoAcademica.Visible = true;
                 cbFormacaoAcademica.Visible = true;
+                txtValorHoraAula.Visible = true;
+                lbValorHoraAula.Visible = true;
             }
             else
             {
                 lbFormacaoAcademica.Visible = false;
                 cbFormacaoAcademica.Visible = false;
+                txtValorHoraAula.Visible = false;
+                lbValorHoraAula.Visible = false;
             }
             
         }
@@ -40,6 +44,8 @@ namespace SistemaProjeto_iTutor.Cadastros
         {
             lbFormacaoAcademica.Visible = false;
             cbFormacaoAcademica.Visible = false;
+            txtValorHoraAula.Visible = false;
+            lbValorHoraAula.Visible = false;
 
             SqlConnection conn = new SqlConnection(Banco.enderecoBanco());
             conn.Open();
@@ -113,15 +119,8 @@ namespace SistemaProjeto_iTutor.Cadastros
 
             string cep = (txtCEP.Text).Trim().Replace("-", "");
 
-            DateTime localDate = DateTime.Now;
-
-            string diaHoraAtual = localDate.ToString();
-            string diaAtual = diaHoraAtual.Substring(0, 2);
-            string mesAtual = diaHoraAtual.Substring(3, 2);
-            string anoAtual = diaHoraAtual.Substring(6, 4);
-            string horaAtual = diaHoraAtual.Substring(11, 8);
-
-            diaHoraAtual = anoAtual + "-" + mesAtual + "-" + diaAtual + " " + horaAtual;
+            DateTime myDateTime = DateTime.Now;
+            string diaHoraAtual = myDateTime.ToString("yyyy-MM-dd HH:mm:ss");
 
             SqlConnection conexao = new SqlConnection(Banco.enderecoBanco());
             SqlCommand query = new SqlCommand();
@@ -135,6 +134,7 @@ namespace SistemaProjeto_iTutor.Cadastros
             query.Parameters.AddWithValue("@statusCadastro", 0);
             query.Parameters.AddWithValue("@telefone", telefone);
             query.Parameters.AddWithValue("@email", txtEmail.Text);
+            query.Parameters.AddWithValue("@valorHoraAula", txtValorHoraAula.Text);
 
             query.Parameters.AddWithValue("@cep", cep);
             query.Parameters.AddWithValue("@rua", txtRua.Text);
@@ -145,13 +145,13 @@ namespace SistemaProjeto_iTutor.Cadastros
 
             query.Parameters.AddWithValue("@usuario", txtUsuario.Text);
             query.Parameters.AddWithValue("@senha", txtSenha.Text);
-            query.Parameters.AddWithValue("@dataCriacao", diaHoraAtual);
+            query.Parameters.AddWithValue("@dataCriacao", Convert.ToDateTime(diaHoraAtual));
             query.Parameters.AddWithValue("@solicitacaoAprovada", 1);
 
             if (perfil == "Professor")
             {
                 query.Parameters.AddWithValue("@fkDisciplina", pkDisciplina);
-                query.CommandText = "INSERT INTO professor (nome, dataNascimento, cpf, statusCadastro, telefone, email, fkDisciplina) values (@nome, @dataNascimento, @cpf, @statusCadastro, @telefone, @email, @fkDisciplina)";
+                query.CommandText = "INSERT INTO professor (nome, dataNascimento, cpf, statusCadastro, telefone, email, fkDisciplina, valorHoraAula) values (@nome, @dataNascimento, @cpf, @statusCadastro, @telefone, @email, @fkDisciplina, @valorHoraAula)";
                 query.ExecuteNonQuery();
 
                 query.CommandText = "SELECT pkProfessor FROM professor where cpf = '" + cpf + "'";
@@ -201,16 +201,15 @@ namespace SistemaProjeto_iTutor.Cadastros
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            DateTime localDate = DateTime.Now;
 
-            string diaHoraAtual = localDate.ToString();
-            string diaAtual = diaHoraAtual.Substring(0, 2);
-            string mesAtual = diaHoraAtual.Substring(3, 2);
-            string anoAtual = diaHoraAtual.Substring(6, 4);
-            string horaAtual = diaHoraAtual.Substring(11, 8);
+        }
 
-            diaHoraAtual = anoAtual + "-" + mesAtual + "-" + diaAtual + " " + horaAtual;
-            MessageBox.Show(diaHoraAtual);
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+            
+            
+           
         }
     }
 }
