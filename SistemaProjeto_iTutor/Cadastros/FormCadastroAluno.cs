@@ -41,10 +41,8 @@ namespace SistemaProjeto_iTutor.Cadastros
 
                 try
                 {
-                    MessageBox.Show(pkAluno.ToString());
-                    string strConexao = Banco.enderecoBanco();
                     string sql = "SELECT a.nome, a.cpf,a.dataNascimento, a.responsavel, a.telefone, e.cep, e.rua, e.numero, e.bairro, e.estado, e.cidade, u.usuario, u.senha, a.pkAluno FROM aluno AS a, endereco AS e, usuario AS u WHERE a.pkAluno = " + pkAluno + " AND e.fkAluno = " + pkAluno + " AND u.fkAluno = " + pkAluno + " AND u.statusCadastro = 0 and a.statusCadastro = 0 ;";
-                    SqlConnection conexao = new SqlConnection(strConexao);
+                    SqlConnection conexao = new SqlConnection(Banco.enderecoBanco());
                     SqlDataAdapter da = new SqlDataAdapter(sql, conexao);
                     DataSet ds = new DataSet();
                     conexao.Open();

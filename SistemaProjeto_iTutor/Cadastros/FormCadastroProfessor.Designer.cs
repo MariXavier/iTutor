@@ -59,11 +59,13 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txtEmailProfessor = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtSenha = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtValorHoraAula = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfessor)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -107,6 +109,7 @@
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnExcluir
             // 
@@ -123,11 +126,15 @@
             // 
             // dgvProfessor
             // 
+            this.dgvProfessor.AllowUserToAddRows = false;
+            this.dgvProfessor.AllowUserToDeleteRows = false;
+            this.dgvProfessor.AllowUserToResizeRows = false;
             this.dgvProfessor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProfessor.Location = new System.Drawing.Point(15, 71);
             this.dgvProfessor.Name = "dgvProfessor";
             this.dgvProfessor.Size = new System.Drawing.Size(299, 353);
             this.dgvProfessor.TabIndex = 62;
+            this.dgvProfessor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProfessor_CellClick);
             // 
             // panel2
             // 
@@ -178,7 +185,7 @@
             this.comboFormacaoProfessor.FormattingEnabled = true;
             this.comboFormacaoProfessor.Location = new System.Drawing.Point(458, 282);
             this.comboFormacaoProfessor.Name = "comboFormacaoProfessor";
-            this.comboFormacaoProfessor.Size = new System.Drawing.Size(247, 24);
+            this.comboFormacaoProfessor.Size = new System.Drawing.Size(149, 24);
             this.comboFormacaoProfessor.TabIndex = 121;
             // 
             // label2
@@ -208,7 +215,6 @@
             this.label3.Size = new System.Drawing.Size(77, 16);
             this.label3.TabIndex = 97;
             this.label3.Text = "Nascimento";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -375,38 +381,38 @@
             this.txtEmailProfessor.Size = new System.Drawing.Size(247, 22);
             this.txtEmailProfessor.TabIndex = 111;
             // 
-            // textBox5
+            // txtSenha
             // 
-            this.textBox5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(565, 328);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(140, 22);
-            this.textBox5.TabIndex = 182;
-            this.textBox5.UseSystemPasswordChar = true;
+            this.txtSenha.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenha.Location = new System.Drawing.Point(565, 330);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.Size = new System.Drawing.Size(140, 22);
+            this.txtSenha.TabIndex = 182;
+            this.txtSenha.UseSystemPasswordChar = true;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(562, 309);
+            this.label15.Location = new System.Drawing.Point(562, 311);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(45, 16);
             this.label15.TabIndex = 181;
             this.label15.Text = "Senha";
             // 
-            // textBox4
+            // txtUsuario
             // 
-            this.textBox4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(333, 328);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(226, 22);
-            this.textBox4.TabIndex = 180;
+            this.txtUsuario.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario.Location = new System.Drawing.Point(333, 330);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(226, 22);
+            this.txtUsuario.TabIndex = 180;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(330, 309);
+            this.label16.Location = new System.Drawing.Point(330, 311);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(52, 16);
             this.label16.TabIndex = 179;
@@ -421,15 +427,35 @@
             this.txtTelefone.Size = new System.Drawing.Size(105, 22);
             this.txtTelefone.TabIndex = 183;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(615, 265);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(94, 16);
+            this.label13.TabIndex = 184;
+            this.label13.Text = "Valor hora/aula";
+            // 
+            // txtValorHoraAula
+            // 
+            this.txtValorHoraAula.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValorHoraAula.Location = new System.Drawing.Point(618, 282);
+            this.txtValorHoraAula.Name = "txtValorHoraAula";
+            this.txtValorHoraAula.Size = new System.Drawing.Size(87, 22);
+            this.txtValorHoraAula.TabIndex = 185;
+            // 
             // FormCadastroProfessor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(723, 436);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.txtValorHoraAula);
             this.Controls.Add(this.txtTelefone);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.comboFormacaoProfessor);
@@ -506,10 +532,12 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtEmailProfessor;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.MaskedTextBox txtTelefone;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtValorHoraAula;
     }
 }
