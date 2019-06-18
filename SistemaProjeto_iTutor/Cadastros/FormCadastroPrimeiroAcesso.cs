@@ -66,11 +66,6 @@ namespace SistemaProjeto_iTutor.Cadastros
             conn.Close();
         }
 
-        private void txtCEP_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
         private void txtCEP_Leave(object sender, EventArgs e)
         {
             string cep = txtCEP.Text.Replace("-", "");
@@ -195,21 +190,36 @@ namespace SistemaProjeto_iTutor.Cadastros
             conexao.Close();
         }
 
-        private void cbFormacaoAcademica_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            
-            
-           
+            if(ValidarCampos.validarNome(txtNome.Text))
+            {
+                MessageBox.Show("valido");
+            }
+            else
+            {
+                MessageBox.Show("informe nome valido");
+            }
+        }
+
+        private void txtNascimento_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Space) { e.SuppressKeyPress = true; }
+        }
+
+        private void txtCEP_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Space) { e.SuppressKeyPress = true; }
+        }
+
+        private void txtCPF_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Space) { e.SuppressKeyPress = true; }
+        }
+
+        private void txtTelefone_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Space) { e.SuppressKeyPress = true; }
         }
     }
 }

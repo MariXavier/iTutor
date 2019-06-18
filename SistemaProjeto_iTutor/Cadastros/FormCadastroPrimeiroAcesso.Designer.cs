@@ -86,8 +86,8 @@
             this.txtCEP.Name = "txtCEP";
             this.txtCEP.Size = new System.Drawing.Size(69, 20);
             this.txtCEP.TabIndex = 3;
-            this.txtCEP.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtCEP_MaskInputRejected);
             this.txtCEP.Click += new System.EventHandler(this.txtCEP_Click);
+            this.txtCEP.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCEP_KeyDown);
             this.txtCEP.Leave += new System.EventHandler(this.txtCEP_Leave);
             // 
             // txtNome
@@ -176,6 +176,7 @@
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(88, 22);
             this.txtTelefone.TabIndex = 11;
+            this.txtTelefone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTelefone_KeyDown);
             // 
             // txtCPF
             // 
@@ -185,6 +186,7 @@
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(118, 22);
             this.txtCPF.TabIndex = 10;
+            this.txtCPF.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCPF_KeyDown);
             // 
             // txtNascimento
             // 
@@ -193,6 +195,7 @@
             this.txtNascimento.Name = "txtNascimento";
             this.txtNascimento.Size = new System.Drawing.Size(74, 20);
             this.txtNascimento.TabIndex = 2;
+            this.txtNascimento.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNascimento_KeyDown);
             // 
             // lbFormacaoAcademica
             // 
@@ -214,7 +217,6 @@
             this.cbFormacaoAcademica.Name = "cbFormacaoAcademica";
             this.cbFormacaoAcademica.Size = new System.Drawing.Size(226, 24);
             this.cbFormacaoAcademica.TabIndex = 14;
-            this.cbFormacaoAcademica.SelectedIndexChanged += new System.EventHandler(this.cbFormacaoAcademica_SelectedIndexChanged);
             // 
             // label12
             // 
@@ -368,6 +370,7 @@
             // 
             this.txtSenha.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenha.Location = new System.Drawing.Point(247, 292);
+            this.txtSenha.MaxLength = 8;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(212, 22);
             this.txtSenha.TabIndex = 13;
