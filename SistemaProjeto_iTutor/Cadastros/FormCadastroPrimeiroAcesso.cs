@@ -192,14 +192,8 @@ namespace SistemaProjeto_iTutor.Cadastros
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(ValidarCampos.validarNome(txtNome.Text))
-            {
-                MessageBox.Show("valido");
-            }
-            else
-            {
-                MessageBox.Show("informe nome valido");
-            }
+            if(cbPerfilUsuario.SelectedIndex == -1) { MessageBox.Show("selecione um item"); }
+            else { MessageBox.Show("foi"); }
         }
 
         private void txtNascimento_KeyDown(object sender, KeyEventArgs e)
@@ -212,12 +206,17 @@ namespace SistemaProjeto_iTutor.Cadastros
             if (e.KeyCode == Keys.Space) { e.SuppressKeyPress = true; }
         }
 
-        private void txtCPF_KeyDown(object sender, KeyEventArgs e)
+        private void txtTelefone_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Space) { e.SuppressKeyPress = true; }
         }
 
-        private void txtTelefone_KeyDown(object sender, KeyEventArgs e)
+        private void txtValorHoraAula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || char.IsSymbol(e.KeyChar) || char.IsWhiteSpace(e.KeyChar)) { e.Handled = true; }  //Não permitir
+        }
+
+        private void txtCPF_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Space) { e.SuppressKeyPress = true; }
         }

@@ -30,6 +30,7 @@ namespace SistemaProjeto_iTutor.Cadastros
         private void FormCadastroProfessor_Load(object sender, EventArgs e)
         {
             preencherComboBoxDisciplina();
+            comboFormacaoProfessor.SelectedIndex = -1; //inicia o combo vazio
 
             SqlConnection conexao = new SqlConnection(Banco.enderecoBanco());
             SqlCommand comando = new SqlCommand();
