@@ -13,14 +13,24 @@ namespace SistemaProjeto_iTutor.Classes
             return cpf.Trim().Replace(",", "").Replace("-", "");
         }
 
-        public static string adaptarDataNascimento(string dataNascimento)
+        //public static string adaptarDataNascimento(string dataNascimento)
+        //{
+        //    string dia = dataNascimento.Substring(0, 2);
+        //    string mes = dataNascimento.Substring(3, 2);
+        //    string ano = dataNascimento.Substring(6, 4);
+        //    dataNascimento = ano + "-" + mes + "-" + dia;
+
+        //    return dataNascimento;
+        //}
+
+        public static DateTime adaptarDataNascimento(string dataNascimento)
         {
             string dia = dataNascimento.Substring(0, 2);
             string mes = dataNascimento.Substring(3, 2);
             string ano = dataNascimento.Substring(6, 4);
             dataNascimento = ano + "-" + mes + "-" + dia;
 
-            return dataNascimento;
+            return Convert.ToDateTime(dataNascimento);
         }
 
         public static string adaptarTelefone(string telefone)
