@@ -11,6 +11,5 @@ namespace SistemaProjeto_iTutor.Classes
         public static int levelPermissao;
         public static int pkAlunoLogado;
         public static int pkProfessorLogado;
-        public static int pkMaster;
     }
 }

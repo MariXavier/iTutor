@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -54,8 +55,15 @@ namespace SistemaProjeto_iTutor
 
         private void BtnGerenciarCadastros_Click(object sender, EventArgs e)
         {
-            FormUtilitarios formUtilitarios = new FormUtilitarios();
-            formUtilitarios.ShowDialog();
+            if (Autenticacao.levelPermissao == 0)
+            {
+                FormUtilitarios formUtilitarios = new FormUtilitarios();
+                formUtilitarios.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Usuário sem permissão", "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 	
