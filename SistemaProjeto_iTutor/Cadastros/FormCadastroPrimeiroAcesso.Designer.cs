@@ -78,8 +78,8 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
+            this.lbAsterisco = new System.Windows.Forms.Label();
+            this.lbAsteriscoValor = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -96,6 +96,7 @@
             // 
             // txtCEP
             // 
+            this.txtCEP.AccessibleDescription = "CEP";
             this.txtCEP.Location = new System.Drawing.Point(110, 146);
             this.txtCEP.Mask = "00000-000";
             this.txtCEP.Name = "txtCEP";
@@ -107,11 +108,13 @@
             // 
             // txtNome
             // 
+            this.txtNome.AccessibleDescription = "Nome";
             this.txtNome.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNome.Location = new System.Drawing.Point(170, 98);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(289, 22);
             this.txtNome.TabIndex = 1;
+            this.txtNome.Validating += new System.ComponentModel.CancelEventHandler(this.TxtNome_Validating);
             // 
             // label4
             // 
@@ -159,6 +162,7 @@
             // 
             // cbPerfilUsuario
             // 
+            this.cbPerfilUsuario.AccessibleDescription = "Perfil usuário";
             this.cbPerfilUsuario.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbPerfilUsuario.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbPerfilUsuario.FlatStyle = System.Windows.Forms.FlatStyle.System;
@@ -185,6 +189,7 @@
             // 
             // txtTelefone
             // 
+            this.txtTelefone.AccessibleDescription = "Telefone";
             this.txtTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefone.Location = new System.Drawing.Point(371, 245);
             this.txtTelefone.Mask = "(00)000000000";
@@ -195,6 +200,7 @@
             // 
             // txtCPF
             // 
+            this.txtCPF.AccessibleDescription = "CPF";
             this.txtCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCPF.Location = new System.Drawing.Point(247, 245);
             this.txtCPF.Mask = "000.000.000-00";
@@ -205,6 +211,7 @@
             // 
             // txtNascimento
             // 
+            this.txtNascimento.AccessibleDescription = "Data de nascimento";
             this.txtNascimento.Location = new System.Drawing.Point(15, 146);
             this.txtNascimento.Mask = "00/00/0000";
             this.txtNascimento.Name = "txtNascimento";
@@ -224,6 +231,7 @@
             // 
             // cbFormacaoAcademica
             // 
+            this.cbFormacaoAcademica.AccessibleDescription = "Formação acadêmica";
             this.cbFormacaoAcademica.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbFormacaoAcademica.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbFormacaoAcademica.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -245,6 +253,7 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.AccessibleDescription = "Email";
             this.txtEmail.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(15, 245);
             this.txtEmail.Name = "txtEmail";
@@ -283,6 +292,7 @@
             // 
             // txtBairro
             // 
+            this.txtBairro.AccessibleDescription = "Bairro";
             this.txtBairro.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBairro.Location = new System.Drawing.Point(15, 196);
             this.txtBairro.Name = "txtBairro";
@@ -311,6 +321,7 @@
             // 
             // txtRua
             // 
+            this.txtRua.AccessibleDescription = "Rua";
             this.txtRua.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRua.Location = new System.Drawing.Point(193, 144);
             this.txtRua.Name = "txtRua";
@@ -329,6 +340,7 @@
             // 
             // txtNumero
             // 
+            this.txtNumero.AccessibleDescription = "Número";
             this.txtNumero.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumero.Location = new System.Drawing.Point(389, 144);
             this.txtNumero.Name = "txtNumero";
@@ -347,6 +359,7 @@
             // 
             // txtCidade
             // 
+            this.txtCidade.AccessibleDescription = "Cidade";
             this.txtCidade.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCidade.Location = new System.Drawing.Point(170, 196);
             this.txtCidade.Name = "txtCidade";
@@ -365,6 +378,7 @@
             // 
             // txtUsuario
             // 
+            this.txtUsuario.AccessibleDescription = "Usuário";
             this.txtUsuario.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.Location = new System.Drawing.Point(15, 292);
             this.txtUsuario.Name = "txtUsuario";
@@ -383,6 +397,7 @@
             // 
             // txtSenha
             // 
+            this.txtSenha.AccessibleDescription = "Senha";
             this.txtSenha.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenha.Location = new System.Drawing.Point(247, 292);
             this.txtSenha.MaxLength = 8;
@@ -417,6 +432,7 @@
             // 
             // txtEstado
             // 
+            this.txtEstado.AccessibleDescription = "Estado";
             this.txtEstado.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEstado.Location = new System.Drawing.Point(389, 196);
             this.txtEstado.Name = "txtEstado";
@@ -425,6 +441,7 @@
             // 
             // txtValorHoraAula
             // 
+            this.txtValorHoraAula.AccessibleDescription = "Valor hora/aula";
             this.txtValorHoraAula.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtValorHoraAula.Location = new System.Drawing.Point(247, 347);
             this.txtValorHoraAula.Name = "txtValorHoraAula";
@@ -608,37 +625,37 @@
             this.label29.TabIndex = 194;
             this.label29.Text = "*";
             // 
-            // label30
+            // lbAsterisco
             // 
-            this.label30.AutoSize = true;
-            this.label30.BackColor = System.Drawing.Color.Transparent;
-            this.label30.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.ForeColor = System.Drawing.Color.Red;
-            this.label30.Location = new System.Drawing.Point(140, 324);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(14, 18);
-            this.label30.TabIndex = 195;
-            this.label30.Text = "*";
+            this.lbAsterisco.AutoSize = true;
+            this.lbAsterisco.BackColor = System.Drawing.Color.Transparent;
+            this.lbAsterisco.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAsterisco.ForeColor = System.Drawing.Color.Red;
+            this.lbAsterisco.Location = new System.Drawing.Point(140, 324);
+            this.lbAsterisco.Name = "lbAsterisco";
+            this.lbAsterisco.Size = new System.Drawing.Size(14, 18);
+            this.lbAsterisco.TabIndex = 195;
+            this.lbAsterisco.Text = "*";
             // 
-            // label31
+            // lbAsteriscoValor
             // 
-            this.label31.AutoSize = true;
-            this.label31.BackColor = System.Drawing.Color.Transparent;
-            this.label31.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.ForeColor = System.Drawing.Color.Red;
-            this.label31.Location = new System.Drawing.Point(333, 325);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(14, 18);
-            this.label31.TabIndex = 196;
-            this.label31.Text = "*";
+            this.lbAsteriscoValor.AutoSize = true;
+            this.lbAsteriscoValor.BackColor = System.Drawing.Color.Transparent;
+            this.lbAsteriscoValor.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAsteriscoValor.ForeColor = System.Drawing.Color.Red;
+            this.lbAsteriscoValor.Location = new System.Drawing.Point(333, 325);
+            this.lbAsteriscoValor.Name = "lbAsteriscoValor";
+            this.lbAsteriscoValor.Size = new System.Drawing.Size(14, 18);
+            this.lbAsteriscoValor.TabIndex = 196;
+            this.lbAsteriscoValor.Text = "*";
             // 
             // FormCadastroPrimeiroAcesso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(478, 431);
-            this.Controls.Add(this.label31);
-            this.Controls.Add(this.label30);
+            this.Controls.Add(this.lbAsteriscoValor);
+            this.Controls.Add(this.lbAsterisco);
             this.Controls.Add(this.label29);
             this.Controls.Add(this.label28);
             this.Controls.Add(this.label27);
@@ -749,7 +766,7 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label lbAsterisco;
+        private System.Windows.Forms.Label lbAsteriscoValor;
     }
 }

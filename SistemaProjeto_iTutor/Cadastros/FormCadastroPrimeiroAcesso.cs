@@ -23,12 +23,14 @@ namespace SistemaProjeto_iTutor.Cadastros
         {
             string perfil = cbPerfilUsuario.SelectedItem.ToString();
 
-            if(perfil == "Professor")
+            if (perfil == "Professor")
             {
                 lbFormacaoAcademica.Visible = true;
                 cbFormacaoAcademica.Visible = true;
                 txtValorHoraAula.Visible = true;
                 lbValorHoraAula.Visible = true;
+                lbAsterisco.Visible = true;
+                lbAsteriscoValor.Visible = true;
             }
             else
             {
@@ -36,8 +38,12 @@ namespace SistemaProjeto_iTutor.Cadastros
                 cbFormacaoAcademica.Visible = false;
                 txtValorHoraAula.Visible = false;
                 lbValorHoraAula.Visible = false;
+                lbAsterisco.Visible = false;
+                lbAsteriscoValor.Visible = false;
+                txtValorHoraAula.Text = String.Empty;
+                cbFormacaoAcademica.SelectedIndex = -1;
             }
-            
+
         }
 
         private void FormCadastroPrimeiroAcesso_Load(object sender, EventArgs e)
@@ -46,13 +52,15 @@ namespace SistemaProjeto_iTutor.Cadastros
             cbFormacaoAcademica.Visible = false;
             txtValorHoraAula.Visible = false;
             lbValorHoraAula.Visible = false;
+            lbAsterisco.Visible = false;
+            lbAsteriscoValor.Visible = false;
 
             SqlConnection conn = new SqlConnection(Banco.enderecoBanco());
             conn.Open();
             SqlCommand sc = new SqlCommand("SELECT * FROM disciplina", conn);
 
             SqlDataReader reader;
-            
+
             reader = sc.ExecuteReader();
             DataTable dt = new DataTable();
 
@@ -100,22 +108,19 @@ namespace SistemaProjeto_iTutor.Cadastros
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
+
+            
+            //if (VerificarConsistenciaDeTodosOsCampos()) { }
+
+
+
             string perfil = cbPerfilUsuario.SelectedItem.ToString();
             string pkDisciplina = cbFormacaoAcademica.SelectedValue.ToString();
 
-            string cpf = (txtCPF.Text).Trim().Replace(",", "").Replace("-", "");
-            
-            string dia = txtNascimento.Text.Substring(0, 2);
-            string mes = txtNascimento.Text.Substring(3, 2);
-            string ano = txtNascimento.Text.Substring(6, 4);
-            string dataNascimento = ano + "-" + mes + "-" + dia;
-
-            string telefone = (txtTelefone.Text).Trim().Replace(")", "").Replace("(", "");
-
-            string cep = (txtCEP.Text).Trim().Replace("-", "");
-
             DateTime myDateTime = DateTime.Now;
             string diaHoraAtual = myDateTime.ToString("yyyy-MM-dd HH:mm:ss");
+
+            string cpf = AdaptarParametros.adaptarCPF(txtCPF.Text);
 
             SqlConnection conexao = new SqlConnection(Banco.enderecoBanco());
             SqlCommand query = new SqlCommand();
@@ -124,14 +129,14 @@ namespace SistemaProjeto_iTutor.Cadastros
             conexao.Open();
 
             query.Parameters.AddWithValue("@nome", txtNome.Text);
-            query.Parameters.AddWithValue("@dataNascimento", dataNascimento);
+            query.Parameters.AddWithValue("@dataNascimento", AdaptarParametros.adaptarCPF(txtNascimento.Text));
             query.Parameters.AddWithValue("@cpf", cpf);
             query.Parameters.AddWithValue("@statusCadastro", 0);
-            query.Parameters.AddWithValue("@telefone", telefone);
+            query.Parameters.AddWithValue("@telefone", AdaptarParametros.adaptarTelefone(txtTelefone.Text));
             query.Parameters.AddWithValue("@email", txtEmail.Text);
             query.Parameters.AddWithValue("@valorHoraAula", txtValorHoraAula.Text);
 
-            query.Parameters.AddWithValue("@cep", cep);
+            query.Parameters.AddWithValue("@cep", AdaptarParametros.adaptarCEP(txtCEP.Text));
             query.Parameters.AddWithValue("@rua", txtRua.Text);
             query.Parameters.AddWithValue("@numero", txtNumero.Text);
             query.Parameters.AddWithValue("@bairro", txtBairro.Text);
@@ -154,14 +159,14 @@ namespace SistemaProjeto_iTutor.Cadastros
                 DataTable tabela = new DataTable();
                 adaptador.Fill(tabela);
                 query.ExecuteNonQuery();
-                
+
                 int pkProfessor = Convert.ToInt32(tabela.Rows[0]["pkProfessor"].ToString());
                 query.Parameters.AddWithValue("@fkProfessor", pkProfessor);
-                query.Parameters.AddWithValue("@fkAluno", DBNull.Value); 
-                query.CommandText = "INSERT INTO endereco (cep, rua, numero, bairro, cidade, estado, statusCadastro, fkAluno, fkProfessor) VALUES (@cep, @rua, @numero, @bairro, @cidade, @estado, @statusCadastro,@fkAluno, @fkProfessor)";           
+                query.Parameters.AddWithValue("@fkAluno", DBNull.Value);
+                query.CommandText = "INSERT INTO endereco (cep, rua, numero, bairro, cidade, estado, statusCadastro, fkAluno, fkProfessor) VALUES (@cep, @rua, @numero, @bairro, @cidade, @estado, @statusCadastro,@fkAluno, @fkProfessor)";
                 query.ExecuteNonQuery();
 
-                query.Parameters.AddWithValue("@levelPermissao",1);
+                query.Parameters.AddWithValue("@levelPermissao", 1);
                 query.CommandText = "INSERT INTO usuario (usuario, senha, levelPermissao, dataCriacao, solicitacaoAprovada, statusCadastro,fkAluno, fkProfessor) VALUES (@usuario, @senha, @levelPermissao, @dataCriacao, @solicitacaoAprovada, @statusCadastro,@fkAluno, @fkProfessor)";
                 query.ExecuteNonQuery();
             }
@@ -192,8 +197,66 @@ namespace SistemaProjeto_iTutor.Cadastros
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(cbPerfilUsuario.SelectedIndex == -1) { MessageBox.Show("selecione um item"); }
-            else { MessageBox.Show("foi"); }
+            //MessageBox.Show(VerificarConsistenciaDeTodosOsCampos().Length == 0);
+        }
+
+        public string VerificarConsistenciaDeTodosOsCampos()
+        {
+            string resposta = "Os seguintes campos precisam ser peenchidos: ";
+            int contador = 0;
+
+            //bool validData = true;
+            //foreach (Control control in this.Controls)
+            //{
+            //    if (control is TextBox)
+            //    {
+            //        TextBox textbox = control as TextBox;
+            //        validData &= !string.IsNullOrWhiteSpace(textbox.Text);
+            //        resposta += "\n" + textbox.AccessibleDescription;
+            //    }
+            //}
+            //MessageBox.Show(validData.ToString() + "\n" + resposta);
+
+            if (string.IsNullOrWhiteSpace(txtNome.Text)) { contador++; resposta += "\n - Nome"; }
+
+            if (string.IsNullOrWhiteSpace(AdaptarParametros.adaptarCPF(txtCPF.Text)) || (AdaptarParametros.adaptarCPF(txtCPF.Text)).Length < 11) { contador++; resposta += "\n - CPF"; }
+
+            if (cbPerfilUsuario.SelectedIndex == -1) { contador++; resposta += "\n - Perfil usuário"; }
+
+            if (!txtNascimento.MaskCompleted) { contador++; resposta += "\n - Data de nascimento"; }
+
+            if (string.IsNullOrWhiteSpace(AdaptarParametros.adaptarCEP(txtCEP.Text)) || (AdaptarParametros.adaptarCEP(txtCEP.Text)).Length < 8) { contador++; resposta += "\n - CEP"; }
+
+            if (string.IsNullOrWhiteSpace(AdaptarParametros.adaptarTelefone(txtTelefone.Text)) || (AdaptarParametros.adaptarTelefone(txtTelefone.Text)).Length < 10) { contador++; resposta += "\n - Telefone"; }
+
+            if (string.IsNullOrWhiteSpace(txtRua.Text)) { contador++; resposta += "\n - Rua"; }
+
+            if (string.IsNullOrWhiteSpace(txtNumero.Text)) { contador++; resposta += "\n - Número"; }
+
+            if (string.IsNullOrWhiteSpace(txtBairro.Text)) { contador++; resposta += "\n - Bairro"; }
+
+            if (string.IsNullOrWhiteSpace(txtCidade.Text)) { contador++; resposta += "\n - Cidade"; }
+
+            if (string.IsNullOrWhiteSpace(txtEstado.Text)) { contador++; resposta += "\n - Estado"; }
+
+            if (string.IsNullOrWhiteSpace(txtUsuario.Text)) { contador++; resposta += "\n - Usuário"; }
+
+            if (string.IsNullOrWhiteSpace(txtSenha.Text)) { contador++; resposta += "\n - Senha"; }
+
+            if (cbPerfilUsuario.SelectedIndex == -1) { contador++; resposta += "\n - Perfil usuário"; }
+            else
+            {
+                if (cbPerfilUsuario.SelectedItem.ToString() == "Professor")
+                {
+                    if (cbFormacaoAcademica.SelectedIndex == -1) { contador++; resposta += "\n - Formação acadêmica"; }
+
+                    if (string.IsNullOrWhiteSpace(txtValorHoraAula.Text)) { contador++; resposta += "\n - Valor hora/aula"; }
+                }
+            }
+
+            if (contador > 0) { return resposta; }
+            else { return ""; }
+
         }
 
         private void txtNascimento_KeyDown(object sender, KeyEventArgs e)
@@ -219,6 +282,20 @@ namespace SistemaProjeto_iTutor.Cadastros
         private void txtCPF_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Space) { e.SuppressKeyPress = true; }
+        }
+
+        private void TxtNome_Validating(object sender, CancelEventArgs e)
+        {
+            //TextBox currenttb = (TextBox)sender;
+            //if (currenttb.Text == "")
+            //{
+            //    MessageBox.Show(string.Format("Empty field {0 }", currenttb.Name.Substring(3)));
+            //    e.Cancel = true;
+            //}
+            //else
+            //{
+            //    e.Cancel = false;
+            //}
         }
     }
 }

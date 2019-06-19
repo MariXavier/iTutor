@@ -12,5 +12,12 @@ namespace SistemaProjeto_iTutor.Classes
         {
             return !(string.IsNullOrWhiteSpace(nome)); //previne null, vazio e espaço em branco
         }
+
+        public static bool validarCPF(string cpf)
+        {
+            return !(string.IsNullOrWhiteSpace(AdaptarParametros.adaptarCPF(cpf))); 
+            //inserir função que faz a validação de CPFs
+        }
+
     }
 }
