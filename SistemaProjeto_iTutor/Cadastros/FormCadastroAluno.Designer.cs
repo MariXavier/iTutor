@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.dgvAluno = new System.Windows.Forms.DataGridView();
             this.txtNomeResponsavel = new System.Windows.Forms.TextBox();
             this.txtNomeAluno = new System.Windows.Forms.TextBox();
@@ -62,42 +59,13 @@
             this.label14 = new System.Windows.Forms.Label();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAluno)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Location = new System.Drawing.Point(1, 1);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(791, 52);
-            this.panel2.TabIndex = 16;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::SistemaProjeto_iTutor.Properties.Resources.iconfinder_user_group_new_23632;
-            this.pictureBox2.Location = new System.Drawing.Point(4, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 12;
-            this.pictureBox2.TabStop = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(63, 18);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(203, 22);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Cadastros de Alunos";
             // 
             // dgvAluno
             // 
@@ -410,6 +378,38 @@
             this.txtTelefone.Size = new System.Drawing.Size(105, 22);
             this.txtTelefone.TabIndex = 10;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label5.Location = new System.Drawing.Point(63, 18);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(203, 22);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Cadastros de Alunos";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::SistemaProjeto_iTutor.Properties.Resources.iconfinder_user_group_new_23632;
+            this.pictureBox2.Location = new System.Drawing.Point(4, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Location = new System.Drawing.Point(1, 1);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(791, 52);
+            this.panel2.TabIndex = 16;
+            // 
             // FormCadastroAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -451,20 +451,16 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCadastroAluno";
             this.Load += new System.EventHandler(this.FormCadastroAluno_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAluno)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAluno)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dgvAluno;
         private System.Windows.Forms.TextBox txtNomeResponsavel;
         private System.Windows.Forms.TextBox txtNomeAluno;
@@ -496,5 +492,8 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.MaskedTextBox txtTelefone;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel panel2;
     }
 }
