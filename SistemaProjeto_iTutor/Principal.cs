@@ -20,10 +20,36 @@ namespace SistemaProjeto_iTutor
             InitializeComponent();
         }
 
+		private void AbrirFormNoPanel<Forms>() where Forms : Form, new()
+		{
+
+			Form formulario;
+			formulario = panelConteudo.Controls.OfType<Forms>().FirstOrDefault();
+
+			if (formulario == null)
+			{
+				formulario = new Forms();
+				formulario.TopLevel = false;
+				formulario.FormBorderStyle = FormBorderStyle.None;
+				formulario.Dock = DockStyle.Fill;
+				panelConteudo.Controls.Add(formulario);
+				panelConteudo.Tag = formulario;
+				formulario.Show();
+				formulario.BringToFront();
+			}
+			else
+			{
+				if (formulario.WindowState == FormWindowState.Minimized)
+					formulario.WindowState = FormWindowState.Normal;
+				formulario.BringToFront();
+			}
+
+		}
         private void btnAlunos_Click(object sender, EventArgs e)
         {
-            FormCadastroAluno formAluno = new FormCadastroAluno();
-            formAluno.ShowDialog();
+			AbrirFormNoPanel<FormCadastroAluno>();
+			//FormCadastroAluno formAluno = new FormCadastroAluno();
+            //formAluno.ShowDialog();
         }
 
         private void btnDeslogar_Click(object sender, EventArgs e)
@@ -40,18 +66,20 @@ namespace SistemaProjeto_iTutor
 
         private void btnCadastrarProfessor_Click(object sender, EventArgs e)
         {
-            FormCadastroProfessor formProfessor = new FormCadastroProfessor();
-            formProfessor.ShowDialog();
-        }
+			AbrirFormNoPanel<FormCadastroProfessor>();
+			//FormCadastroProfessor formProfessor = new FormCadastroProfessor();
+			//formProfessor.ShowDialog();
+		}
 
         private void BtnGerenciarCadastros_Click(object sender, EventArgs e)
         {
             MessageBox.Show(Autenticacao.levelPermissao.ToString());
             if (Autenticacao.levelPermissao == 0)
             {
-                FormUtilitarios formUtilitarios = new FormUtilitarios();
-                formUtilitarios.ShowDialog();
-            }
+				AbrirFormNoPanel<FormUtilitarios>();
+				//FormUtilitarios formUtilitarios = new FormUtilitarios();
+				//formUtilitarios.ShowDialog();
+			}
             else
             {
                 MessageBox.Show("Usuário sem permissão", "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Error);
