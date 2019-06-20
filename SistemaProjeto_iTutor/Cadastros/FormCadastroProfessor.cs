@@ -254,5 +254,20 @@ namespace SistemaProjeto_iTutor.Cadastros
             conexao.Close();
             FormCadastroProfessor_Load(null, null);
         }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
