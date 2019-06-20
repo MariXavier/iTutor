@@ -198,24 +198,17 @@ namespace SistemaProjeto_iTutor.Cadastros
         private void button1_Click(object sender, EventArgs e)
         {
             //MessageBox.Show(VerificarConsistenciaDeTodosOsCampos().Length == 0);
+            ValidarCampos.VerificarConsistencia(txtNome.Text, AdaptarParametros.adaptarCPF(txtCPF.Text), cbPerfilUsuario.SelectedIndex, "", AdaptarParametros.adaptarCEP(txtCEP.Text), AdaptarParametros.adaptarTelefone(txtTelefone.Text), txtRua.Text, txtNumero.Text, txtBairro.Text, txtCidade.Text, txtEstado.Text, txtUsuario.Text, txtSenha.Text, cbPerfilUsuario.SelectedItem.ToString(), cbFormacaoAcademica.SelectedIndex, txtValorHoraAula.Text);
+            if(ValidarCampos.camposIncompletos)
+            {
+                MessageBox.Show(ValidarCampos.respostaFinal);
+            }
         }
 
         public string VerificarConsistenciaDeTodosOsCampos()
         {
             string resposta = "Os seguintes campos precisam ser peenchidos: ";
             int contador = 0;
-
-            //bool validData = true;
-            //foreach (Control control in this.Controls)
-            //{
-            //    if (control is TextBox)
-            //    {
-            //        TextBox textbox = control as TextBox;
-            //        validData &= !string.IsNullOrWhiteSpace(textbox.Text);
-            //        resposta += "\n" + textbox.AccessibleDescription;
-            //    }
-            //}
-            //MessageBox.Show(validData.ToString() + "\n" + resposta);
 
             if (string.IsNullOrWhiteSpace(txtNome.Text)) { contador++; resposta += "\n - Nome"; }
 
@@ -241,7 +234,7 @@ namespace SistemaProjeto_iTutor.Cadastros
 
             if (string.IsNullOrWhiteSpace(txtUsuario.Text)) { contador++; resposta += "\n - Usuário"; }
 
-            if (string.IsNullOrWhiteSpace(txtSenha.Text)) { contador++; resposta += "\n - Senha"; }
+            if (string.IsNullOrWhiteSpace(txtSenha.Text) || txtSenha.Text.Length == 0) { contador++; resposta += "\n - Senha"; }
 
             if (cbPerfilUsuario.SelectedIndex == -1) { contador++; resposta += "\n - Perfil usuário"; }
             else

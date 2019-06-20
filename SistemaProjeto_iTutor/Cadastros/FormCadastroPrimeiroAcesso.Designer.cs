@@ -33,6 +33,7 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbFechar = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cbPerfilUsuario = new System.Windows.Forms.ComboBox();
@@ -79,7 +80,7 @@
             this.label29 = new System.Windows.Forms.Label();
             this.lbAsterisco = new System.Windows.Forms.Label();
             this.lbAsteriscoValor = new System.Windows.Forms.Label();
-            this.lbFechar = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -137,6 +138,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(512, 58);
             this.panel2.TabIndex = 117;
+            // 
+            // lbFechar
+            // 
+            this.lbFechar.AutoSize = true;
+            this.lbFechar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFechar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbFechar.Location = new System.Drawing.Point(453, 12);
+            this.lbFechar.Name = "lbFechar";
+            this.lbFechar.Size = new System.Drawing.Size(15, 16);
+            this.lbFechar.TabIndex = 197;
+            this.lbFechar.Text = "X";
+            this.lbFechar.Click += new System.EventHandler(this.lbFechar_Click);
             // 
             // pictureBox2
             // 
@@ -419,16 +432,18 @@
             // 
             // btnEnviar
             // 
-            this.btnEnviar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnviar.Image = global::SistemaProjeto_iTutor.Properties.Resources.paper_plane;
+            this.btnEnviar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(156)))), ((int)(((byte)(4)))));
+            this.btnEnviar.FlatAppearance.BorderSize = 0;
+            this.btnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnviar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnviar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnEnviar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEnviar.Location = new System.Drawing.Point(381, 384);
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.Size = new System.Drawing.Size(78, 34);
             this.btnEnviar.TabIndex = 15;
             this.btnEnviar.Text = "Enviar";
-            this.btnEnviar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEnviar.UseVisualStyleBackColor = true;
+            this.btnEnviar.UseVisualStyleBackColor = false;
             this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
             // 
             // txtEstado
@@ -640,23 +655,22 @@
             this.lbAsteriscoValor.TabIndex = 196;
             this.lbAsteriscoValor.Text = "*";
             // 
-            // lbFechar
+            // button1
             // 
-            this.lbFechar.AutoSize = true;
-            this.lbFechar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFechar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbFechar.Location = new System.Drawing.Point(453, 12);
-            this.lbFechar.Name = "lbFechar";
-            this.lbFechar.Size = new System.Drawing.Size(15, 16);
-            this.lbFechar.TabIndex = 197;
-            this.lbFechar.Text = "X";
-            this.lbFechar.Click += new System.EventHandler(this.lbFechar_Click);
+            this.button1.Location = new System.Drawing.Point(140, 384);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 197;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormCadastroPrimeiroAcesso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(478, 431);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lbAsteriscoValor);
             this.Controls.Add(this.lbAsterisco);
             this.Controls.Add(this.label29);
@@ -771,5 +785,6 @@
         private System.Windows.Forms.Label lbAsterisco;
         private System.Windows.Forms.Label lbAsteriscoValor;
         private System.Windows.Forms.Label lbFechar;
+        private System.Windows.Forms.Button button1;
     }
 }

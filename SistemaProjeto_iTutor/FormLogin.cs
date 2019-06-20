@@ -101,5 +101,11 @@ namespace SistemaProjeto_iTutor
         {
             Application.Exit();
         }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+            txtUsuario.Text = String.Empty;
+            txtSenha.Text = String.Empty;
+        }
     }
 }
