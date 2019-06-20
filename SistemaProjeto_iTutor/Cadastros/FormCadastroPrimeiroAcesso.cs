@@ -297,9 +297,15 @@ namespace SistemaProjeto_iTutor.Cadastros
             //    e.Cancel = false;
             //}
         }
+
+        private void lbFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
 
 
 
 
+    

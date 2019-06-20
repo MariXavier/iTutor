@@ -64,7 +64,6 @@
             this.txtEstado = new System.Windows.Forms.TextBox();
             this.txtValorHoraAula = new System.Windows.Forms.TextBox();
             this.lbValorHoraAula = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -80,6 +79,7 @@
             this.label29 = new System.Windows.Forms.Label();
             this.lbAsterisco = new System.Windows.Forms.Label();
             this.lbAsteriscoValor = new System.Windows.Forms.Label();
+            this.lbFechar = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -129,6 +129,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.panel2.Controls.Add(this.lbFechar);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(-2, -3);
@@ -459,16 +460,6 @@
             this.lbValorHoraAula.TabIndex = 179;
             this.lbValorHoraAula.Text = "Valor hora/aula";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(170, 384);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 180;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -649,6 +640,18 @@
             this.lbAsteriscoValor.TabIndex = 196;
             this.lbAsteriscoValor.Text = "*";
             // 
+            // lbFechar
+            // 
+            this.lbFechar.AutoSize = true;
+            this.lbFechar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFechar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbFechar.Location = new System.Drawing.Point(453, 12);
+            this.lbFechar.Name = "lbFechar";
+            this.lbFechar.Size = new System.Drawing.Size(15, 16);
+            this.lbFechar.TabIndex = 197;
+            this.lbFechar.Text = "X";
+            this.lbFechar.Click += new System.EventHandler(this.lbFechar_Click);
+            // 
             // FormCadastroPrimeiroAcesso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -669,7 +672,6 @@
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtValorHoraAula);
             this.Controls.Add(this.lbValorHoraAula);
             this.Controls.Add(this.txtEstado);
@@ -704,6 +706,7 @@
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormCadastroPrimeiroAcesso";
             this.Text = "FormCadastroPrimeiroAcesso";
             this.Load += new System.EventHandler(this.FormCadastroPrimeiroAcesso_Load);
@@ -752,7 +755,6 @@
         private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.TextBox txtValorHoraAula;
         private System.Windows.Forms.Label lbValorHoraAula;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
@@ -768,5 +770,6 @@
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label lbAsterisco;
         private System.Windows.Forms.Label lbAsteriscoValor;
+        private System.Windows.Forms.Label lbFechar;
     }
 }

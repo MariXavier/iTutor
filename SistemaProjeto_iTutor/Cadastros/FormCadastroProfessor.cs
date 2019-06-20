@@ -41,7 +41,7 @@ namespace SistemaProjeto_iTutor.Cadastros
                 btnExcluir.Visible = false;
                 btnLimpar.Visible = false;
                 btnSalvar.Visible = false;
-                btnAlterar.Location = new Point(627, 390);
+                btnAlterar.Location = new Point(679, 363);
 
                 comando.CommandText = "SELECT fkDisciplina FROM professor WHERE pkProfessor = " + pkProfessor + "";
                 SqlDataAdapter adaptador = new SqlDataAdapter(comando);
@@ -253,21 +253,6 @@ namespace SistemaProjeto_iTutor.Cadastros
 
             conexao.Close();
             FormCadastroProfessor_Load(null, null);
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUsuario_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
