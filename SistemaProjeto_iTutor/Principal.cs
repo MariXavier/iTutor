@@ -47,9 +47,15 @@ namespace SistemaProjeto_iTutor
 		}
         private void btnAlunos_Click(object sender, EventArgs e)
         {
-			AbrirFormNoPanel<FormCadastroAluno>();
-			//FormCadastroAluno formAluno = new FormCadastroAluno();
-            //formAluno.ShowDialog();
+            //AbrirFormNoPanel<FormCadastroAluno>();
+            barrinhaLateral.Visible = true;
+            barrinhaLateral.Height = btnAlunos.Height;
+            barrinhaLateral.Top = btnAlunos.Top;
+            panelConteudo.Controls.Clear();
+            FormCadastroAluno formAluno = new FormCadastroAluno();
+            formAluno.TopLevel = false;
+            panelConteudo.Controls.Add(formAluno);
+            formAluno.Show();
         }
 
         private void btnDeslogar_Click(object sender, EventArgs e)
@@ -67,12 +73,21 @@ namespace SistemaProjeto_iTutor
         private void btnCadastrarProfessor_Click(object sender, EventArgs e)
         {
 			AbrirFormNoPanel<FormCadastroProfessor>();
-			//FormCadastroProfessor formProfessor = new FormCadastroProfessor();
-			//formProfessor.ShowDialog();
-		}
+
+            barrinhaLateral.Visible = true;
+            barrinhaLateral.Height = btnCadastrarProfessor.Height;
+            barrinhaLateral.Top = btnCadastrarProfessor.Top;
+
+            //FormCadastroProfessor formProfessor = new FormCadastroProfessor();
+            //formProfessor.ShowDialog();
+        }
 
         private void BtnGerenciarCadastros_Click(object sender, EventArgs e)
         {
+            barrinhaLateral.Visible = true;
+            barrinhaLateral.Height = btnGerenciarCadastros.Height;
+            barrinhaLateral.Top = btnGerenciarCadastros.Top;
+
             MessageBox.Show(Autenticacao.levelPermissao.ToString());
             if (Autenticacao.levelPermissao == 0)
             {
@@ -84,6 +99,20 @@ namespace SistemaProjeto_iTutor
             {
                 MessageBox.Show("Usuário sem permissão", "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnRelatorio_Click(object sender, EventArgs e)
+        {
+            barrinhaLateral.Visible = true;
+            barrinhaLateral.Height = btnRelatorio.Height;
+            barrinhaLateral.Top = btnRelatorio.Top;
+        }
+
+        private void btnAgendarAulas_Click(object sender, EventArgs e)
+        {
+            barrinhaLateral.Visible = true;
+            barrinhaLateral.Height = btnAgendarAulas.Height;
+            barrinhaLateral.Top = btnAgendarAulas.Top;
         }
     }
 }

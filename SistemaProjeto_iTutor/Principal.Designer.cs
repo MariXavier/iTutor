@@ -31,12 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnDeslogar = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnRelatorio = new System.Windows.Forms.Button();
             this.btnGerenciarCadastros = new System.Windows.Forms.Button();
             this.btnCadastrarProfessor = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnAgendarAulas = new System.Windows.Forms.Button();
             this.btnAlunos = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.barrinhaLateral = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbFechar = new System.Windows.Forms.Label();
             this.panelConteudo = new System.Windows.Forms.Panel();
@@ -47,11 +48,12 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(4)))), ((int)(((byte)(44)))));
+            this.panel1.Controls.Add(this.barrinhaLateral);
             this.panel1.Controls.Add(this.btnDeslogar);
-            this.panel1.Controls.Add(this.button5);
+            this.panel1.Controls.Add(this.btnRelatorio);
             this.panel1.Controls.Add(this.btnGerenciarCadastros);
             this.panel1.Controls.Add(this.btnCadastrarProfessor);
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.btnAgendarAulas);
             this.panel1.Controls.Add(this.btnAlunos);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -73,27 +75,28 @@
             this.btnDeslogar.Location = new System.Drawing.Point(0, 424);
             this.btnDeslogar.Name = "btnDeslogar";
             this.btnDeslogar.Size = new System.Drawing.Size(198, 34);
-            this.btnDeslogar.TabIndex = 21;
+            this.btnDeslogar.TabIndex = 6;
             this.btnDeslogar.Text = "Deslogar";
             this.btnDeslogar.UseVisualStyleBackColor = false;
             this.btnDeslogar.Click += new System.EventHandler(this.btnDeslogar_Click);
             // 
-            // button5
+            // btnRelatorio
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(4)))), ((int)(((byte)(44)))));
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(4)))), ((int)(((byte)(80)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.button5.ForeColor = System.Drawing.SystemColors.Control;
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(0, 214);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(198, 34);
-            this.button5.TabIndex = 20;
-            this.button5.Text = "Relatório";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnRelatorio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(4)))), ((int)(((byte)(44)))));
+            this.btnRelatorio.FlatAppearance.BorderSize = 0;
+            this.btnRelatorio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(4)))), ((int)(((byte)(80)))));
+            this.btnRelatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRelatorio.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.btnRelatorio.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnRelatorio.Image = ((System.Drawing.Image)(resources.GetObject("btnRelatorio.Image")));
+            this.btnRelatorio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRelatorio.Location = new System.Drawing.Point(0, 214);
+            this.btnRelatorio.Name = "btnRelatorio";
+            this.btnRelatorio.Size = new System.Drawing.Size(198, 34);
+            this.btnRelatorio.TabIndex = 5;
+            this.btnRelatorio.Text = "Relatório";
+            this.btnRelatorio.UseVisualStyleBackColor = false;
+            this.btnRelatorio.Click += new System.EventHandler(this.btnRelatorio_Click);
             // 
             // btnGerenciarCadastros
             // 
@@ -108,7 +111,7 @@
             this.btnGerenciarCadastros.Location = new System.Drawing.Point(0, 181);
             this.btnGerenciarCadastros.Name = "btnGerenciarCadastros";
             this.btnGerenciarCadastros.Size = new System.Drawing.Size(198, 34);
-            this.btnGerenciarCadastros.TabIndex = 19;
+            this.btnGerenciarCadastros.TabIndex = 4;
             this.btnGerenciarCadastros.Text = "Utilitários";
             this.btnGerenciarCadastros.UseVisualStyleBackColor = false;
             this.btnGerenciarCadastros.Click += new System.EventHandler(this.BtnGerenciarCadastros_Click);
@@ -126,27 +129,28 @@
             this.btnCadastrarProfessor.Location = new System.Drawing.Point(0, 148);
             this.btnCadastrarProfessor.Name = "btnCadastrarProfessor";
             this.btnCadastrarProfessor.Size = new System.Drawing.Size(198, 34);
-            this.btnCadastrarProfessor.TabIndex = 18;
+            this.btnCadastrarProfessor.TabIndex = 3;
             this.btnCadastrarProfessor.Text = "Professor";
             this.btnCadastrarProfessor.UseVisualStyleBackColor = false;
             this.btnCadastrarProfessor.Click += new System.EventHandler(this.btnCadastrarProfessor_Click);
             // 
-            // button2
+            // btnAgendarAulas
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(4)))), ((int)(((byte)(44)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(4)))), ((int)(((byte)(80)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 116);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(198, 34);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "   Agendar Aulas";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnAgendarAulas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(4)))), ((int)(((byte)(44)))));
+            this.btnAgendarAulas.FlatAppearance.BorderSize = 0;
+            this.btnAgendarAulas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(4)))), ((int)(((byte)(80)))));
+            this.btnAgendarAulas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgendarAulas.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.btnAgendarAulas.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnAgendarAulas.Image = ((System.Drawing.Image)(resources.GetObject("btnAgendarAulas.Image")));
+            this.btnAgendarAulas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgendarAulas.Location = new System.Drawing.Point(0, 116);
+            this.btnAgendarAulas.Name = "btnAgendarAulas";
+            this.btnAgendarAulas.Size = new System.Drawing.Size(198, 34);
+            this.btnAgendarAulas.TabIndex = 2;
+            this.btnAgendarAulas.Text = "   Agendar Aulas";
+            this.btnAgendarAulas.UseVisualStyleBackColor = false;
+            this.btnAgendarAulas.Click += new System.EventHandler(this.btnAgendarAulas_Click);
             // 
             // btnAlunos
             // 
@@ -161,7 +165,7 @@
             this.btnAlunos.Location = new System.Drawing.Point(0, 83);
             this.btnAlunos.Name = "btnAlunos";
             this.btnAlunos.Size = new System.Drawing.Size(198, 34);
-            this.btnAlunos.TabIndex = 0;
+            this.btnAlunos.TabIndex = 1;
             this.btnAlunos.Text = "Aluno";
             this.btnAlunos.UseVisualStyleBackColor = false;
             this.btnAlunos.Click += new System.EventHandler(this.btnAlunos_Click);
@@ -174,41 +178,44 @@
             this.label1.Location = new System.Drawing.Point(45, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 39);
-            this.label1.TabIndex = 16;
+            this.label1.TabIndex = 0;
             this.label1.Text = "iTutor";
+            // 
+            // barrinhaLateral
+            // 
+            this.barrinhaLateral.BackColor = System.Drawing.Color.DodgerBlue;
+            this.barrinhaLateral.Location = new System.Drawing.Point(191, 83);
+            this.barrinhaLateral.Name = "barrinhaLateral";
+            this.barrinhaLateral.Size = new System.Drawing.Size(7, 34);
+            this.barrinhaLateral.TabIndex = 0;
+            this.barrinhaLateral.Visible = false;
             // 
             // panel2
             // 
-            this.panel2.AutoSize = true;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(4)))), ((int)(((byte)(44)))));
             this.panel2.Controls.Add(this.lbFechar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(198, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(781, 24);
-            this.panel2.TabIndex = 1;
+            this.panel2.Size = new System.Drawing.Size(781, 31);
+            this.panel2.TabIndex = 0;
             // 
             // lbFechar
             // 
             this.lbFechar.AutoSize = true;
-            this.lbFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFechar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbFechar.Image = ((System.Drawing.Image)(resources.GetObject("lbFechar.Image")));
-            this.lbFechar.Location = new System.Drawing.Point(755, 6);
+            this.lbFechar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbFechar.Location = new System.Drawing.Point(755, 9);
             this.lbFechar.Name = "lbFechar";
-            this.lbFechar.Size = new System.Drawing.Size(23, 18);
-            this.lbFechar.TabIndex = 17;
-            this.lbFechar.Text = "   ";
+            this.lbFechar.Size = new System.Drawing.Size(14, 13);
+            this.lbFechar.TabIndex = 1;
+            this.lbFechar.Text = "X";
             this.lbFechar.Click += new System.EventHandler(this.lbFechar_Click);
             // 
             // panelConteudo
             // 
-            this.panelConteudo.AutoSize = true;
-            this.panelConteudo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panelConteudo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelConteudo.Location = new System.Drawing.Point(198, 24);
+            this.panelConteudo.Location = new System.Drawing.Point(198, 31);
             this.panelConteudo.Name = "panelConteudo";
-            this.panelConteudo.Size = new System.Drawing.Size(781, 434);
+            this.panelConteudo.Size = new System.Drawing.Size(781, 427);
             this.panelConteudo.TabIndex = 2;
             // 
             // Principal
@@ -217,9 +224,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(979, 458);
-            this.Controls.Add(this.panelConteudo);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelConteudo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Principal";
             this.Text = "Principal";
@@ -228,22 +235,22 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panelConteudo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAlunos;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnRelatorio;
         private System.Windows.Forms.Button btnGerenciarCadastros;
         private System.Windows.Forms.Button btnCadastrarProfessor;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnAgendarAulas;
         private System.Windows.Forms.Button btnDeslogar;
+        private System.Windows.Forms.Panel barrinhaLateral;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lbFechar;
+        private System.Windows.Forms.Panel panelConteudo;
     }
 }

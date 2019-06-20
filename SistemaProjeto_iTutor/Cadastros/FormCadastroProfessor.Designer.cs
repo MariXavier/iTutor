@@ -73,7 +73,7 @@
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSalvar.Location = new System.Drawing.Point(402, 329);
+            this.btnSalvar.Location = new System.Drawing.Point(426, 363);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(78, 34);
             this.btnSalvar.TabIndex = 94;
@@ -88,7 +88,7 @@
             this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlterar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAlterar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAlterar.Location = new System.Drawing.Point(486, 329);
+            this.btnAlterar.Location = new System.Drawing.Point(510, 363);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(78, 34);
             this.btnAlterar.TabIndex = 93;
@@ -103,7 +103,7 @@
             this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnLimpar.Location = new System.Drawing.Point(570, 329);
+            this.btnLimpar.Location = new System.Drawing.Point(594, 363);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(78, 34);
             this.btnLimpar.TabIndex = 92;
@@ -118,7 +118,7 @@
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluir.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcluir.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnExcluir.Location = new System.Drawing.Point(654, 329);
+            this.btnExcluir.Location = new System.Drawing.Point(679, 363);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(78, 34);
             this.btnExcluir.TabIndex = 91;
@@ -131,10 +131,13 @@
             this.dgvProfessor.AllowUserToAddRows = false;
             this.dgvProfessor.AllowUserToDeleteRows = false;
             this.dgvProfessor.AllowUserToResizeRows = false;
+            this.dgvProfessor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProfessor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProfessor.Location = new System.Drawing.Point(42, 22);
+            this.dgvProfessor.Location = new System.Drawing.Point(23, 34);
             this.dgvProfessor.Name = "dgvProfessor";
-            this.dgvProfessor.Size = new System.Drawing.Size(340, 341);
+            this.dgvProfessor.RowHeadersVisible = false;
+            this.dgvProfessor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProfessor.Size = new System.Drawing.Size(340, 363);
             this.dgvProfessor.TabIndex = 62;
             this.dgvProfessor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProfessor_CellClick);
             // 
@@ -142,7 +145,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(512, 218);
+            this.label14.Location = new System.Drawing.Point(499, 231);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(133, 16);
             this.label14.TabIndex = 122;
@@ -152,16 +155,16 @@
             // 
             this.comboFormacaoProfessor.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboFormacaoProfessor.FormattingEnabled = true;
-            this.comboFormacaoProfessor.Location = new System.Drawing.Point(512, 237);
+            this.comboFormacaoProfessor.Location = new System.Drawing.Point(499, 250);
             this.comboFormacaoProfessor.Name = "comboFormacaoProfessor";
-            this.comboFormacaoProfessor.Size = new System.Drawing.Size(220, 24);
+            this.comboFormacaoProfessor.Size = new System.Drawing.Size(258, 24);
             this.comboFormacaoProfessor.TabIndex = 121;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(395, 20);
+            this.label2.Location = new System.Drawing.Point(382, 34);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 16);
             this.label2.TabIndex = 95;
@@ -170,16 +173,16 @@
             // txtNomeProfressor
             // 
             this.txtNomeProfressor.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomeProfressor.Location = new System.Drawing.Point(398, 39);
+            this.txtNomeProfressor.Location = new System.Drawing.Point(385, 54);
             this.txtNomeProfressor.Name = "txtNomeProfressor";
-            this.txtNomeProfressor.Size = new System.Drawing.Size(234, 22);
+            this.txtNomeProfressor.Size = new System.Drawing.Size(282, 22);
             this.txtNomeProfressor.TabIndex = 96;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(642, 22);
+            this.label3.Location = new System.Drawing.Point(670, 37);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 16);
             this.label3.TabIndex = 97;
@@ -189,7 +192,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(398, 64);
+            this.label4.Location = new System.Drawing.Point(385, 79);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 16);
             this.label4.TabIndex = 98;
@@ -199,7 +202,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(480, 64);
+            this.label5.Location = new System.Drawing.Point(467, 79);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(31, 16);
             this.label5.TabIndex = 99;
@@ -208,16 +211,16 @@
             // txtRua
             // 
             this.txtRua.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRua.Location = new System.Drawing.Point(483, 81);
+            this.txtRua.Location = new System.Drawing.Point(467, 96);
             this.txtRua.Name = "txtRua";
-            this.txtRua.Size = new System.Drawing.Size(188, 22);
+            this.txtRua.Size = new System.Drawing.Size(232, 22);
             this.txtRua.TabIndex = 100;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(674, 64);
+            this.label6.Location = new System.Drawing.Point(702, 79);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(22, 16);
             this.label6.TabIndex = 101;
@@ -226,7 +229,7 @@
             // txtCPFProfessor
             // 
             this.txtCPFProfessor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCPFProfessor.Location = new System.Drawing.Point(398, 181);
+            this.txtCPFProfessor.Location = new System.Drawing.Point(385, 196);
             this.txtCPFProfessor.Mask = "000.000.000-00";
             this.txtCPFProfessor.Name = "txtCPFProfessor";
             this.txtCPFProfessor.Size = new System.Drawing.Size(108, 22);
@@ -235,7 +238,7 @@
             // txtNumProfessor
             // 
             this.txtNumProfessor.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumProfessor.Location = new System.Drawing.Point(677, 81);
+            this.txtNumProfessor.Location = new System.Drawing.Point(705, 96);
             this.txtNumProfessor.Name = "txtNumProfessor";
             this.txtNumProfessor.Size = new System.Drawing.Size(55, 22);
             this.txtNumProfessor.TabIndex = 102;
@@ -243,7 +246,7 @@
             // txtCEPProfessor
             // 
             this.txtCEPProfessor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCEPProfessor.Location = new System.Drawing.Point(398, 81);
+            this.txtCEPProfessor.Location = new System.Drawing.Point(385, 96);
             this.txtCEPProfessor.Mask = "00000-000";
             this.txtCEPProfessor.Name = "txtCEPProfessor";
             this.txtCEPProfessor.Size = new System.Drawing.Size(76, 22);
@@ -253,7 +256,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(395, 114);
+            this.label7.Location = new System.Drawing.Point(382, 129);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(42, 16);
             this.label7.TabIndex = 103;
@@ -262,7 +265,7 @@
             // txtNascimentoProfessor
             // 
             this.txtNascimentoProfessor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNascimentoProfessor.Location = new System.Drawing.Point(645, 39);
+            this.txtNascimentoProfessor.Location = new System.Drawing.Point(673, 54);
             this.txtNascimentoProfessor.Mask = "00/00/0000";
             this.txtNascimentoProfessor.Name = "txtNascimentoProfessor";
             this.txtNascimentoProfessor.Size = new System.Drawing.Size(87, 22);
@@ -272,7 +275,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(395, 218);
+            this.label12.Location = new System.Drawing.Point(382, 233);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(55, 16);
             this.label12.TabIndex = 112;
@@ -281,16 +284,16 @@
             // txtBairroProfessor
             // 
             this.txtBairroProfessor.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBairroProfessor.Location = new System.Drawing.Point(398, 131);
+            this.txtBairroProfessor.Location = new System.Drawing.Point(385, 146);
             this.txtBairroProfessor.Name = "txtBairroProfessor";
-            this.txtBairroProfessor.Size = new System.Drawing.Size(108, 22);
+            this.txtBairroProfessor.Size = new System.Drawing.Size(149, 22);
             this.txtBairroProfessor.TabIndex = 104;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(509, 114);
+            this.label8.Location = new System.Drawing.Point(537, 129);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(48, 16);
             this.label8.TabIndex = 105;
@@ -299,7 +302,7 @@
             // txtCidadeProfessor
             // 
             this.txtCidadeProfessor.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCidadeProfessor.Location = new System.Drawing.Point(512, 131);
+            this.txtCidadeProfessor.Location = new System.Drawing.Point(540, 146);
             this.txtCidadeProfessor.Name = "txtCidadeProfessor";
             this.txtCidadeProfessor.Size = new System.Drawing.Size(148, 22);
             this.txtCidadeProfessor.TabIndex = 106;
@@ -308,17 +311,16 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(663, 112);
+            this.label9.Location = new System.Drawing.Point(691, 127);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(49, 16);
             this.label9.TabIndex = 107;
             this.label9.Text = "Estado";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // txtEstadoProfessor
             // 
             this.txtEstadoProfessor.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEstadoProfessor.Location = new System.Drawing.Point(666, 131);
+            this.txtEstadoProfessor.Location = new System.Drawing.Point(694, 146);
             this.txtEstadoProfessor.Name = "txtEstadoProfessor";
             this.txtEstadoProfessor.Size = new System.Drawing.Size(66, 22);
             this.txtEstadoProfessor.TabIndex = 108;
@@ -327,7 +329,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(395, 162);
+            this.label10.Location = new System.Drawing.Point(382, 177);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(34, 16);
             this.label10.TabIndex = 109;
@@ -337,7 +339,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(512, 162);
+            this.label11.Location = new System.Drawing.Point(496, 177);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(45, 16);
             this.label11.TabIndex = 110;
@@ -346,17 +348,17 @@
             // txtEmailProfessor
             // 
             this.txtEmailProfessor.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmailProfessor.Location = new System.Drawing.Point(512, 181);
+            this.txtEmailProfessor.Location = new System.Drawing.Point(499, 196);
             this.txtEmailProfessor.Name = "txtEmailProfessor";
-            this.txtEmailProfessor.Size = new System.Drawing.Size(220, 22);
+            this.txtEmailProfessor.Size = new System.Drawing.Size(261, 22);
             this.txtEmailProfessor.TabIndex = 111;
             // 
             // txtSenha
             // 
             this.txtSenha.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.Location = new System.Drawing.Point(645, 293);
+            this.txtSenha.Location = new System.Drawing.Point(649, 308);
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(87, 22);
+            this.txtSenha.Size = new System.Drawing.Size(108, 22);
             this.txtSenha.TabIndex = 182;
             this.txtSenha.UseSystemPasswordChar = true;
             // 
@@ -364,7 +366,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(642, 274);
+            this.label15.Location = new System.Drawing.Point(646, 289);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(45, 16);
             this.label15.TabIndex = 181;
@@ -373,17 +375,16 @@
             // txtUsuario
             // 
             this.txtUsuario.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.Location = new System.Drawing.Point(508, 293);
+            this.txtUsuario.Location = new System.Drawing.Point(499, 308);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(131, 22);
+            this.txtUsuario.Size = new System.Drawing.Size(144, 22);
             this.txtUsuario.TabIndex = 180;
-            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(505, 274);
+            this.label16.Location = new System.Drawing.Point(496, 289);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(52, 16);
             this.label16.TabIndex = 179;
@@ -392,36 +393,35 @@
             // txtTelefone
             // 
             this.txtTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefone.Location = new System.Drawing.Point(398, 237);
+            this.txtTelefone.Location = new System.Drawing.Point(385, 252);
             this.txtTelefone.Mask = "(00)000000000";
             this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(105, 22);
+            this.txtTelefone.Size = new System.Drawing.Size(108, 22);
             this.txtTelefone.TabIndex = 183;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(398, 274);
+            this.label13.Location = new System.Drawing.Point(385, 289);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(94, 16);
             this.label13.TabIndex = 184;
             this.label13.Text = "Valor hora/aula";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // txtValorHoraAula
             // 
             this.txtValorHoraAula.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValorHoraAula.Location = new System.Drawing.Point(398, 293);
+            this.txtValorHoraAula.Location = new System.Drawing.Point(385, 308);
             this.txtValorHoraAula.Name = "txtValorHoraAula";
-            this.txtValorHoraAula.Size = new System.Drawing.Size(104, 22);
+            this.txtValorHoraAula.Size = new System.Drawing.Size(108, 22);
             this.txtValorHoraAula.TabIndex = 185;
             // 
             // FormCadastroProfessor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(765, 395);
+            this.ClientSize = new System.Drawing.Size(781, 427);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.txtValorHoraAula);
             this.Controls.Add(this.txtTelefone);
@@ -457,6 +457,7 @@
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.dgvProfessor);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormCadastroProfessor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Professores";

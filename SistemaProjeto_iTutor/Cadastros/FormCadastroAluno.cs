@@ -37,7 +37,7 @@ namespace SistemaProjeto_iTutor.Cadastros
                 btnLimpar.Visible = false;
                 btnSalvar.Visible = false;
 
-                btnAlterar.Location = new Point(681, 346);
+                btnAlterar.Location = new Point(679, 363);
 
                 try
                 {
