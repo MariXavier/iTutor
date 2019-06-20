@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+			
             this.dgvAluno = new System.Windows.Forms.DataGridView();
             this.txtNomeResponsavel = new System.Windows.Forms.TextBox();
             this.txtNomeAluno = new System.Windows.Forms.TextBox();
