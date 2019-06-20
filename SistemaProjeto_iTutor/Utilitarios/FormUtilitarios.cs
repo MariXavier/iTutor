@@ -28,47 +28,71 @@ namespace SistemaProjeto_iTutor.Utilitarios
             // TODO: esta linha de código carrega dados na tabela 'iTutorDataSet.usuario'. Você pode movê-la ou removê-la conforme necessário.
             this.usuarioTableAdapter.Fill(this.iTutorDataSet.usuario);
 
-           
-        }
+			try
+			{
+				string strConexao = Banco.enderecoBanco();
+				string sql = "select pkUsuario, usuario as 'Usuário', senha as 'Senha', levelPermissao, dataCriacao as 'Data Criação', statusCadastro from usuario";
+				SqlConnection conexao = new SqlConnection(strConexao);
+				SqlDataAdapter da = new SqlDataAdapter(sql, conexao);
+				DataSet ds = new DataSet();
+				conexao.Open();
+				da.Fill(ds, "usuario");
+				conexao.Close();
+				dgvUsuarios.DataSource = ds;
+				dgvUsuarios.DataMember = "usuario";
+
+				for (int i = 1; i < dgvUsuarios.Columns.Count; i++)
+				{
+					dgvUsuarios.Columns[0].Visible = false;
+					dgvUsuarios.Columns[i].Visible = true;
+				}
+				dgvUsuarios.Columns[5].Visible = false;
+				dgvUsuarios.Columns[3].Visible = false;
+				
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             Limpar.limparComponentes(this);
         }
 
-
+		
         private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
-                preencherTextBoxUsuario(e);
-                //usuario = Convert.ToInt32(dgvUsuarios.Rows[e.RowIndex].Cells["pkUsuario"].Value.ToString());
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
 
+			try
+			{
+				preencherTextBoxUsuario(e);
+				//pkUsuario = Convert.ToInt32(dgvUsuarios.Rows[e.RowIndex].Cells["pkUsuario"].Value.ToString());
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 
-        }
+		}
 
         public void preencherTextBoxUsuario(DataGridViewCellEventArgs e)
         {
-            pkUser = dgvUsuarios.Rows[e.RowIndex].Cells[0].Value.ToString();
-            txtData.Text = dgvUsuarios.Rows[e.RowIndex].Cells[4].Value.ToString();
-            txtUser.Text = dgvUsuarios.Rows[e.RowIndex].Cells[1].Value.ToString();
-            txtSenha.Text = dgvUsuarios.Rows[e.RowIndex].Cells[2].Value.ToString();
-            string status = dgvUsuarios.Rows[e.RowIndex].Cells[6].Value.ToString();
+            pkUser = dgvUsuarios.Rows[e.RowIndex].Cells["pkUsuario"].Value.ToString();
+            txtData.Text = dgvUsuarios.Rows[e.RowIndex].Cells["Data Criação"].Value.ToString();
+            txtUser.Text = dgvUsuarios.Rows[e.RowIndex].Cells["Usuário"].Value.ToString();
+            txtSenha.Text = dgvUsuarios.Rows[e.RowIndex].Cells["Senha"].Value.ToString();
+            string status = dgvUsuarios.Rows[e.RowIndex].Cells["statusCadastro"].Value.ToString();
             if (status == "0") {
-                cbxStatusCadastro.SelectedValue = "Ativo";
-            }
+				rbnAtivo.Checked = true;
+			}
             else
             {
-                cbxStatusCadastro.SelectedValue = "Inativo";
-            }
+				rbnInativo.Checked = true;
+			}
 
            
-
-            string permissao = dgvUsuarios.Rows[e.RowIndex].Cells[3].Value.ToString();
+            string permissao = dgvUsuarios.Rows[e.RowIndex].Cells["levelPermissao"].Value.ToString();
             if (permissao == "0")
             {
                 rbnAdministrador.Checked = true;
@@ -105,7 +129,7 @@ namespace SistemaProjeto_iTutor.Utilitarios
                 perfil = 1;
             }
 
-            if (cbxStatusCadastro.ToString() == "Ativo")
+            if (rbnAtivo.Checked == true)
             {
                 status = 0;
             }
@@ -127,7 +151,8 @@ namespace SistemaProjeto_iTutor.Utilitarios
 
             conexao.Close();
             FormUtilitarios_Load(null, null);
-        }
+			LimparCliente();
+		}
 
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
@@ -136,6 +161,7 @@ namespace SistemaProjeto_iTutor.Utilitarios
             string diaHoraAtual = localDate.ToString();
             
             int perfil;
+			int status;
 
             txtData.Text = diaHoraAtual;
 
@@ -152,7 +178,16 @@ namespace SistemaProjeto_iTutor.Utilitarios
                 perfil = 1;
             }
 
-            SqlConnection conexao = new SqlConnection(Banco.enderecoBanco());
+			if (rbnAtivo.Checked == true)
+			{
+				status = 0;
+			}
+			else
+			{
+				status = 999;
+			}
+
+			SqlConnection conexao = new SqlConnection(Banco.enderecoBanco());
             SqlCommand query = new SqlCommand();
 
             query.Connection = conexao;
@@ -161,7 +196,7 @@ namespace SistemaProjeto_iTutor.Utilitarios
             query.Parameters.AddWithValue("@usuario", txtUser.Text);
             query.Parameters.AddWithValue("@senha", txtSenha.Text);
             query.Parameters.AddWithValue("@dataCriacao", diaHoraAtual);
-            query.Parameters.AddWithValue("@statusCadastro", 0);
+            query.Parameters.AddWithValue("@statusCadastro", status);
             query.Parameters.AddWithValue("@levelPermissao", perfil);
             query.Parameters.AddWithValue("@solicitacaoAprovada", 1);
 
@@ -181,13 +216,16 @@ namespace SistemaProjeto_iTutor.Utilitarios
         {
             txtUser.Clear();
             txtSenha.Clear();
-            cbxStatusCadastro.SelectedIndex = -1;
-            rbnAdministrador.Checked = false;
+			rbnAtivo.Checked = false;
+			rbnInativo.Checked = false;
+			rbnAdministrador.Checked = false;
             rbnAluno.Checked = false;
             rbnProfessor.Checked = false;
             txtData.Clear();
         }
-    }
+
+		
+	}
 
     
 }

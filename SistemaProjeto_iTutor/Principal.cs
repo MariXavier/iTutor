@@ -3,6 +3,7 @@ using SistemaProjeto_iTutor.Classes;
 using SistemaProjeto_iTutor.Utilitarios;
 using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -15,7 +16,8 @@ namespace SistemaProjeto_iTutor
 {
     public partial class Principal : Form
     {
-        public Principal()
+		
+		public Principal()
         {
             InitializeComponent();
         }
@@ -73,7 +75,6 @@ namespace SistemaProjeto_iTutor
 
         private void BtnGerenciarCadastros_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(Autenticacao.levelPermissao.ToString());
             if (Autenticacao.levelPermissao == 0)
             {
 				AbrirFormNoPanel<FormUtilitarios>();
