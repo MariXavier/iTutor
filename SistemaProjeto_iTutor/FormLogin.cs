@@ -67,9 +67,10 @@ namespace SistemaProjeto_iTutor
                 //Autenticacao.levelPermissao = Convert.ToInt32(consulta.GetValue(3));
 
                 Limpar.limparComponentes(this);
-                FormMenu formMenu = new FormMenu();
-                formMenu.ShowDialog();
-                
+                Principal formMenu = new Principal();
+                formMenu.Show();
+                this.Hide();
+
             }
             conexao.Close();
 
@@ -79,6 +80,26 @@ namespace SistemaProjeto_iTutor
         {
             FormCadastroPrimeiroAcesso primeiroAcesso = new FormCadastroPrimeiroAcesso();
             primeiroAcesso.ShowDialog();
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbFechar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

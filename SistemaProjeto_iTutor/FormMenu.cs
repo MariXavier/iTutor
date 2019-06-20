@@ -55,15 +55,18 @@ namespace SistemaProjeto_iTutor
 
         private void BtnGerenciarCadastros_Click(object sender, EventArgs e)
         {
-            if (Autenticacao.levelPermissao == 0)
-            {
-                FormUtilitarios formUtilitarios = new FormUtilitarios();
-                formUtilitarios.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Usuário sem permissão", "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            FormUtilitarios formUtilitarios = new FormUtilitarios();
+            formUtilitarios.ShowDialog();
+
+            //if (Autenticacao.levelPermissao == 0)
+            //{
+            //    FormUtilitarios formUtilitarios = new FormUtilitarios();
+            //    formUtilitarios.ShowDialog();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Usuário sem permissão", "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
     }
 	
