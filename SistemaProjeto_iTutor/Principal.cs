@@ -86,14 +86,11 @@ namespace SistemaProjeto_iTutor
 
         private void BtnGerenciarCadastros_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-=======
             barrinhaLateral.Visible = true;
             barrinhaLateral.Height = btnGerenciarCadastros.Height;
             barrinhaLateral.Top = btnGerenciarCadastros.Top;
 
             MessageBox.Show(Autenticacao.levelPermissao.ToString());
->>>>>>> 25fa6983cd488b9e5d342540ac23ab9c7991b939
             if (Autenticacao.levelPermissao == 0)
             {
 				AbrirFormNoPanel<FormUtilitarios>();
