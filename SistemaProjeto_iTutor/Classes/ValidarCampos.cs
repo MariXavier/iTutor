@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SistemaProjeto_iTutor.Classes
 {
@@ -27,8 +28,21 @@ namespace SistemaProjeto_iTutor.Classes
                 camposIncompletos = true;
                 resposta += "\n - CPF";
             }
-
-            //if (!txtNascimento.MaskCompleted) { contador++; resposta += "\n - Data de nascimento"; }
+            
+            if (string.IsNullOrWhiteSpace(nascimento))
+            {
+                camposIncompletos = true;
+                resposta += "\n - Data de nascimento";
+            }
+            else
+            {
+                DateTime result;
+                if (!DateTime.TryParse(nascimento, out result))
+                {
+                    camposIncompletos = true;
+                    resposta += "\n - Data de nascimento";
+                }
+            }
 
             if (string.IsNullOrWhiteSpace(cep) || cep.Length < 8)
             {

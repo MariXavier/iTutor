@@ -197,59 +197,12 @@ namespace SistemaProjeto_iTutor.Cadastros
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show(VerificarConsistenciaDeTodosOsCampos().Length == 0);
-            ValidarCampos.VerificarConsistencia(txtNome.Text, AdaptarParametros.adaptarCPF(txtCPF.Text), cbPerfilUsuario.SelectedIndex, "", AdaptarParametros.adaptarCEP(txtCEP.Text), AdaptarParametros.adaptarTelefone(txtTelefone.Text), txtRua.Text, txtNumero.Text, txtBairro.Text, txtCidade.Text, txtEstado.Text, txtUsuario.Text, txtSenha.Text, cbPerfilUsuario.SelectedItem.ToString(), cbFormacaoAcademica.SelectedIndex, txtValorHoraAula.Text);
-            if(ValidarCampos.camposIncompletos)
+            ValidarCampos.VerificarConsistencia(txtNome.Text, AdaptarParametros.adaptarCPF(txtCPF.Text), cbPerfilUsuario.SelectedIndex, txtNascimento.MaskCompleted ? txtNascimento.Text : String.Empty, AdaptarParametros.adaptarCEP(txtCEP.Text), AdaptarParametros.adaptarTelefone(txtTelefone.Text), txtRua.Text, txtNumero.Text, txtBairro.Text, txtCidade.Text, txtEstado.Text, txtUsuario.Text, txtSenha.Text, (cbPerfilUsuario.SelectedIndex == - 1 ? String.Empty : cbPerfilUsuario.SelectedItem.ToString()), cbFormacaoAcademica.SelectedIndex, txtValorHoraAula.Text);
+            
+            if (ValidarCampos.camposIncompletos)
             {
                 MessageBox.Show(ValidarCampos.respostaFinal);
             }
-        }
-
-        public string VerificarConsistenciaDeTodosOsCampos()
-        {
-            string resposta = "Os seguintes campos precisam ser peenchidos: ";
-            int contador = 0;
-
-            if (string.IsNullOrWhiteSpace(txtNome.Text)) { contador++; resposta += "\n - Nome"; }
-
-            if (string.IsNullOrWhiteSpace(AdaptarParametros.adaptarCPF(txtCPF.Text)) || (AdaptarParametros.adaptarCPF(txtCPF.Text)).Length < 11) { contador++; resposta += "\n - CPF"; }
-
-            if (cbPerfilUsuario.SelectedIndex == -1) { contador++; resposta += "\n - Perfil usuário"; }
-
-            if (!txtNascimento.MaskCompleted) { contador++; resposta += "\n - Data de nascimento"; }
-
-            if (string.IsNullOrWhiteSpace(AdaptarParametros.adaptarCEP(txtCEP.Text)) || (AdaptarParametros.adaptarCEP(txtCEP.Text)).Length < 8) { contador++; resposta += "\n - CEP"; }
-
-            if (string.IsNullOrWhiteSpace(AdaptarParametros.adaptarTelefone(txtTelefone.Text)) || (AdaptarParametros.adaptarTelefone(txtTelefone.Text)).Length < 10) { contador++; resposta += "\n - Telefone"; }
-
-            if (string.IsNullOrWhiteSpace(txtRua.Text)) { contador++; resposta += "\n - Rua"; }
-
-            if (string.IsNullOrWhiteSpace(txtNumero.Text)) { contador++; resposta += "\n - Número"; }
-
-            if (string.IsNullOrWhiteSpace(txtBairro.Text)) { contador++; resposta += "\n - Bairro"; }
-
-            if (string.IsNullOrWhiteSpace(txtCidade.Text)) { contador++; resposta += "\n - Cidade"; }
-
-            if (string.IsNullOrWhiteSpace(txtEstado.Text)) { contador++; resposta += "\n - Estado"; }
-
-            if (string.IsNullOrWhiteSpace(txtUsuario.Text)) { contador++; resposta += "\n - Usuário"; }
-
-            if (string.IsNullOrWhiteSpace(txtSenha.Text) || txtSenha.Text.Length == 0) { contador++; resposta += "\n - Senha"; }
-
-            if (cbPerfilUsuario.SelectedIndex == -1) { contador++; resposta += "\n - Perfil usuário"; }
-            else
-            {
-                if (cbPerfilUsuario.SelectedItem.ToString() == "Professor")
-                {
-                    if (cbFormacaoAcademica.SelectedIndex == -1) { contador++; resposta += "\n - Formação acadêmica"; }
-
-                    if (string.IsNullOrWhiteSpace(txtValorHoraAula.Text)) { contador++; resposta += "\n - Valor hora/aula"; }
-                }
-            }
-
-            if (contador > 0) { return resposta; }
-            else { return ""; }
-
         }
 
         private void txtNascimento_KeyDown(object sender, KeyEventArgs e)
