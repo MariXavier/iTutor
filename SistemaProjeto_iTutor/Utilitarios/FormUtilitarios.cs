@@ -25,9 +25,7 @@ namespace SistemaProjeto_iTutor.Utilitarios
         
         private void FormUtilitarios_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'iTutorDataSet.usuario'. Você pode movê-la ou removê-la conforme necessário.
-            this.usuarioTableAdapter.Fill(this.iTutorDataSet.usuario);
-
+            
 			try
 			{
 				string strConexao = Banco.enderecoBanco();
@@ -67,7 +65,7 @@ namespace SistemaProjeto_iTutor.Utilitarios
 			try
 			{
 				preencherTextBoxUsuario(e);
-				//pkUsuario = Convert.ToInt32(dgvUsuarios.Rows[e.RowIndex].Cells["pkUsuario"].Value.ToString());
+				
 			}
 			catch (Exception ex)
 			{

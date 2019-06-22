@@ -30,7 +30,6 @@
         {
 			this.components = new System.ComponentModel.Container();
 			this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.iTutorDataSet = new SistemaProjeto_iTutor.iTutorDataSet();
 			this.label14 = new System.Windows.Forms.Label();
 			this.txtSenha = new System.Windows.Forms.TextBox();
 			this.btnSalvar = new System.Windows.Forms.Button();
@@ -43,28 +42,20 @@
 			this.rbnAdministrador = new System.Windows.Forms.RadioButton();
 			this.rbnProfessor = new System.Windows.Forms.RadioButton();
 			this.rbnAluno = new System.Windows.Forms.RadioButton();
-			this.usuarioTableAdapter = new SistemaProjeto_iTutor.iTutorDataSetTableAdapters.usuarioTableAdapter();
 			this.txtData = new System.Windows.Forms.MaskedTextBox();
-			this.dgvUsuarios = new System.Windows.Forms.DataGridView();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.rbnAtivo = new System.Windows.Forms.RadioButton();
 			this.rbnInativo = new System.Windows.Forms.RadioButton();
+			this.rbnAtivo = new System.Windows.Forms.RadioButton();
+			this.dgvUsuarios = new System.Windows.Forms.DataGridView();
 			((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.iTutorDataSet)).BeginInit();
 			this.groupPerfil.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
 			this.groupBox1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// usuarioBindingSource
 			// 
 			this.usuarioBindingSource.DataMember = "usuario";
-			this.usuarioBindingSource.DataSource = this.iTutorDataSet;
-			// 
-			// iTutorDataSet
-			// 
-			this.iTutorDataSet.DataSetName = "iTutorDataSet";
-			this.iTutorDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
 			// 
 			// label14
 			// 
@@ -205,10 +196,6 @@
 			this.rbnAluno.Text = "Aluno";
 			this.rbnAluno.UseVisualStyleBackColor = true;
 			// 
-			// usuarioTableAdapter
-			// 
-			this.usuarioTableAdapter.ClearBeforeFill = true;
-			// 
 			// txtData
 			// 
 			this.txtData.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -219,20 +206,6 @@
 			this.txtData.Size = new System.Drawing.Size(137, 22);
 			this.txtData.TabIndex = 177;
 			this.txtData.ValidatingType = typeof(System.DateTime);
-			// 
-			// dgvUsuarios
-			// 
-			this.dgvUsuarios.AllowUserToAddRows = false;
-			this.dgvUsuarios.AllowUserToDeleteRows = false;
-			this.dgvUsuarios.AllowUserToResizeColumns = false;
-			this.dgvUsuarios.AllowUserToResizeRows = false;
-			this.dgvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-			this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dgvUsuarios.Location = new System.Drawing.Point(12, 12);
-			this.dgvUsuarios.Name = "dgvUsuarios";
-			this.dgvUsuarios.Size = new System.Drawing.Size(382, 342);
-			this.dgvUsuarios.TabIndex = 179;
-			this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
 			// 
 			// groupBox1
 			// 
@@ -245,17 +218,6 @@
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Status Cadastro";
 			// 
-			// rbnAtivo
-			// 
-			this.rbnAtivo.AutoSize = true;
-			this.rbnAtivo.Location = new System.Drawing.Point(7, 20);
-			this.rbnAtivo.Name = "rbnAtivo";
-			this.rbnAtivo.Size = new System.Drawing.Size(49, 17);
-			this.rbnAtivo.TabIndex = 0;
-			this.rbnAtivo.TabStop = true;
-			this.rbnAtivo.Text = "Ativo";
-			this.rbnAtivo.UseVisualStyleBackColor = true;
-			// 
 			// rbnInativo
 			// 
 			this.rbnInativo.AutoSize = true;
@@ -267,14 +229,39 @@
 			this.rbnInativo.Text = "Inativo";
 			this.rbnInativo.UseVisualStyleBackColor = true;
 			// 
+			// rbnAtivo
+			// 
+			this.rbnAtivo.AutoSize = true;
+			this.rbnAtivo.Location = new System.Drawing.Point(7, 20);
+			this.rbnAtivo.Name = "rbnAtivo";
+			this.rbnAtivo.Size = new System.Drawing.Size(49, 17);
+			this.rbnAtivo.TabIndex = 0;
+			this.rbnAtivo.TabStop = true;
+			this.rbnAtivo.Text = "Ativo";
+			this.rbnAtivo.UseVisualStyleBackColor = true;
+			// 
+			// dgvUsuarios
+			// 
+			this.dgvUsuarios.AllowUserToAddRows = false;
+			this.dgvUsuarios.AllowUserToDeleteRows = false;
+			this.dgvUsuarios.AllowUserToResizeColumns = false;
+			this.dgvUsuarios.AllowUserToResizeRows = false;
+			this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgvUsuarios.Location = new System.Drawing.Point(12, 14);
+			this.dgvUsuarios.Name = "dgvUsuarios";
+			this.dgvUsuarios.RowHeadersVisible = false;
+			this.dgvUsuarios.Size = new System.Drawing.Size(399, 340);
+			this.dgvUsuarios.TabIndex = 181;
+			this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
+			// 
 			// FormUtilitarios
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(755, 366);
 			this.ControlBox = false;
-			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.dgvUsuarios);
+			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.txtData);
 			this.Controls.Add(this.groupPerfil);
 			this.Controls.Add(this.label14);
@@ -287,14 +274,12 @@
 			this.Controls.Add(this.label1);
 			this.Name = "FormUtilitarios";
 			this.Text = "Utilitários";
-			this.Load += new System.EventHandler(this.FormUtilitarios_Load);
 			((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.iTutorDataSet)).EndInit();
 			this.groupPerfil.ResumeLayout(false);
 			this.groupPerfil.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -313,13 +298,11 @@
         private System.Windows.Forms.RadioButton rbnAdministrador;
         private System.Windows.Forms.RadioButton rbnProfessor;
         private System.Windows.Forms.RadioButton rbnAluno;
-        private iTutorDataSet iTutorDataSet;
         private System.Windows.Forms.BindingSource usuarioBindingSource;
-        private iTutorDataSetTableAdapters.usuarioTableAdapter usuarioTableAdapter;
         private System.Windows.Forms.MaskedTextBox txtData;
-		private System.Windows.Forms.DataGridView dgvUsuarios;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.RadioButton rbnInativo;
 		private System.Windows.Forms.RadioButton rbnAtivo;
+		private System.Windows.Forms.DataGridView dgvUsuarios;
 	}
 }

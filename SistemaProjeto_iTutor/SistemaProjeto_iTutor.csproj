@@ -100,11 +100,6 @@
     <Compile Include="FormMenu.Designer.cs">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="iTutorDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>iTutorDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +113,12 @@
     </Compile>
     <Compile Include="Relatorios\FormRelatorio.Designer.cs">
       <DependentUpon>FormRelatorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilitarios\FormGerenciar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utilitarios\FormGerenciar.Designer.cs">
+      <DependentUpon>FormGerenciar.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilitarios\FormRelatorios.cs">
       <SubType>Form</SubType>
@@ -167,6 +168,9 @@
     </Compile>
     <EmbeddedResource Include="Relatorios\FormRelatorio.resx">
       <DependentUpon>FormRelatorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utilitarios\FormGerenciar.resx">
+      <DependentUpon>FormGerenciar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Utilitarios\FormRelatorios.resx">
       <DependentUpon>FormRelatorios.cs</DependentUpon>
@@ -312,17 +316,6 @@
     </None>
     <None Include="Connected Services\WSCorreios\SistemaProjeto_iTutor.WSCorreios.VerificaSeTodosObjetosCanceladosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="iTutorDataSet.xsc">
-      <DependentUpon>iTutorDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="iTutorDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>iTutorDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="iTutorDataSet.xss">
-      <DependentUpon>iTutorDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

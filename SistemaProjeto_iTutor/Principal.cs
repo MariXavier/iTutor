@@ -93,7 +93,7 @@ namespace SistemaProjeto_iTutor
             MessageBox.Show(Autenticacao.levelPermissao.ToString());
             if (Autenticacao.levelPermissao == 0)
             {
-				AbrirFormNoPanel<FormUtilitarios>();
+				AbrirFormNoPanel<FormGerenciar>();
 				//FormUtilitarios formUtilitarios = new FormUtilitarios();
 				//formUtilitarios.ShowDialog();
 			}
