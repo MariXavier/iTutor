@@ -25,7 +25,7 @@ namespace SistemaProjeto_iTutor.Utilitarios
 			try
 			{
 				string strConexao = Banco.enderecoBanco();
-				string sql = "select pkUsuario, usuario as 'Usuário', senha as 'Senha', levelPermissao, dataCriacao as 'Data Criação', statusCadastro from usuario";
+				string sql = "select pkUsuario, usuario as 'Usuário', senha as 'Senha', levelPermissao, dataCriacao as 'Data Criação', statusCadastro, case when statusCadastro = 0 then 'Ativo' else 'Inativo' end as Status from usuario";
 				SqlConnection conexao = new SqlConnection(strConexao);
 				SqlDataAdapter da = new SqlDataAdapter(sql, conexao);
 				DataSet ds = new DataSet();
