@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-			
             this.dgvAluno = new System.Windows.Forms.DataGridView();
             this.txtNomeResponsavel = new System.Windows.Forms.TextBox();
             this.txtNomeAluno = new System.Windows.Forms.TextBox();
@@ -171,7 +170,6 @@
             this.txtRua.Name = "txtRua";
             this.txtRua.Size = new System.Drawing.Size(236, 22);
             this.txtRua.TabIndex = 5;
-            this.txtRua.TextChanged += new System.EventHandler(this.txtEndereco_TextChanged);
             // 
             // label7
             // 

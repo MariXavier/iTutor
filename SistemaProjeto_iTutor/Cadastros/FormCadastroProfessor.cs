@@ -140,41 +140,47 @@ namespace SistemaProjeto_iTutor.Cadastros
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            SqlConnection conexao = new SqlConnection(Banco.enderecoBanco());
-            SqlCommand query = new SqlCommand();
-            query.Connection = conexao;
-            conexao.Open();
+            ValidarCampos.VerificarConsistencia(txtNomeProfressor.Text, AdaptarParametros.adaptarCPF(txtCPFProfessor.Text), txtNascimentoProfessor.MaskCompleted ? txtNascimentoProfessor.Text : String.Empty, AdaptarParametros.adaptarCEP(txtCEPProfessor.Text), AdaptarParametros.adaptarTelefone(txtTelefone.Text), txtRua.Text, txtNumProfessor.Text, txtBairroProfessor.Text, txtCidadeProfessor.Text, txtEstadoProfessor.Text, txtUsuario.Text, txtSenha.Text, comboFormacaoProfessor.SelectedIndex, txtValorHoraAula.Text);
 
-            query.Parameters.AddWithValue("@nome", txtNomeProfressor.Text);
-            query.Parameters.AddWithValue("@dataNascimento", AdaptarParametros.adaptarDataNascimento(txtNascimentoProfessor.Text));
-            query.Parameters.AddWithValue("@cpf", AdaptarParametros.adaptarCPF(txtCPFProfessor.Text));
-            query.Parameters.AddWithValue("@email", txtEmailProfessor.Text);
-            query.Parameters.AddWithValue("@valorHoraAula", txtValorHoraAula.Text);
-            query.Parameters.AddWithValue("@telefone", AdaptarParametros.adaptarTelefone(txtTelefone.Text));
-            query.Parameters.AddWithValue("@pkDisciplina", comboFormacaoProfessor.SelectedValue.ToString());
-            query.Parameters.AddWithValue("@pkProfessorSelecionado", pkProfessorSelecionado);
-            
-            query.Parameters.AddWithValue("@cep", AdaptarParametros.adaptarCEP(txtCEPProfessor.Text));
-            query.Parameters.AddWithValue("@rua", txtRua.Text);
-            query.Parameters.AddWithValue("@numero", txtNumProfessor.Text);
-            query.Parameters.AddWithValue("@bairro", txtBairroProfessor.Text);
-            query.Parameters.AddWithValue("@cidade", txtCidadeProfessor.Text);
-            query.Parameters.AddWithValue("@estado", txtEstadoProfessor.Text);
+            if(ValidarCampos.camposIncompletos) { MessageBox.Show(ValidarCampos.respostaFinal); }
+            else
+            {
+                SqlConnection conexao = new SqlConnection(Banco.enderecoBanco());
+                SqlCommand query = new SqlCommand();
+                query.Connection = conexao;
+                conexao.Open();
 
-            query.Parameters.AddWithValue("@usuario", txtUsuario.Text);
-            query.Parameters.AddWithValue("@senha", txtSenha.Text);
+                query.Parameters.AddWithValue("@nome", txtNomeProfressor.Text);
+                query.Parameters.AddWithValue("@dataNascimento", AdaptarParametros.adaptarDataNascimento(txtNascimentoProfessor.Text));
+                query.Parameters.AddWithValue("@cpf", AdaptarParametros.adaptarCPF(txtCPFProfessor.Text));
+                query.Parameters.AddWithValue("@email", txtEmailProfessor.Text);
+                query.Parameters.AddWithValue("@valorHoraAula", txtValorHoraAula.Text);
+                query.Parameters.AddWithValue("@telefone", AdaptarParametros.adaptarTelefone(txtTelefone.Text));
+                query.Parameters.AddWithValue("@pkDisciplina", comboFormacaoProfessor.SelectedValue.ToString());
+                query.Parameters.AddWithValue("@pkProfessorSelecionado", pkProfessorSelecionado);
 
-            query.CommandText = "UPDATE professor SET nome = @nome, dataNascimento = @dataNascimento, cpf = @cpf, email = @email, valorHoraAula = @valorHoraAula, telefone = @telefone, fkDisciplina = @pkDisciplina WHERE pkProfessor = @pkProfessorSelecionado AND statusCadastro = 0";
-            query.ExecuteNonQuery();
+                query.Parameters.AddWithValue("@cep", AdaptarParametros.adaptarCEP(txtCEPProfessor.Text));
+                query.Parameters.AddWithValue("@rua", txtRua.Text);
+                query.Parameters.AddWithValue("@numero", txtNumProfessor.Text);
+                query.Parameters.AddWithValue("@bairro", txtBairroProfessor.Text);
+                query.Parameters.AddWithValue("@cidade", txtCidadeProfessor.Text);
+                query.Parameters.AddWithValue("@estado", txtEstadoProfessor.Text);
 
-            query.CommandText = "UPDATE endereco SET cep = @cep, rua = @rua, numero = @numero, bairro = @bairro, cidade = @cidade, estado = @estado WHERE fkProfessor = @pkProfessorSelecionado AND statusCadastro = 0";
-            query.ExecuteNonQuery();
+                query.Parameters.AddWithValue("@usuario", txtUsuario.Text);
+                query.Parameters.AddWithValue("@senha", txtSenha.Text);
 
-            query.CommandText = "UPDATE usuario SET usuario = @usuario, senha = @senha WHERE fkProfessor = @pkProfessorSelecionado AND statusCadastro = 0";
-            query.ExecuteNonQuery();
+                query.CommandText = "UPDATE professor SET nome = @nome, dataNascimento = @dataNascimento, cpf = @cpf, email = @email, valorHoraAula = @valorHoraAula, telefone = @telefone, fkDisciplina = @pkDisciplina WHERE pkProfessor = @pkProfessorSelecionado AND statusCadastro = 0";
+                query.ExecuteNonQuery();
 
-            FormCadastroProfessor_Load(null, null);
-            conexao.Close();
+                query.CommandText = "UPDATE endereco SET cep = @cep, rua = @rua, numero = @numero, bairro = @bairro, cidade = @cidade, estado = @estado WHERE fkProfessor = @pkProfessorSelecionado AND statusCadastro = 0";
+                query.ExecuteNonQuery();
+
+                query.CommandText = "UPDATE usuario SET usuario = @usuario, senha = @senha WHERE fkProfessor = @pkProfessorSelecionado AND statusCadastro = 0";
+                query.ExecuteNonQuery();
+
+                FormCadastroProfessor_Load(null, null);
+                conexao.Close();
+            }
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -197,62 +203,71 @@ namespace SistemaProjeto_iTutor.Cadastros
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            DateTime localDate = DateTime.Now;
+            ValidarCampos.VerificarConsistencia(txtNomeProfressor.Text, AdaptarParametros.adaptarCPF(txtCPFProfessor.Text), txtNascimentoProfessor.MaskCompleted ? txtNascimentoProfessor.Text : String.Empty, AdaptarParametros.adaptarCEP(txtCEPProfessor.Text), AdaptarParametros.adaptarTelefone(txtTelefone.Text), txtRua.Text, txtNumProfessor.Text, txtBairroProfessor.Text, txtCidadeProfessor.Text, txtEstadoProfessor.Text, txtUsuario.Text, txtSenha.Text, comboFormacaoProfessor.SelectedIndex, txtValorHoraAula.Text);
 
-            string diaHoraAtual = localDate.ToString();
-            string diaAtual = diaHoraAtual.Substring(0, 2);
-            string mesAtual = diaHoraAtual.Substring(3, 2);
-            string anoAtual = diaHoraAtual.Substring(6, 4);
-            string horaAtual = diaHoraAtual.Substring(11, 8);
+            if (ValidarCampos.camposIncompletos)
+            {
+                MessageBox.Show(ValidarCampos.respostaFinal);
+            }
+            else
+            {
+                DateTime localDate = DateTime.Now;
 
-            diaHoraAtual = anoAtual + "-" + mesAtual + "-" + diaAtual + " " + horaAtual;
+                string diaHoraAtual = localDate.ToString();
+                string diaAtual = diaHoraAtual.Substring(0, 2);
+                string mesAtual = diaHoraAtual.Substring(3, 2);
+                string anoAtual = diaHoraAtual.Substring(6, 4);
+                string horaAtual = diaHoraAtual.Substring(11, 8);
 
-            SqlConnection conexao = new SqlConnection(Banco.enderecoBanco());
-            SqlCommand query = new SqlCommand();
-            query.Connection = conexao;
-            conexao.Open();
+                diaHoraAtual = anoAtual + "-" + mesAtual + "-" + diaAtual + " " + horaAtual;
 
-            query.Parameters.AddWithValue("nome", txtNomeProfressor.Text);
-            query.Parameters.AddWithValue("@dataNascimento", AdaptarParametros.adaptarDataNascimento(txtNascimentoProfessor.Text));
-            query.Parameters.AddWithValue("@cpf", AdaptarParametros.adaptarCPF(txtCPFProfessor.Text));
-            query.Parameters.AddWithValue("@email", txtEmailProfessor.Text);
-            query.Parameters.AddWithValue("@valorHoraAula", txtValorHoraAula.Text);
-            query.Parameters.AddWithValue("@telefone", AdaptarParametros.adaptarTelefone(txtTelefone.Text));
-            query.Parameters.AddWithValue("@fkDisciplina", comboFormacaoProfessor.SelectedValue.ToString());
-            query.Parameters.AddWithValue("@statusCadastro", 0);
+                SqlConnection conexao = new SqlConnection(Banco.enderecoBanco());
+                SqlCommand query = new SqlCommand();
+                query.Connection = conexao;
+                conexao.Open();
 
-            query.Parameters.AddWithValue("@cep", AdaptarParametros.adaptarCEP(txtCEPProfessor.Text));
-            query.Parameters.AddWithValue("@rua", txtRua.Text);
-            query.Parameters.AddWithValue("@numero", txtNumProfessor.Text);
-            query.Parameters.AddWithValue("@bairro", txtBairroProfessor.Text);
-            query.Parameters.AddWithValue("@cidade", txtCidadeProfessor.Text);
-            query.Parameters.AddWithValue("@estado", txtEstadoProfessor.Text);
+                query.Parameters.AddWithValue("nome", txtNomeProfressor.Text);
+                query.Parameters.AddWithValue("@dataNascimento", AdaptarParametros.adaptarDataNascimento(txtNascimentoProfessor.Text));
+                query.Parameters.AddWithValue("@cpf", AdaptarParametros.adaptarCPF(txtCPFProfessor.Text));
+                query.Parameters.AddWithValue("@email", txtEmailProfessor.Text);
+                query.Parameters.AddWithValue("@valorHoraAula", txtValorHoraAula.Text);
+                query.Parameters.AddWithValue("@telefone", AdaptarParametros.adaptarTelefone(txtTelefone.Text));
+                query.Parameters.AddWithValue("@fkDisciplina", comboFormacaoProfessor.SelectedValue.ToString());
+                query.Parameters.AddWithValue("@statusCadastro", 0);
 
-            query.Parameters.AddWithValue("@usuario", txtUsuario.Text);
-            query.Parameters.AddWithValue("@senha", txtSenha.Text);
-            query.Parameters.AddWithValue("@levelPermissao", 1);
-            query.Parameters.AddWithValue("@dataCriacao", Convert.ToDateTime(diaHoraAtual));
+                query.Parameters.AddWithValue("@cep", AdaptarParametros.adaptarCEP(txtCEPProfessor.Text));
+                query.Parameters.AddWithValue("@rua", txtRua.Text);
+                query.Parameters.AddWithValue("@numero", txtNumProfessor.Text);
+                query.Parameters.AddWithValue("@bairro", txtBairroProfessor.Text);
+                query.Parameters.AddWithValue("@cidade", txtCidadeProfessor.Text);
+                query.Parameters.AddWithValue("@estado", txtEstadoProfessor.Text);
 
-            query.CommandText = "INSERT INTO professor (nome, cpf, dataNascimento, telefone, email, valorHoraAula, statusCadastro, fkDisciplina) VALUES (@nome, @cpf, @dataNascimento, @telefone, @email, @valorHoraAula, @statusCadastro, @fkDisciplina)"; 
-            query.ExecuteNonQuery();
+                query.Parameters.AddWithValue("@usuario", txtUsuario.Text);
+                query.Parameters.AddWithValue("@senha", txtSenha.Text);
+                query.Parameters.AddWithValue("@levelPermissao", 1);
+                query.Parameters.AddWithValue("@dataCriacao", Convert.ToDateTime(diaHoraAtual));
 
-            query.CommandText = "SELECT pkProfessor FROM professor WHERE cpf = '" + AdaptarParametros.adaptarCPF(txtCPFProfessor.Text) + "'";
-            DataTable tabela = new DataTable();
-            SqlDataAdapter adaptador = new SqlDataAdapter(query);
-            adaptador.Fill(tabela);
-            query.ExecuteNonQuery();
+                query.CommandText = "INSERT INTO professor (nome, cpf, dataNascimento, telefone, email, valorHoraAula, statusCadastro, fkDisciplina) VALUES (@nome, @cpf, @dataNascimento, @telefone, @email, @valorHoraAula, @statusCadastro, @fkDisciplina)";
+                query.ExecuteNonQuery();
 
-            int pkProfesor = Convert.ToInt32(tabela.Rows[0]["pkProfessor"].ToString());
-            query.Parameters.AddWithValue("@fkProfessor", pkProfesor);
+                query.CommandText = "SELECT pkProfessor FROM professor WHERE cpf = '" + AdaptarParametros.adaptarCPF(txtCPFProfessor.Text) + "'";
+                DataTable tabela = new DataTable();
+                SqlDataAdapter adaptador = new SqlDataAdapter(query);
+                adaptador.Fill(tabela);
+                query.ExecuteNonQuery();
 
-            query.CommandText = "INSERT INTO endereco (cep, rua, numero, bairro, cidade, estado, statusCadastro, fkProfessor) VALUES (@cep, @rua, @numero, @bairro, @cidade, @estado, @statusCadastro, @fkProfessor)";
-            query.ExecuteNonQuery();
+                int pkProfesor = Convert.ToInt32(tabela.Rows[0]["pkProfessor"].ToString());
+                query.Parameters.AddWithValue("@fkProfessor", pkProfesor);
 
-            query.CommandText = "INSERT INTO usuario (usuario, senha, statusCadastro, solicitacaoAprovada, levelPermissao, dataCriacao, fkProfessor) VALUES (@usuario, @senha, @statusCadastro, 1, @levelPermissao, @dataCriacao, @fkProfessor)";
-            query.ExecuteNonQuery();
+                query.CommandText = "INSERT INTO endereco (cep, rua, numero, bairro, cidade, estado, statusCadastro, fkProfessor) VALUES (@cep, @rua, @numero, @bairro, @cidade, @estado, @statusCadastro, @fkProfessor)";
+                query.ExecuteNonQuery();
 
-            conexao.Close();
-            FormCadastroProfessor_Load(null, null);
+                query.CommandText = "INSERT INTO usuario (usuario, senha, statusCadastro, solicitacaoAprovada, levelPermissao, dataCriacao, fkProfessor) VALUES (@usuario, @senha, @statusCadastro, 1, @levelPermissao, @dataCriacao, @fkProfessor)";
+                query.ExecuteNonQuery();
+
+                conexao.Close();
+                FormCadastroProfessor_Load(null, null);
+            }
         }
     }
 }

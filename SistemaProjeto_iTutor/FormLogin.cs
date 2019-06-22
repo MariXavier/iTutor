@@ -107,5 +107,15 @@ namespace SistemaProjeto_iTutor
             txtUsuario.Text = String.Empty;
             txtSenha.Text = String.Empty;
         }
+
+        private void lbPrimeiroAcesso_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+        }
+
+        private void lbPrimeiroAcesso_MouseMove(object sender, MouseEventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
     }
 }

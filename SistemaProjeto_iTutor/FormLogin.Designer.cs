@@ -125,6 +125,8 @@
             this.lbPrimeiroAcesso.TabIndex = 13;
             this.lbPrimeiroAcesso.Text = "Primeiro acesso";
             this.lbPrimeiroAcesso.Click += new System.EventHandler(this.lbPrimeiroAcesso_Click);
+            this.lbPrimeiroAcesso.MouseLeave += new System.EventHandler(this.lbPrimeiroAcesso_MouseLeave);
+            this.lbPrimeiroAcesso.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lbPrimeiroAcesso_MouseMove);
             // 
             // label6
             // 
