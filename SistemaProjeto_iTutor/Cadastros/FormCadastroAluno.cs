@@ -258,28 +258,36 @@ namespace SistemaProjeto_iTutor.Cadastros
                 query.Parameters.AddWithValue("@dataCriacao", Convert.ToDateTime(diaHoraAtual));
                 query.Parameters.AddWithValue("@solicitacaoAprovada", 1);
 
-                query.CommandText = "INSERT INTO aluno (nome, dataNascimento, cpf, statusCadastro, telefone) values (@nome, @dataNascimento, @cpf, @statusCadastro, @telefone)";
-                query.ExecuteNonQuery();
+                query.CommandText = "IF NOT EXISTS (SELECT cpf FROM aluno WHERE cpf = @cpf) INSERT INTO aluno (nome, dataNascimento, cpf, statusCadastro, telefone) values (@nome, @dataNascimento, @cpf, @statusCadastro, @telefone)";
 
-                query.CommandText = "SELECT pkAluno FROM aluno WHERE cpf = '" + AdaptarParametros.adaptarCPF(txtCPF.Text) + "'";
-                DataTable tabela = new DataTable();
-                SqlDataAdapter adaptador = new SqlDataAdapter(query);
-                adaptador.Fill(tabela);
-                query.ExecuteNonQuery();
+                int linhasAfetadas = query.ExecuteNonQuery();
+                if(linhasAfetadas > 0)
+                {
+                    query.CommandText = "SELECT pkAluno FROM aluno WHERE cpf = '" + AdaptarParametros.adaptarCPF(txtCPF.Text) + "'";
+                    DataTable tabela = new DataTable();
+                    SqlDataAdapter adaptador = new SqlDataAdapter(query);
+                    adaptador.Fill(tabela);
+                    query.ExecuteNonQuery();
 
-                int pkAluno = Convert.ToInt32(tabela.Rows[0]["pkAluno"].ToString());
-                query.Parameters.AddWithValue("@fkProfessor", DBNull.Value);
-                query.Parameters.AddWithValue("@fkAluno", pkAluno);
+                    int pkAluno = Convert.ToInt32(tabela.Rows[0]["pkAluno"].ToString());
+                    query.Parameters.AddWithValue("@fkProfessor", DBNull.Value);
+                    query.Parameters.AddWithValue("@fkAluno", pkAluno);
 
-                query.CommandText = "INSERT INTO endereco (cep, rua, numero, bairro, cidade, estado, statusCadastro, fkAluno, fkProfessor) VALUES (@cep, @rua, @numero, @bairro, @cidade, @estado, @statusCadastro, @fkAluno, @fkProfessor)";
-                query.ExecuteNonQuery();
+                    query.CommandText = "INSERT INTO endereco (cep, rua, numero, bairro, cidade, estado, statusCadastro, fkAluno, fkProfessor) VALUES (@cep, @rua, @numero, @bairro, @cidade, @estado, @statusCadastro, @fkAluno, @fkProfessor)";
+                    query.ExecuteNonQuery();
 
-                query.Parameters.AddWithValue("@levelPermissao", 2);
-                query.CommandText = "INSERT INTO usuario (usuario, senha, levelPermissao, dataCriacao, solicitacaoAprovada, statusCadastro,fkAluno, fkProfessor) VALUES (@usuario, @senha, @levelPermissao, @dataCriacao, @solicitacaoAprovada, @statusCadastro,@fkAluno, @fkProfessor)";
-                query.ExecuteNonQuery();
+                    query.Parameters.AddWithValue("@levelPermissao", 2);
+                    query.CommandText = "INSERT INTO usuario (usuario, senha, levelPermissao, dataCriacao, solicitacaoAprovada, statusCadastro,fkAluno, fkProfessor) VALUES (@usuario, @senha, @levelPermissao, @dataCriacao, @solicitacaoAprovada, @statusCadastro,@fkAluno, @fkProfessor)";
+                    query.ExecuteNonQuery();
 
-                FormCadastroAluno_Load(null, null);
-                conexao.Close();
+                    FormCadastroAluno_Load(null, null);
+                    conexao.Close();
+                    MessageBox.Show("Registro cadastrado com sucesso");
+                }
+                else
+                {
+                    MessageBox.Show("Já existe um registro com esse CPF");
+                }
             }
         }
 	}
