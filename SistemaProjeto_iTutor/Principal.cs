@@ -90,7 +90,7 @@ namespace SistemaProjeto_iTutor
             barrinhaLateral.Height = btnGerenciarCadastros.Height;
             barrinhaLateral.Top = btnGerenciarCadastros.Top;
 
-            MessageBox.Show(Autenticacao.levelPermissao.ToString());
+            
             if (Autenticacao.levelPermissao == 0)
             {
 				AbrirFormNoPanel<FormGerenciar>();
