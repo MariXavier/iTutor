@@ -108,23 +108,35 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relatorios\FormAbaCubo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\FormAbaCubo.Designer.cs">
+      <DependentUpon>FormAbaCubo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\FormAbaFiltros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\FormAbaFiltros.Designer.cs">
+      <DependentUpon>FormAbaFiltros.cs</DependentUpon>
+    </Compile>
     <Compile Include="Relatorios\FormRelatorio.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Relatorios\FormRelatorio.Designer.cs">
       <DependentUpon>FormRelatorio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Relatorios\FormRelatorios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\FormRelatorios.Designer.cs">
+      <DependentUpon>FormRelatorios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilitarios\FormGerenciar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Utilitarios\FormGerenciar.Designer.cs">
       <DependentUpon>FormGerenciar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Utilitarios\FormRelatorios.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Utilitarios\FormRelatorios.Designer.cs">
-      <DependentUpon>FormRelatorios.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilitarios\FormUtilitarios.cs">
       <SubType>Form</SubType>
@@ -166,14 +178,20 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Relatorios\FormAbaCubo.resx">
+      <DependentUpon>FormAbaCubo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\FormAbaFiltros.resx">
+      <DependentUpon>FormAbaFiltros.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\FormRelatorio.resx">
       <DependentUpon>FormRelatorio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\FormRelatorios.resx">
+      <DependentUpon>FormRelatorios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Utilitarios\FormGerenciar.resx">
       <DependentUpon>FormGerenciar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Utilitarios\FormRelatorios.resx">
-      <DependentUpon>FormRelatorios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Utilitarios\FormUtilitarios.resx">
       <DependentUpon>FormUtilitarios.cs</DependentUpon>

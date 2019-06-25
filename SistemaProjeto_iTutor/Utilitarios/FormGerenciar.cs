@@ -19,6 +19,7 @@ namespace SistemaProjeto_iTutor.Utilitarios
 			InitializeComponent();
 		}
 		string pkUser;
+		
 
 		private void FormGerenciar_Load(object sender, EventArgs e)
 		{

@@ -1,6 +1,7 @@
 ﻿using SistemaProjeto_iTutor.Cadastros;
 using SistemaProjeto_iTutor.Classes;
 using SistemaProjeto_iTutor.Utilitarios;
+using SistemaProjeto_iTutor.Relatorios;
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
@@ -105,10 +106,12 @@ namespace SistemaProjeto_iTutor
 
         private void btnRelatorio_Click(object sender, EventArgs e)
         {
-            barrinhaLateral.Visible = true;
-            barrinhaLateral.Height = btnRelatorio.Height;
-            barrinhaLateral.Top = btnRelatorio.Top;
-        }
+			AbrirFormNoPanel<FormRelatorios>();
+
+			barrinhaLateral.Visible = true;
+			barrinhaLateral.Height = btnRelatorio.Height;
+			barrinhaLateral.Top = btnRelatorio.Top;
+		}
 
         private void btnAgendarAulas_Click(object sender, EventArgs e)
         {
@@ -116,5 +119,5 @@ namespace SistemaProjeto_iTutor
             barrinhaLateral.Height = btnAgendarAulas.Height;
             barrinhaLateral.Top = btnAgendarAulas.Top;
         }
-    }
+	}
 }

@@ -8,13 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SistemaProjeto_iTutor.Utilitarios
+namespace SistemaProjeto_iTutor.Relatorios
 {
-    public partial class FormRelatorios : Form
-    {
-        public FormRelatorios()
-        {
-            InitializeComponent();
-        }
-    }
+	public partial class FormAbaCubo : Form
+	{
+		public FormAbaCubo()
+		{
+			InitializeComponent();
+		}
+	}
 }
