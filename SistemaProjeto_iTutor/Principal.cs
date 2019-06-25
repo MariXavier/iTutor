@@ -119,5 +119,38 @@ namespace SistemaProjeto_iTutor
             barrinhaLateral.Height = btnAgendarAulas.Height;
             barrinhaLateral.Top = btnAgendarAulas.Top;
         }
-	}
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+            if(Autenticacao.levelPermissao == 0) //Admin
+            {
+                btnAlunos.Visible = true;
+                btnAgendarAulas.Visible = true;
+                btnCadastrarProfessor.Visible = true;
+                btnGerenciarCadastros.Visible = true;
+                btnRelatorio.Visible = true;
+            }
+            else if(Autenticacao.levelPermissao == 1) //professor
+            {
+                btnAlunos.Visible = false;
+                btnAgendarAulas.Visible = true;
+                btnCadastrarProfessor.Visible = true;
+                btnGerenciarCadastros.Visible = false;
+                btnRelatorio.Visible = true;
+
+                btnAgendarAulas.Location = new Point(0, 83);
+                btnCadastrarProfessor.Location = new Point(0, 116);
+                btnRelatorio.Location = new Point(0, 148);
+            }
+            else if (Autenticacao.levelPermissao == 2) //aluno
+            {
+                btnAlunos.Visible = true;
+                btnAgendarAulas.Visible = true;
+                btnCadastrarProfessor.Visible = false;
+                btnGerenciarCadastros.Visible = false;
+                btnRelatorio.Visible = false;
+
+            }
+        }
+    }
 }

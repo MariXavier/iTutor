@@ -45,11 +45,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 29F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 29F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label1.Location = new System.Drawing.Point(32, 54);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 48);
+            this.label1.Size = new System.Drawing.Size(127, 44);
             this.label1.TabIndex = 0;
             this.label1.Text = "iTutor";
             // 
@@ -104,7 +104,7 @@
             this.btnEntrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(4)))), ((int)(((byte)(80)))));
             this.btnEntrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(4)))), ((int)(((byte)(80)))));
             this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEntrar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEntrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEntrar.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnEntrar.Location = new System.Drawing.Point(162, 302);
             this.btnEntrar.Name = "btnEntrar";
@@ -164,7 +164,7 @@
             this.lbFechar.AutoSize = true;
             this.lbFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFechar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbFechar.Location = new System.Drawing.Point(249, 9);
+            this.lbFechar.Location = new System.Drawing.Point(269, 9);
             this.lbFechar.Name = "lbFechar";
             this.lbFechar.Size = new System.Drawing.Size(19, 18);
             this.lbFechar.TabIndex = 16;
