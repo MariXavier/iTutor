@@ -29,11 +29,12 @@
 		private void InitializeComponent()
 		{
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.rbnFinanceiro = new System.Windows.Forms.RadioButton();
+			this.rbnProfessores = new System.Windows.Forms.RadioButton();
+			this.rbnAlunos = new System.Windows.Forms.RadioButton();
+			this.rbnAulas = new System.Windows.Forms.RadioButton();
 			this.tabCubo = new System.Windows.Forms.TabPage();
-			this.button1 = new System.Windows.Forms.Button();
-			this.btnAlterar = new System.Windows.Forms.Button();
-			this.button2 = new System.Windows.Forms.Button();
-			this.btnExcluir = new System.Windows.Forms.Button();
+			this.btnSalvar = new System.Windows.Forms.Button();
 			this.dgvCubo = new System.Windows.Forms.DataGridView();
 			this.tabFiltro = new System.Windows.Forms.TabPage();
 			this.label2 = new System.Windows.Forms.Label();
@@ -43,10 +44,6 @@
 			this.btnGerarCubo = new System.Windows.Forms.Button();
 			this.btnLimpar = new System.Windows.Forms.Button();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
-			this.rbnAulas = new System.Windows.Forms.RadioButton();
-			this.rbnAlunos = new System.Windows.Forms.RadioButton();
-			this.rbnProfessores = new System.Windows.Forms.RadioButton();
-			this.rbnFinanceiro = new System.Windows.Forms.RadioButton();
 			this.groupBox1.SuspendLayout();
 			this.tabCubo.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvCubo)).BeginInit();
@@ -63,92 +60,88 @@
 			this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.groupBox1.Location = new System.Drawing.Point(12, 12);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(253, 387);
+			this.groupBox1.Size = new System.Drawing.Size(215, 396);
 			this.groupBox1.TabIndex = 1;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Consulta";
 			// 
+			// rbnFinanceiro
+			// 
+			this.rbnFinanceiro.AutoSize = true;
+			this.rbnFinanceiro.Location = new System.Drawing.Point(7, 117);
+			this.rbnFinanceiro.Name = "rbnFinanceiro";
+			this.rbnFinanceiro.Size = new System.Drawing.Size(92, 21);
+			this.rbnFinanceiro.TabIndex = 3;
+			this.rbnFinanceiro.TabStop = true;
+			this.rbnFinanceiro.Text = "Financeiro";
+			this.rbnFinanceiro.UseVisualStyleBackColor = true;
+			// 
+			// rbnProfessores
+			// 
+			this.rbnProfessores.AutoSize = true;
+			this.rbnProfessores.Location = new System.Drawing.Point(7, 90);
+			this.rbnProfessores.Name = "rbnProfessores";
+			this.rbnProfessores.Size = new System.Drawing.Size(186, 21);
+			this.rbnProfessores.TabIndex = 2;
+			this.rbnProfessores.TabStop = true;
+			this.rbnProfessores.Text = "Professores Cadastrados";
+			this.rbnProfessores.UseVisualStyleBackColor = true;
+			// 
+			// rbnAlunos
+			// 
+			this.rbnAlunos.AutoSize = true;
+			this.rbnAlunos.Location = new System.Drawing.Point(6, 63);
+			this.rbnAlunos.Name = "rbnAlunos";
+			this.rbnAlunos.Size = new System.Drawing.Size(153, 21);
+			this.rbnAlunos.TabIndex = 1;
+			this.rbnAlunos.TabStop = true;
+			this.rbnAlunos.Text = "Alunos Cadastrados";
+			this.rbnAlunos.UseVisualStyleBackColor = true;
+			// 
+			// rbnAulas
+			// 
+			this.rbnAulas.AutoSize = true;
+			this.rbnAulas.Location = new System.Drawing.Point(7, 36);
+			this.rbnAulas.Name = "rbnAulas";
+			this.rbnAulas.Size = new System.Drawing.Size(142, 21);
+			this.rbnAulas.TabIndex = 0;
+			this.rbnAulas.TabStop = true;
+			this.rbnAulas.Text = "Relatório de Aulas";
+			this.rbnAulas.UseVisualStyleBackColor = true;
+			// 
 			// tabCubo
 			// 
-			this.tabCubo.Controls.Add(this.button1);
-			this.tabCubo.Controls.Add(this.btnAlterar);
-			this.tabCubo.Controls.Add(this.button2);
-			this.tabCubo.Controls.Add(this.btnExcluir);
+			this.tabCubo.Controls.Add(this.btnSalvar);
 			this.tabCubo.Controls.Add(this.dgvCubo);
 			this.tabCubo.Location = new System.Drawing.Point(4, 22);
 			this.tabCubo.Name = "tabCubo";
 			this.tabCubo.Padding = new System.Windows.Forms.Padding(3);
-			this.tabCubo.Size = new System.Drawing.Size(475, 361);
+			this.tabCubo.Size = new System.Drawing.Size(537, 374);
 			this.tabCubo.TabIndex = 1;
 			this.tabCubo.Text = "Cubo";
 			this.tabCubo.UseVisualStyleBackColor = true;
 			// 
-			// button1
+			// btnSalvar
 			// 
-			this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(204)))), ((int)(((byte)(108)))));
-			this.button1.FlatAppearance.BorderSize = 0;
-			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.button1.Location = new System.Drawing.Point(137, 316);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(78, 34);
-			this.button1.TabIndex = 17;
-			this.button1.Text = "Salvar";
-			this.button1.UseVisualStyleBackColor = false;
-			// 
-			// btnAlterar
-			// 
-			this.btnAlterar.BackColor = System.Drawing.Color.PaleVioletRed;
-			this.btnAlterar.FlatAppearance.BorderSize = 0;
-			this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnAlterar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnAlterar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.btnAlterar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnAlterar.Location = new System.Drawing.Point(221, 316);
-			this.btnAlterar.Name = "btnAlterar";
-			this.btnAlterar.Size = new System.Drawing.Size(78, 34);
-			this.btnAlterar.TabIndex = 18;
-			this.btnAlterar.Text = "Alterar";
-			this.btnAlterar.UseVisualStyleBackColor = false;
-			// 
-			// button2
-			// 
-			this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(131)))), ((int)(((byte)(194)))));
-			this.button2.FlatAppearance.BorderSize = 0;
-			this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.button2.Location = new System.Drawing.Point(305, 316);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(78, 34);
-			this.button2.TabIndex = 19;
-			this.button2.Text = "Limpar";
-			this.button2.UseVisualStyleBackColor = false;
-			// 
-			// btnExcluir
-			// 
-			this.btnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(44)))), ((int)(((byte)(23)))));
-			this.btnExcluir.FlatAppearance.BorderSize = 0;
-			this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnExcluir.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnExcluir.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnExcluir.Location = new System.Drawing.Point(389, 316);
-			this.btnExcluir.Name = "btnExcluir";
-			this.btnExcluir.Size = new System.Drawing.Size(78, 34);
-			this.btnExcluir.TabIndex = 20;
-			this.btnExcluir.Text = "Excluir";
-			this.btnExcluir.UseVisualStyleBackColor = false;
+			this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(204)))), ((int)(((byte)(108)))));
+			this.btnSalvar.FlatAppearance.BorderSize = 0;
+			this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnSalvar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnSalvar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+			this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnSalvar.Location = new System.Drawing.Point(402, 334);
+			this.btnSalvar.Name = "btnSalvar";
+			this.btnSalvar.Size = new System.Drawing.Size(129, 34);
+			this.btnSalvar.TabIndex = 17;
+			this.btnSalvar.Text = "Salvar em PDF";
+			this.btnSalvar.UseVisualStyleBackColor = false;
 			// 
 			// dgvCubo
 			// 
 			this.dgvCubo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvCubo.Location = new System.Drawing.Point(6, 19);
 			this.dgvCubo.Name = "dgvCubo";
-			this.dgvCubo.Size = new System.Drawing.Size(463, 271);
+			this.dgvCubo.Size = new System.Drawing.Size(525, 309);
 			this.dgvCubo.TabIndex = 1;
 			// 
 			// tabFiltro
@@ -162,7 +155,7 @@
 			this.tabFiltro.Location = new System.Drawing.Point(4, 22);
 			this.tabFiltro.Name = "tabFiltro";
 			this.tabFiltro.Padding = new System.Windows.Forms.Padding(3);
-			this.tabFiltro.Size = new System.Drawing.Size(475, 361);
+			this.tabFiltro.Size = new System.Drawing.Size(537, 374);
 			this.tabFiltro.TabIndex = 0;
 			this.tabFiltro.Text = "Filtros";
 			this.tabFiltro.UseVisualStyleBackColor = true;
@@ -238,55 +231,11 @@
 			// 
 			this.tabControl1.Controls.Add(this.tabFiltro);
 			this.tabControl1.Controls.Add(this.tabCubo);
-			this.tabControl1.Location = new System.Drawing.Point(271, 12);
+			this.tabControl1.Location = new System.Drawing.Point(233, 12);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(483, 387);
+			this.tabControl1.Size = new System.Drawing.Size(545, 400);
 			this.tabControl1.TabIndex = 2;
-			// 
-			// rbnAulas
-			// 
-			this.rbnAulas.AutoSize = true;
-			this.rbnAulas.Location = new System.Drawing.Point(7, 36);
-			this.rbnAulas.Name = "rbnAulas";
-			this.rbnAulas.Size = new System.Drawing.Size(142, 21);
-			this.rbnAulas.TabIndex = 0;
-			this.rbnAulas.TabStop = true;
-			this.rbnAulas.Text = "Relatório de Aulas";
-			this.rbnAulas.UseVisualStyleBackColor = true;
-			// 
-			// rbnAlunos
-			// 
-			this.rbnAlunos.AutoSize = true;
-			this.rbnAlunos.Location = new System.Drawing.Point(6, 63);
-			this.rbnAlunos.Name = "rbnAlunos";
-			this.rbnAlunos.Size = new System.Drawing.Size(153, 21);
-			this.rbnAlunos.TabIndex = 1;
-			this.rbnAlunos.TabStop = true;
-			this.rbnAlunos.Text = "Alunos Cadastrados";
-			this.rbnAlunos.UseVisualStyleBackColor = true;
-			// 
-			// rbnProfessores
-			// 
-			this.rbnProfessores.AutoSize = true;
-			this.rbnProfessores.Location = new System.Drawing.Point(7, 90);
-			this.rbnProfessores.Name = "rbnProfessores";
-			this.rbnProfessores.Size = new System.Drawing.Size(186, 21);
-			this.rbnProfessores.TabIndex = 2;
-			this.rbnProfessores.TabStop = true;
-			this.rbnProfessores.Text = "Professores Cadastrados";
-			this.rbnProfessores.UseVisualStyleBackColor = true;
-			// 
-			// rbnFinanceiro
-			// 
-			this.rbnFinanceiro.AutoSize = true;
-			this.rbnFinanceiro.Location = new System.Drawing.Point(7, 117);
-			this.rbnFinanceiro.Name = "rbnFinanceiro";
-			this.rbnFinanceiro.Size = new System.Drawing.Size(92, 21);
-			this.rbnFinanceiro.TabIndex = 3;
-			this.rbnFinanceiro.TabStop = true;
-			this.rbnFinanceiro.Text = "Financeiro";
-			this.rbnFinanceiro.UseVisualStyleBackColor = true;
 			// 
 			// FormRelatorios
 			// 
@@ -322,10 +271,7 @@
 		private System.Windows.Forms.Button btnGerarCubo;
 		private System.Windows.Forms.Button btnLimpar;
 		private System.Windows.Forms.DataGridView dgvCubo;
-		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.Button btnAlterar;
-		private System.Windows.Forms.Button button2;
-		private System.Windows.Forms.Button btnExcluir;
+		private System.Windows.Forms.Button btnSalvar;
 		private System.Windows.Forms.RadioButton rbnFinanceiro;
 		private System.Windows.Forms.RadioButton rbnProfessores;
 		private System.Windows.Forms.RadioButton rbnAlunos;
