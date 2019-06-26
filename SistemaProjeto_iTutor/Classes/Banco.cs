@@ -13,8 +13,10 @@ namespace SistemaProjeto_iTutor.Classes
 
             //return "server=DESKTOP-EBQVT0A\\SQLEXPRESS;database=iTutor;UID=sa;password=123456";
             return "server=LAPTOP-RRGSDFI2\\SQLEXPRESS;database=iTutor;UID=sa;password=123456";
-            //return "server=DESKTOP-O714ESL\\SQLEXPRESS;database=sandBox;UID=sa;password=123456";
-            //return "server=SENAC\\SQLEXPRESS; database=iTutor;UID=sa;password=123456";
-        }
+			//return "server=DESKTOP-O714ESL\\SQLEXPRESS;database=sandBox;UID=sa;password=123456";
+			//return "server=SENAC\\SQLEXPRESS; database=iTutor;UID=sa;password=123456";
+			//return "itutordb.cyvkzho0k0lr.sa-east-1.rds.amazonaws.com,1433; database=itutorDB;UID=itutor123;password=iTutor_123$senac";
+
+		}
     }
 }
