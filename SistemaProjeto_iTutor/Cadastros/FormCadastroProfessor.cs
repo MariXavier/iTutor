@@ -22,6 +22,7 @@ namespace SistemaProjeto_iTutor.Cadastros
         int pkProfessor = Autenticacao.pkProfessorLogado;
         int pkProfessorSelecionado = 0;
 
+
         private void tabPage1_Click(object sender, EventArgs e)
         {
 
@@ -140,7 +141,7 @@ namespace SistemaProjeto_iTutor.Cadastros
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            ValidarCampos.VerificarConsistencia(txtNomeProfressor.Text, AdaptarParametros.adaptarCPF(txtCPFProfessor.Text), txtNascimentoProfessor.MaskCompleted ? txtNascimentoProfessor.Text : String.Empty, AdaptarParametros.adaptarCEP(txtCEPProfessor.Text), AdaptarParametros.adaptarTelefone(txtTelefone.Text), txtRua.Text, txtNumProfessor.Text, txtBairroProfessor.Text, txtCidadeProfessor.Text, txtEstadoProfessor.Text, txtUsuario.Text, txtSenha.Text, comboFormacaoProfessor.SelectedIndex, txtValorHoraAula.Text);
+            ValidarCampos.VerificarConsistencia(txtNomeProfressor.Text, AdaptarParametros.adaptarCPF(txtCPFProfessor.Text), txtNascimentoProfessor.MaskCompleted ? txtNascimentoProfessor.Text : String.Empty, AdaptarParametros.adaptarCEP(txtCEPProfessor.Text), AdaptarParametros.adaptarTelefone(txtTelefone.Text), txtRua.Text, txtNumProfessor.Text, txtBairroProfessor.Text, txtCidadeProfessor.Text, txtEstadoProfessor.Text, txtUsuario.Text, txtSenha.Text, comboFormacaoProfessor.SelectedIndex, txtValorHoraAula.Text, pkProfessorSelecionado);
 
             if(ValidarCampos.camposIncompletos) { MessageBox.Show(ValidarCampos.respostaFinal); }
             else
@@ -203,7 +204,7 @@ namespace SistemaProjeto_iTutor.Cadastros
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            ValidarCampos.VerificarConsistencia(txtNomeProfressor.Text, AdaptarParametros.adaptarCPF(txtCPFProfessor.Text), txtNascimentoProfessor.MaskCompleted ? txtNascimentoProfessor.Text : String.Empty, AdaptarParametros.adaptarCEP(txtCEPProfessor.Text), AdaptarParametros.adaptarTelefone(txtTelefone.Text), txtRua.Text, txtNumProfessor.Text, txtBairroProfessor.Text, txtCidadeProfessor.Text, txtEstadoProfessor.Text, txtUsuario.Text, txtSenha.Text, comboFormacaoProfessor.SelectedIndex, txtValorHoraAula.Text);
+            ValidarCampos.VerificarConsistencia(txtNomeProfressor.Text, AdaptarParametros.adaptarCPF(txtCPFProfessor.Text), txtNascimentoProfessor.MaskCompleted ? txtNascimentoProfessor.Text : String.Empty, AdaptarParametros.adaptarCEP(txtCEPProfessor.Text), AdaptarParametros.adaptarTelefone(txtTelefone.Text), txtRua.Text, txtNumProfessor.Text, txtBairroProfessor.Text, txtCidadeProfessor.Text, txtEstadoProfessor.Text, txtUsuario.Text, txtSenha.Text, comboFormacaoProfessor.SelectedIndex, txtValorHoraAula.Text, pkProfessorSelecionado);
 
             if (ValidarCampos.camposIncompletos)
             {
