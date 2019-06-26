@@ -83,7 +83,7 @@
 			this.btnSalvar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnSalvar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
 			this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnSalvar.Location = new System.Drawing.Point(481, 320);
+			this.btnSalvar.Location = new System.Drawing.Point(445, 295);
 			this.btnSalvar.Name = "btnSalvar";
 			this.btnSalvar.Size = new System.Drawing.Size(93, 34);
 			this.btnSalvar.TabIndex = 155;
@@ -99,7 +99,7 @@
 			this.btnAlterar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnAlterar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
 			this.btnAlterar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnAlterar.Location = new System.Drawing.Point(581, 320);
+			this.btnAlterar.Location = new System.Drawing.Point(545, 295);
 			this.btnAlterar.Name = "btnAlterar";
 			this.btnAlterar.Size = new System.Drawing.Size(78, 34);
 			this.btnAlterar.TabIndex = 156;
@@ -115,7 +115,7 @@
 			this.btnLimpar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnLimpar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
 			this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnLimpar.Location = new System.Drawing.Point(665, 320);
+			this.btnLimpar.Location = new System.Drawing.Point(629, 295);
 			this.btnLimpar.Name = "btnLimpar";
 			this.btnLimpar.Size = new System.Drawing.Size(78, 34);
 			this.btnLimpar.TabIndex = 157;
@@ -258,7 +258,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(755, 366);
+			this.ClientSize = new System.Drawing.Size(765, 388);
 			this.ControlBox = false;
 			this.Controls.Add(this.dgvUsuarios);
 			this.Controls.Add(this.groupBox1);
@@ -272,7 +272,9 @@
 			this.Controls.Add(this.label8);
 			this.Controls.Add(this.txtUser);
 			this.Controls.Add(this.label1);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "FormUtilitarios";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Utilitários";
 			((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
 			this.groupPerfil.ResumeLayout(false);

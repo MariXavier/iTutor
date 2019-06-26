@@ -87,21 +87,12 @@ namespace SistemaProjeto_iTutor
 
         private void BtnGerenciarCadastros_Click(object sender, EventArgs e)
         {
-            barrinhaLateral.Visible = true;
+			AbrirFormNoPanel<FormGerenciar>();
+
+			barrinhaLateral.Visible = true;
             barrinhaLateral.Height = btnGerenciarCadastros.Height;
             barrinhaLateral.Top = btnGerenciarCadastros.Top;
 
-            
-            if (Autenticacao.levelPermissao == 0)
-            {
-				AbrirFormNoPanel<FormGerenciar>();
-				//FormUtilitarios formUtilitarios = new FormUtilitarios();
-				//formUtilitarios.ShowDialog();
-			}
-            else
-            {
-                MessageBox.Show("Usuário sem permissão", "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
         private void btnRelatorio_Click(object sender, EventArgs e)
@@ -115,7 +106,9 @@ namespace SistemaProjeto_iTutor
 
         private void btnAgendarAulas_Click(object sender, EventArgs e)
         {
-            barrinhaLateral.Visible = true;
+			AbrirFormNoPanel<FormCadastroAula>();
+
+			barrinhaLateral.Visible = true;
             barrinhaLateral.Height = btnAgendarAulas.Height;
             barrinhaLateral.Top = btnAgendarAulas.Top;
         }

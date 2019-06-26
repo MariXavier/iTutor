@@ -54,7 +54,7 @@
 			// 
 			this.groupBox1.Controls.Add(this.rbnInativo);
 			this.groupBox1.Controls.Add(this.rbnAtivo);
-			this.groupBox1.Location = new System.Drawing.Point(629, 89);
+			this.groupBox1.Location = new System.Drawing.Point(632, 74);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Size = new System.Drawing.Size(134, 48);
 			this.groupBox1.TabIndex = 191;
@@ -86,7 +86,7 @@
 			// txtData
 			// 
 			this.txtData.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtData.Location = new System.Drawing.Point(462, 108);
+			this.txtData.Location = new System.Drawing.Point(465, 93);
 			this.txtData.Mask = "00/00/0000";
 			this.txtData.Name = "txtData";
 			this.txtData.ReadOnly = true;
@@ -99,7 +99,7 @@
 			this.groupPerfil.Controls.Add(this.rbnAdministrador);
 			this.groupPerfil.Controls.Add(this.rbnProfessor);
 			this.groupPerfil.Controls.Add(this.rbnAluno);
-			this.groupPerfil.Location = new System.Drawing.Point(462, 159);
+			this.groupPerfil.Location = new System.Drawing.Point(465, 144);
 			this.groupPerfil.Name = "groupPerfil";
 			this.groupPerfil.Size = new System.Drawing.Size(301, 48);
 			this.groupPerfil.TabIndex = 189;
@@ -143,7 +143,7 @@
 			// 
 			this.label14.AutoSize = true;
 			this.label14.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label14.Location = new System.Drawing.Point(639, 28);
+			this.label14.Location = new System.Drawing.Point(642, 13);
 			this.label14.Name = "label14";
 			this.label14.Size = new System.Drawing.Size(45, 16);
 			this.label14.TabIndex = 188;
@@ -152,7 +152,7 @@
 			// txtSenha
 			// 
 			this.txtSenha.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtSenha.Location = new System.Drawing.Point(642, 45);
+			this.txtSenha.Location = new System.Drawing.Point(645, 30);
 			this.txtSenha.Name = "txtSenha";
 			this.txtSenha.Size = new System.Drawing.Size(120, 22);
 			this.txtSenha.TabIndex = 182;
@@ -165,7 +165,7 @@
 			this.btnSalvar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnSalvar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
 			this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnSalvar.Location = new System.Drawing.Point(522, 334);
+			this.btnSalvar.Location = new System.Drawing.Point(503, 381);
 			this.btnSalvar.Name = "btnSalvar";
 			this.btnSalvar.Size = new System.Drawing.Size(93, 34);
 			this.btnSalvar.TabIndex = 183;
@@ -181,7 +181,7 @@
 			this.btnAlterar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnAlterar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
 			this.btnAlterar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnAlterar.Location = new System.Drawing.Point(622, 334);
+			this.btnAlterar.Location = new System.Drawing.Point(603, 381);
 			this.btnAlterar.Name = "btnAlterar";
 			this.btnAlterar.Size = new System.Drawing.Size(78, 34);
 			this.btnAlterar.TabIndex = 184;
@@ -197,7 +197,7 @@
 			this.btnLimpar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnLimpar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
 			this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnLimpar.Location = new System.Drawing.Point(706, 334);
+			this.btnLimpar.Location = new System.Drawing.Point(687, 381);
 			this.btnLimpar.Name = "btnLimpar";
 			this.btnLimpar.Size = new System.Drawing.Size(78, 34);
 			this.btnLimpar.TabIndex = 185;
@@ -209,7 +209,7 @@
 			// 
 			this.label8.AutoSize = true;
 			this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label8.Location = new System.Drawing.Point(462, 89);
+			this.label8.Location = new System.Drawing.Point(465, 74);
 			this.label8.Name = "label8";
 			this.label8.Size = new System.Drawing.Size(83, 16);
 			this.label8.TabIndex = 187;
@@ -218,7 +218,7 @@
 			// txtUser
 			// 
 			this.txtUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtUser.Location = new System.Drawing.Point(461, 46);
+			this.txtUser.Location = new System.Drawing.Point(464, 31);
 			this.txtUser.Name = "txtUser";
 			this.txtUser.Size = new System.Drawing.Size(164, 22);
 			this.txtUser.TabIndex = 181;
@@ -227,7 +227,7 @@
 			// 
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(458, 27);
+			this.label1.Location = new System.Drawing.Point(461, 12);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(52, 16);
 			this.label1.TabIndex = 186;
@@ -247,7 +247,7 @@
 			this.dgvUsuarios.ReadOnly = true;
 			this.dgvUsuarios.RowHeadersVisible = false;
 			this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dgvUsuarios.Size = new System.Drawing.Size(427, 356);
+			this.dgvUsuarios.Size = new System.Drawing.Size(433, 403);
 			this.dgvUsuarios.TabIndex = 192;
 			this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvUsuarios_CellClick);
 			// 
@@ -255,7 +255,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 382);
+			this.ClientSize = new System.Drawing.Size(781, 427);
 			this.Controls.Add(this.dgvUsuarios);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.txtData);
@@ -268,6 +268,7 @@
 			this.Controls.Add(this.label8);
 			this.Controls.Add(this.txtUser);
 			this.Controls.Add(this.label1);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "FormGerenciar";
 			this.Text = "Utilitários";
 			this.Load += new System.EventHandler(this.FormGerenciar_Load);
