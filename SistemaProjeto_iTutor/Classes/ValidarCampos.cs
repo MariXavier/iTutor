@@ -17,7 +17,7 @@ namespace SistemaProjeto_iTutor.Classes
         {
             camposIncompletos = false;
             respostaFinal = String.Empty;
-            string resposta = "Os seguintes campos precisam ser peenchidos: ";
+            string resposta = "Os seguintes campos precisam ser preenchidos: ";
 
             if (string.IsNullOrWhiteSpace(nome))
             {
@@ -93,6 +93,22 @@ namespace SistemaProjeto_iTutor.Classes
                 camposIncompletos = true;
                 resposta += "\n - Usuário";
             }
+            else
+            {
+                SqlConnection conexao = new SqlConnection(Banco.enderecoBanco());
+                SqlCommand query = new SqlCommand();
+                query.Connection = conexao;
+                conexao.Open();
+
+                query.CommandText = "SELECT COUNT (usuario) as valor FROM usuario WHERE usuario = @usuario";
+                query.Parameters.AddWithValue("@usuario", usuario);
+                int usuarioJaCadastrado = (int)query.ExecuteScalar();
+                if (usuarioJaCadastrado > 0)
+                {
+                    camposIncompletos = true;
+                    resposta += "\n - Usuário (já existe um cadastro com esse usuário)";
+                }
+            }
 
             if (string.IsNullOrWhiteSpace(senha) || senha.Length == 0)
             {
@@ -130,7 +146,7 @@ namespace SistemaProjeto_iTutor.Classes
         }
 
         //Aluno
-        public static void VerificarConsistencia(string nome, string cpf, string nascimento, string cep, string telefone, string rua, string numero, string bairro, string cidade, string estado, string usuario, string senha)
+        public static void VerificarConsistencia(string nome, string cpf, string nascimento, string cep, string telefone, string rua, string numero, string bairro, string cidade, string estado, string usuario, string senha, int pkAlunoSelecionado)
         {
             camposIncompletos = false;
             respostaFinal = String.Empty;
@@ -209,6 +225,36 @@ namespace SistemaProjeto_iTutor.Classes
             {
                 camposIncompletos = true;
                 resposta += "\n - Usuário";
+            }
+            else
+            {
+                SqlConnection conexao = new SqlConnection(Banco.enderecoBanco());
+                SqlCommand query = new SqlCommand();
+                query.Connection = conexao;
+                conexao.Open();
+                query.CommandText = "SELECT usuario FROM usuario WHERE fkAluno = @pkAlunoSelecionado";
+                query.Parameters.AddWithValue("@pkAlunoSelecionado", pkAlunoSelecionado);
+                query.ExecuteNonQuery();
+                string alunoPreAlteracao = (string)query.ExecuteScalar();
+
+                if (alunoPreAlteracao.Equals(usuario))
+                {
+                    //MessageBox.Show("IGuais. pode prosseguir com o cadastro");
+
+                    //ExecuteNonQuery conta somente as linhas afetadas (insert, update e delete. Não funciona para select pq não modifica linhas)
+                }
+                else
+                {
+                    query.CommandText = "SELECT COUNT (usuario) as valor FROM usuario WHERE usuario = @usuario";
+                    query.Parameters.AddWithValue("@usuario", usuario);
+                    query.ExecuteNonQuery();
+                    int usuarioJaCadastrado = (int)query.ExecuteScalar();
+                    if (usuarioJaCadastrado > 0)
+                    {
+                        camposIncompletos = true;
+                        resposta += "\n - Usuário (já existe um cadastro com esse usuário)";
+                    }
+                }
             }
 
             if (string.IsNullOrWhiteSpace(senha) || senha.Length == 0)
@@ -328,7 +374,6 @@ namespace SistemaProjeto_iTutor.Classes
                     query.Parameters.AddWithValue("@usuario", usuario);
                     query.ExecuteNonQuery();
                     int usuarioJaCadastrado = (int)query.ExecuteScalar();
-                    MessageBox.Show(usuario + "     " + usuarioJaCadastrado.ToString());
                     if (usuarioJaCadastrado > 0)
                     {
                         camposIncompletos = true;

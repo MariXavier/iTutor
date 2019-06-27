@@ -30,8 +30,7 @@ namespace SistemaProjeto_iTutor
 
         private void btnDeptoFinanceiro_Click(object sender, EventArgs e)
         {
-            FormRelatorio formRelatorio = new FormRelatorio();
-            formRelatorio.ShowDialog();
+            
         }
 
         private void btnCadastrarProfessor_Click(object sender, EventArgs e)

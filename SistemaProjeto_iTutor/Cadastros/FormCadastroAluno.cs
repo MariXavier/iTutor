@@ -135,7 +135,7 @@ namespace SistemaProjeto_iTutor.Cadastros
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            ValidarCampos.VerificarConsistencia(txtNomeAluno.Text, AdaptarParametros.adaptarCPF(txtCPF.Text), txtDataNascimento.MaskCompleted ? txtDataNascimento.Text : String.Empty, AdaptarParametros.adaptarCEP(txtCEP.Text), AdaptarParametros.adaptarTelefone(txtTelefone.Text), txtRua.Text, txtNumero.Text, txtBairro.Text, txtCidade.Text, txtEstado.Text, txtUsuario.Text, txtSenha.Text);
+            ValidarCampos.VerificarConsistencia(txtNomeAluno.Text, AdaptarParametros.adaptarCPF(txtCPF.Text), txtDataNascimento.MaskCompleted ? txtDataNascimento.Text : String.Empty, AdaptarParametros.adaptarCEP(txtCEP.Text), AdaptarParametros.adaptarTelefone(txtTelefone.Text), txtRua.Text, txtNumero.Text, txtBairro.Text, txtCidade.Text, txtEstado.Text, txtUsuario.Text, txtSenha.Text, pkAluno);
 
             if(ValidarCampos.camposIncompletos)
             {
@@ -216,7 +216,7 @@ namespace SistemaProjeto_iTutor.Cadastros
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            ValidarCampos.VerificarConsistencia(txtNomeAluno.Text, AdaptarParametros.adaptarCPF(txtCPF.Text), txtDataNascimento.MaskCompleted ? txtDataNascimento.Text : String.Empty, AdaptarParametros.adaptarCEP(txtCEP.Text), AdaptarParametros.adaptarTelefone(txtTelefone.Text), txtRua.Text, txtNumero.Text, txtBairro.Text, txtCidade.Text, txtEstado.Text, txtUsuario.Text, txtSenha.Text);
+            ValidarCampos.VerificarConsistencia(txtNomeAluno.Text, AdaptarParametros.adaptarCPF(txtCPF.Text), txtDataNascimento.MaskCompleted ? txtDataNascimento.Text : String.Empty, AdaptarParametros.adaptarCEP(txtCEP.Text), AdaptarParametros.adaptarTelefone(txtTelefone.Text), txtRua.Text, txtNumero.Text, txtBairro.Text, txtCidade.Text, txtEstado.Text, txtUsuario.Text, txtSenha.Text, pkAluno);
 
             if(ValidarCampos.camposIncompletos)
             {
