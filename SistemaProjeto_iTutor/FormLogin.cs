@@ -117,5 +117,10 @@ namespace SistemaProjeto_iTutor
         {
             this.Cursor = Cursors.Hand;
         }
+
+        private void lbEsqueciSenha_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Recurso indisponível no momento. Por favor entre em contato com um de nossos administradores para efetuar a alteração", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
     }
 }

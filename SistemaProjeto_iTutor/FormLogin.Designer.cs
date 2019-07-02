@@ -35,7 +35,7 @@
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.btnEntrar = new System.Windows.Forms.Button();
             this.lbPrimeiroAcesso = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lbEsqueciSenha = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lbFechar = new System.Windows.Forms.Label();
@@ -128,16 +128,17 @@
             this.lbPrimeiroAcesso.MouseLeave += new System.EventHandler(this.lbPrimeiroAcesso_MouseLeave);
             this.lbPrimeiroAcesso.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lbPrimeiroAcesso_MouseMove);
             // 
-            // label6
+            // lbEsqueciSenha
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(199, 436);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 13);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Esqueci a Senha";
+            this.lbEsqueciSenha.AutoSize = true;
+            this.lbEsqueciSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEsqueciSenha.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lbEsqueciSenha.Location = new System.Drawing.Point(199, 436);
+            this.lbEsqueciSenha.Name = "lbEsqueciSenha";
+            this.lbEsqueciSenha.Size = new System.Drawing.Size(88, 13);
+            this.lbEsqueciSenha.TabIndex = 14;
+            this.lbEsqueciSenha.Text = "Esqueci a Senha";
+            this.lbEsqueciSenha.Click += new System.EventHandler(this.lbEsqueciSenha_Click);
             // 
             // label7
             // 
@@ -179,7 +180,7 @@
             this.ClientSize = new System.Drawing.Size(300, 475);
             this.Controls.Add(this.lbFechar);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lbEsqueciSenha);
             this.Controls.Add(this.lbPrimeiroAcesso);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.btnEntrar);
@@ -211,7 +212,7 @@
 		private System.Windows.Forms.Button btnEntrar;
 		private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label lbPrimeiroAcesso;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbEsqueciSenha;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lbFechar;
     }
