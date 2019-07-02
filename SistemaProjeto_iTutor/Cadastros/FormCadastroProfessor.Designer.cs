@@ -134,7 +134,9 @@
             this.dgvProfessor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProfessor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProfessor.Location = new System.Drawing.Point(23, 34);
+            this.dgvProfessor.MultiSelect = false;
             this.dgvProfessor.Name = "dgvProfessor";
+            this.dgvProfessor.ReadOnly = true;
             this.dgvProfessor.RowHeadersVisible = false;
             this.dgvProfessor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProfessor.Size = new System.Drawing.Size(340, 363);
