@@ -50,8 +50,7 @@ namespace SistemaProjeto_iTutor.Cadastros
                 adaptador.Fill(tabela);
 
                 string pkDisciplina = tabela.Rows[0]["fkDisciplina"].ToString();
-
-                // string sql = "select p.nome, p.cpf, d.nome as disciplina, e.cep, e.rua, e.numero, e.bairro, e.cidade, e.estado, p.email, p.valorHoraAula, p.dataNascimento, p.telefone, u.usuario, u.senha from ((professor as p inner join endereco as e on p."+ pkProfessor + " = e." + pkProfessor + ") inner join disciplina as d on p."+ pkDisciplina + " = d." + pkDisciplina + ") inner join usuario as u on p." + pkProfessor + " = u." + pkProfessor + ";";
+                
                 string sql = "SELECT p.nome, p.cpf, d.nome as disciplina, e.cep, e.rua, e.numero, e.bairro, e.cidade, e.estado, p.email, p.valorHoraAula, p.dataNascimento, p.telefone, u.usuario, u.senha, p.pkProfessor, p.fkDisciplina " +
                     "FROM professor AS p, endereco AS e, usuario AS u, disciplina AS d " +
                     "WHERE p.pkProfessor = " + pkProfessor + " AND e.fkProfessor = " + pkProfessor + " AND u.fkProfessor = " + pkProfessor + " AND d.pkDisciplina = " + pkDisciplina + "; ";
