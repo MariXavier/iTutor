@@ -30,6 +30,7 @@ namespace SistemaProjeto_iTutor.Cadastros
 
         private void FormCadastroProfessor_Load(object sender, EventArgs e)
         {
+            btnSalvar.Visible = false;
             preencherComboBoxDisciplina();
             comboFormacaoProfessor.SelectedIndex = -1; //inicia o combo vazio
 
