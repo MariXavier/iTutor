@@ -29,7 +29,6 @@
 		private void InitializeComponent()
 		{
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.rbnFinanceiro = new System.Windows.Forms.RadioButton();
 			this.rbnProfessores = new System.Windows.Forms.RadioButton();
 			this.rbnAlunos = new System.Windows.Forms.RadioButton();
 			this.rbnAulas = new System.Windows.Forms.RadioButton();
@@ -53,7 +52,6 @@
 			// 
 			// groupBox1
 			// 
-			this.groupBox1.Controls.Add(this.rbnFinanceiro);
 			this.groupBox1.Controls.Add(this.rbnProfessores);
 			this.groupBox1.Controls.Add(this.rbnAlunos);
 			this.groupBox1.Controls.Add(this.rbnAulas);
@@ -64,17 +62,6 @@
 			this.groupBox1.TabIndex = 1;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Consulta";
-			// 
-			// rbnFinanceiro
-			// 
-			this.rbnFinanceiro.AutoSize = true;
-			this.rbnFinanceiro.Location = new System.Drawing.Point(7, 117);
-			this.rbnFinanceiro.Name = "rbnFinanceiro";
-			this.rbnFinanceiro.Size = new System.Drawing.Size(92, 21);
-			this.rbnFinanceiro.TabIndex = 3;
-			this.rbnFinanceiro.TabStop = true;
-			this.rbnFinanceiro.Text = "Financeiro";
-			this.rbnFinanceiro.UseVisualStyleBackColor = true;
 			// 
 			// rbnProfessores
 			// 
@@ -273,7 +260,6 @@
 		private System.Windows.Forms.Button btnLimpar;
 		private System.Windows.Forms.DataGridView dgvCubo;
 		private System.Windows.Forms.Button btnSalvar;
-		private System.Windows.Forms.RadioButton rbnFinanceiro;
 		private System.Windows.Forms.RadioButton rbnProfessores;
 		private System.Windows.Forms.RadioButton rbnAlunos;
 		private System.Windows.Forms.RadioButton rbnAulas;

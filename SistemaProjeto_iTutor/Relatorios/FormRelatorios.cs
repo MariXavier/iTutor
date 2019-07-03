@@ -27,7 +27,6 @@ namespace SistemaProjeto_iTutor.Relatorios
 			if (Autenticacao.levelPermissao == 2) //aluno
 			{
 				rbnProfessores.Visible = false;
-				rbnFinanceiro.Visible = false;
 				rbnAlunos.Visible = false;
 
 				//btnAlterar.Location = new Point(679, 363);
@@ -35,7 +34,6 @@ namespace SistemaProjeto_iTutor.Relatorios
 			}
 			else if (Autenticacao.levelPermissao == 1)
 			{
-				rbnFinanceiro.Visible = false;
 				rbnProfessores.Visible = false;
 
 			}
@@ -122,29 +120,7 @@ namespace SistemaProjeto_iTutor.Relatorios
 						MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					}
 				}
-				else if (rbnFinanceiro.Checked == true)
-				{
-
-					try
-					{
-						string sql = "SELECT a.nome AS 'Nome', a.dataNascimento AS 'Data Nascimento', a.telefone AS 'Telefone', a.statusCadastro, a.email AS 'E-mail', d.nome, a.valorHoraAula, a.dataCadastro, case when statusCadastro = 0 then 'Ativo' else 'Inativo' end as Status FROM professor AS a, disciplina AS d WHERE a.pkProfessor = " + pkProfessor + " AND a.fkdisciplina = d.pkDisciplina AND a.dataCadastro BETWEEN @inicio AND @fim ORDER BY a.dataCadastro;";
-
-						SqlCommand cmd = new SqlCommand(sql);
-						cmd.CommandType = CommandType.Text;
-
-						cmd.Parameters.AddWithValue("@inicio", dtpInicio.Value);
-						cmd.Parameters.AddWithValue("@fim", dtpFim.Value);
-
-						DataTable dt = GetDados(cmd);
-						dgvCubo.DataSource = dt;
-						dgvCubo.Columns[3].Visible = false;
-
-					}
-					catch (Exception ex)
-					{
-						MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-					}
-				}
+				
 			}
 			else
 			{
@@ -223,29 +199,7 @@ namespace SistemaProjeto_iTutor.Relatorios
 						MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					}
 				}
-				else if (rbnFinanceiro.Checked == true)
-				{
-
-					try
-					{
-						string sql = "SELECT a.nome AS 'Nome', a.dataNascimento AS 'Data Nascimento', a.telefone AS 'Telefone', a.statusCadastro, a.email AS 'E-mail', d.nome, a.valorHoraAula, a.dataCadastro, case when statusCadastro = 0 then 'Ativo' else 'Inativo' end as Status FROM professor AS a, disciplina AS d WHERE a.fkdisciplina = d.pkDisciplina AND a.dataCadastro BETWEEN @inicio AND @fim ORDER BY a.dataCadastro;";
-
-						SqlCommand cmd = new SqlCommand(sql);
-						cmd.CommandType = CommandType.Text;
-
-						cmd.Parameters.AddWithValue("@inicio", dtpInicio.Value);
-						cmd.Parameters.AddWithValue("@fim", dtpFim.Value);
-
-						DataTable dt = GetDados(cmd);
-						dgvCubo.DataSource = dt;
-						dgvCubo.Columns[3].Visible = false;
-
-					}
-					catch (Exception ex)
-					{
-						MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-					}
-				}
+				
 			}
 		}
 
