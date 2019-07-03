@@ -30,6 +30,7 @@ namespace SistemaProjeto_iTutor.Cadastros
 
         private void FormCadastroProfessor_Load(object sender, EventArgs e)
         {
+            btnSalvar.Visible = false;
             preencherComboBoxDisciplina();
             comboFormacaoProfessor.SelectedIndex = -1; //inicia o combo vazio
 
@@ -180,6 +181,7 @@ namespace SistemaProjeto_iTutor.Cadastros
 
                 FormCadastroProfessor_Load(null, null);
                 conexao.Close();
+                MessageBox.Show("Cadastro alterado com sucesso");
             }
         }
 
@@ -199,6 +201,7 @@ namespace SistemaProjeto_iTutor.Cadastros
 
             conexao.Close();
             FormCadastroProfessor_Load(null, null);
+            MessageBox.Show("Cadastro removido com sucesso");
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)

@@ -26,6 +26,7 @@ namespace SistemaProjeto_iTutor.Cadastros
 
         private void FormCadastroAluno_Load(object sender, EventArgs e)
         {
+            btnSalvar.Visible = false;
             if (Autenticacao.levelPermissao == 2) //aluno
             {
                 btnExcluir.Visible = false;
@@ -186,6 +187,7 @@ namespace SistemaProjeto_iTutor.Cadastros
                 query.ExecuteNonQuery();
                 conexao.Close();
                 FormCadastroAluno_Load(null, null);
+                MessageBox.Show("Cadastro alterado com sucesso");
             }
         }
 
