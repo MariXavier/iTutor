@@ -181,6 +181,7 @@ namespace SistemaProjeto_iTutor.Cadastros
 
                 FormCadastroProfessor_Load(null, null);
                 conexao.Close();
+                MessageBox.Show("Cadastro alterado com sucesso");
             }
         }
 
@@ -200,6 +201,7 @@ namespace SistemaProjeto_iTutor.Cadastros
 
             conexao.Close();
             FormCadastroProfessor_Load(null, null);
+            MessageBox.Show("Cadastro removido com sucesso");
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)

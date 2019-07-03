@@ -187,6 +187,7 @@ namespace SistemaProjeto_iTutor.Cadastros
                 query.ExecuteNonQuery();
                 conexao.Close();
                 FormCadastroAluno_Load(null, null);
+                MessageBox.Show("Cadastro alterado com sucesso");
             }
         }
 
