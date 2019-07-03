@@ -29,32 +29,31 @@
         private void InitializeComponent()
         {
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroAula));
-			this.comboEndereço = new System.Windows.Forms.ComboBox();
+			this.comboEndereco = new System.Windows.Forms.ComboBox();
 			this.lblValorTotal = new System.Windows.Forms.Label();
 			this.label14 = new System.Windows.Forms.Label();
 			this.txtObservacao = new System.Windows.Forms.TextBox();
 			this.label13 = new System.Windows.Forms.Label();
-			this.comboStatusAula = new System.Windows.Forms.ComboBox();
+			this.cbStatusAula = new System.Windows.Forms.ComboBox();
 			this.label12 = new System.Windows.Forms.Label();
-			this.comboPagamento = new System.Windows.Forms.ComboBox();
+			this.cbPagamento = new System.Windows.Forms.ComboBox();
 			this.label11 = new System.Windows.Forms.Label();
 			this.txtConteudo = new System.Windows.Forms.TextBox();
 			this.label10 = new System.Windows.Forms.Label();
 			this.label9 = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
 			this.txtTelefone = new System.Windows.Forms.TextBox();
-			this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+			this.dateHoraFinal = new System.Windows.Forms.DateTimePicker();
 			this.label6 = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
-			this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+			this.dateHoraInicial = new System.Windows.Forms.DateTimePicker();
 			this.label5 = new System.Windows.Forms.Label();
-			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+			this.dateDataAula = new System.Windows.Forms.DateTimePicker();
 			this.cbDisciplina = new System.Windows.Forms.ComboBox();
 			this.label4 = new System.Windows.Forms.Label();
 			this.cbProfessor = new System.Windows.Forms.ComboBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
-			this.cbAluno = new System.Windows.Forms.ComboBox();
 			this.lbNovoEndereco = new System.Windows.Forms.Label();
 			this.btnAgendar = new System.Windows.Forms.Button();
 			this.btnAlterar = new System.Windows.Forms.Button();
@@ -62,17 +61,18 @@
 			this.btnExcluir = new System.Windows.Forms.Button();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.dgvAulasAgendadas = new System.Windows.Forms.DataGridView();
+			this.cbAluno = new System.Windows.Forms.ComboBox();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvAulasAgendadas)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// comboEndereço
+			// comboEndereco
 			// 
-			this.comboEndereço.FormattingEnabled = true;
-			this.comboEndereço.Location = new System.Drawing.Point(351, 118);
-			this.comboEndereço.Name = "comboEndereço";
-			this.comboEndereço.Size = new System.Drawing.Size(376, 21);
-			this.comboEndereço.TabIndex = 69;
+			this.comboEndereco.FormattingEnabled = true;
+			this.comboEndereco.Location = new System.Drawing.Point(351, 118);
+			this.comboEndereco.Name = "comboEndereco";
+			this.comboEndereco.Size = new System.Drawing.Size(376, 21);
+			this.comboEndereco.TabIndex = 69;
 			// 
 			// lblValorTotal
 			// 
@@ -113,15 +113,14 @@
 			this.label13.TabIndex = 63;
 			this.label13.Text = "Observação";
 			// 
-			// comboStatusAula
+			// cbStatusAula
 			// 
-			this.comboStatusAula.FormattingEnabled = true;
-			this.comboStatusAula.Location = new System.Drawing.Point(585, 212);
-			this.comboStatusAula.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-			this.comboStatusAula.Name = "comboStatusAula";
-			this.comboStatusAula.Size = new System.Drawing.Size(184, 21);
-			this.comboStatusAula.TabIndex = 62;
-			this.comboStatusAula.SelectedIndexChanged += new System.EventHandler(this.comboStatusAula_SelectedIndexChanged);
+			this.cbStatusAula.FormattingEnabled = true;
+			this.cbStatusAula.Location = new System.Drawing.Point(585, 212);
+			this.cbStatusAula.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+			this.cbStatusAula.Name = "cbStatusAula";
+			this.cbStatusAula.Size = new System.Drawing.Size(184, 21);
+			this.cbStatusAula.TabIndex = 62;
 			// 
 			// label12
 			// 
@@ -133,14 +132,14 @@
 			this.label12.TabIndex = 61;
 			this.label12.Text = "Status da Aula";
 			// 
-			// comboPagamento
+			// cbPagamento
 			// 
-			this.comboPagamento.FormattingEnabled = true;
-			this.comboPagamento.Location = new System.Drawing.Point(350, 212);
-			this.comboPagamento.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-			this.comboPagamento.Name = "comboPagamento";
-			this.comboPagamento.Size = new System.Drawing.Size(228, 21);
-			this.comboPagamento.TabIndex = 60;
+			this.cbPagamento.FormattingEnabled = true;
+			this.cbPagamento.Location = new System.Drawing.Point(350, 212);
+			this.cbPagamento.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+			this.cbPagamento.Name = "cbPagamento";
+			this.cbPagamento.Size = new System.Drawing.Size(228, 21);
+			this.cbPagamento.TabIndex = 60;
 			// 
 			// label11
 			// 
@@ -200,18 +199,18 @@
 			this.txtTelefone.Size = new System.Drawing.Size(167, 20);
 			this.txtTelefone.TabIndex = 54;
 			// 
-			// dateTimePicker2
+			// dateHoraFinal
 			// 
-			this.dateTimePicker2.Checked = false;
-			this.dateTimePicker2.CustomFormat = "HH:mm";
-			this.dateTimePicker2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-			this.dateTimePicker2.Location = new System.Drawing.Point(649, 162);
-			this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-			this.dateTimePicker2.Name = "dateTimePicker2";
-			this.dateTimePicker2.ShowUpDown = true;
-			this.dateTimePicker2.Size = new System.Drawing.Size(81, 26);
-			this.dateTimePicker2.TabIndex = 53;
+			this.dateHoraFinal.Checked = false;
+			this.dateHoraFinal.CustomFormat = "HH:mm";
+			this.dateHoraFinal.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.dateHoraFinal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+			this.dateHoraFinal.Location = new System.Drawing.Point(649, 162);
+			this.dateHoraFinal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+			this.dateHoraFinal.Name = "dateHoraFinal";
+			this.dateHoraFinal.ShowUpDown = true;
+			this.dateHoraFinal.Size = new System.Drawing.Size(81, 26);
+			this.dateHoraFinal.TabIndex = 53;
 			// 
 			// label6
 			// 
@@ -233,19 +232,19 @@
 			this.label7.TabIndex = 51;
 			this.label7.Text = "Horário inicial";
 			// 
-			// dateTimePicker3
+			// dateHoraInicial
 			// 
-			this.dateTimePicker3.Checked = false;
-			this.dateTimePicker3.CustomFormat = "HH:mm";
-			this.dateTimePicker3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-			this.dateTimePicker3.Location = new System.Drawing.Point(555, 162);
-			this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-			this.dateTimePicker3.Name = "dateTimePicker3";
-			this.dateTimePicker3.ShowUpDown = true;
-			this.dateTimePicker3.Size = new System.Drawing.Size(88, 26);
-			this.dateTimePicker3.TabIndex = 50;
-			this.dateTimePicker3.Value = new System.DateTime(2019, 5, 4, 15, 50, 0, 0);
+			this.dateHoraInicial.Checked = false;
+			this.dateHoraInicial.CustomFormat = "HH:mm";
+			this.dateHoraInicial.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.dateHoraInicial.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+			this.dateHoraInicial.Location = new System.Drawing.Point(555, 162);
+			this.dateHoraInicial.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+			this.dateHoraInicial.Name = "dateHoraInicial";
+			this.dateHoraInicial.ShowUpDown = true;
+			this.dateHoraInicial.Size = new System.Drawing.Size(88, 26);
+			this.dateHoraInicial.TabIndex = 50;
+			this.dateHoraInicial.Value = new System.DateTime(2019, 5, 4, 15, 50, 0, 0);
 			// 
 			// label5
 			// 
@@ -257,16 +256,16 @@
 			this.label5.TabIndex = 49;
 			this.label5.Text = "Data da Aula";
 			// 
-			// dateTimePicker1
+			// dateDataAula
 			// 
-			this.dateTimePicker1.Checked = false;
-			this.dateTimePicker1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.dateTimePicker1.Location = new System.Drawing.Point(351, 162);
-			this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-			this.dateTimePicker1.Name = "dateTimePicker1";
-			this.dateTimePicker1.Size = new System.Drawing.Size(198, 26);
-			this.dateTimePicker1.TabIndex = 48;
+			this.dateDataAula.Checked = false;
+			this.dateDataAula.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.dateDataAula.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+			this.dateDataAula.Location = new System.Drawing.Point(351, 162);
+			this.dateDataAula.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+			this.dateDataAula.Name = "dateDataAula";
+			this.dateDataAula.Size = new System.Drawing.Size(198, 26);
+			this.dateDataAula.TabIndex = 48;
 			// 
 			// cbDisciplina
 			// 
@@ -276,8 +275,6 @@
 			this.cbDisciplina.Name = "cbDisciplina";
 			this.cbDisciplina.Size = new System.Drawing.Size(202, 21);
 			this.cbDisciplina.TabIndex = 47;
-			this.cbDisciplina.SelectedIndexChanged += new System.EventHandler(this.cbDisciplina_SelectedIndexChanged);
-			this.cbDisciplina.Click += new System.EventHandler(this.cbDisciplina_Click);
 			// 
 			// label4
 			// 
@@ -318,15 +315,6 @@
 			this.label3.TabIndex = 42;
 			this.label3.Text = "Aluno";
 			// 
-			// cbAluno
-			// 
-			this.cbAluno.FormattingEnabled = true;
-			this.cbAluno.Location = new System.Drawing.Point(351, 30);
-			this.cbAluno.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-			this.cbAluno.Name = "cbAluno";
-			this.cbAluno.Size = new System.Drawing.Size(203, 21);
-			this.cbAluno.TabIndex = 97;
-			// 
 			// lbNovoEndereco
 			// 
 			this.lbNovoEndereco.AutoSize = true;
@@ -337,7 +325,6 @@
 			this.lbNovoEndereco.Size = new System.Drawing.Size(36, 16);
 			this.lbNovoEndereco.TabIndex = 98;
 			this.lbNovoEndereco.Text = "Novo";
-			this.lbNovoEndereco.Click += new System.EventHandler(this.lbNovoEndereco_Click);
 			// 
 			// btnAgendar
 			// 
@@ -353,6 +340,7 @@
 			this.btnAgendar.TabIndex = 99;
 			this.btnAgendar.Text = "Agendar";
 			this.btnAgendar.UseVisualStyleBackColor = false;
+			this.btnAgendar.Click += new System.EventHandler(this.BtnAgendar_Click);
 			// 
 			// btnAlterar
 			// 
@@ -412,11 +400,27 @@
 			// 
 			// dgvAulasAgendadas
 			// 
+			this.dgvAulasAgendadas.AllowUserToAddRows = false;
+			this.dgvAulasAgendadas.AllowUserToDeleteRows = false;
+			this.dgvAulasAgendadas.AllowUserToResizeColumns = false;
+			this.dgvAulasAgendadas.AllowUserToResizeRows = false;
+			this.dgvAulasAgendadas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dgvAulasAgendadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvAulasAgendadas.Location = new System.Drawing.Point(7, 22);
 			this.dgvAulasAgendadas.Name = "dgvAulasAgendadas";
+			this.dgvAulasAgendadas.RowHeadersVisible = false;
 			this.dgvAulasAgendadas.Size = new System.Drawing.Size(315, 378);
 			this.dgvAulasAgendadas.TabIndex = 0;
+			this.dgvAulasAgendadas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvAulasAgendadas_CellClick);
+			// 
+			// cbAluno
+			// 
+			this.cbAluno.FormattingEnabled = true;
+			this.cbAluno.Location = new System.Drawing.Point(351, 30);
+			this.cbAluno.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+			this.cbAluno.Name = "cbAluno";
+			this.cbAluno.Size = new System.Drawing.Size(203, 21);
+			this.cbAluno.TabIndex = 97;
 			// 
 			// FormCadastroAula
 			// 
@@ -430,26 +434,26 @@
 			this.Controls.Add(this.btnAgendar);
 			this.Controls.Add(this.lbNovoEndereco);
 			this.Controls.Add(this.cbAluno);
-			this.Controls.Add(this.comboEndereço);
+			this.Controls.Add(this.comboEndereco);
 			this.Controls.Add(this.lblValorTotal);
 			this.Controls.Add(this.label14);
 			this.Controls.Add(this.txtObservacao);
 			this.Controls.Add(this.label13);
-			this.Controls.Add(this.comboStatusAula);
+			this.Controls.Add(this.cbStatusAula);
 			this.Controls.Add(this.label12);
-			this.Controls.Add(this.comboPagamento);
+			this.Controls.Add(this.cbPagamento);
 			this.Controls.Add(this.label11);
 			this.Controls.Add(this.txtConteudo);
 			this.Controls.Add(this.label10);
 			this.Controls.Add(this.label9);
 			this.Controls.Add(this.label8);
 			this.Controls.Add(this.txtTelefone);
-			this.Controls.Add(this.dateTimePicker2);
+			this.Controls.Add(this.dateHoraFinal);
 			this.Controls.Add(this.label6);
 			this.Controls.Add(this.label7);
-			this.Controls.Add(this.dateTimePicker3);
+			this.Controls.Add(this.dateHoraInicial);
 			this.Controls.Add(this.label5);
-			this.Controls.Add(this.dateTimePicker1);
+			this.Controls.Add(this.dateDataAula);
 			this.Controls.Add(this.cbDisciplina);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.cbProfessor);
@@ -470,32 +474,31 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboEndereço;
+        private System.Windows.Forms.ComboBox comboEndereco;
         private System.Windows.Forms.Label lblValorTotal;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtObservacao;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox comboStatusAula;
+        private System.Windows.Forms.ComboBox cbStatusAula;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox comboPagamento;
+        private System.Windows.Forms.ComboBox cbPagamento;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtConteudo;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtTelefone;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateHoraFinal;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.DateTimePicker dateHoraInicial;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateDataAula;
         private System.Windows.Forms.ComboBox cbDisciplina;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbProfessor;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cbAluno;
         private System.Windows.Forms.Label lbNovoEndereco;
 		private System.Windows.Forms.Button btnAgendar;
 		private System.Windows.Forms.Button btnAlterar;
@@ -503,5 +506,6 @@
 		private System.Windows.Forms.Button btnExcluir;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.DataGridView dgvAulasAgendadas;
+		private System.Windows.Forms.ComboBox cbAluno;
 	}
 }

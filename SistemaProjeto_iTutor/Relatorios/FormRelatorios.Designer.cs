@@ -29,7 +29,6 @@
 		private void InitializeComponent()
 		{
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.rbnFinanceiro = new System.Windows.Forms.RadioButton();
 			this.rbnProfessores = new System.Windows.Forms.RadioButton();
 			this.rbnAlunos = new System.Windows.Forms.RadioButton();
 			this.rbnAulas = new System.Windows.Forms.RadioButton();
@@ -37,10 +36,10 @@
 			this.btnSalvar = new System.Windows.Forms.Button();
 			this.dgvCubo = new System.Windows.Forms.DataGridView();
 			this.tabFiltro = new System.Windows.Forms.TabPage();
+			this.dtpFim = new System.Windows.Forms.DateTimePicker();
+			this.dtpInicio = new System.Windows.Forms.DateTimePicker();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
-			this.maskDataFinal = new System.Windows.Forms.MaskedTextBox();
-			this.maskDataInicial = new System.Windows.Forms.MaskedTextBox();
 			this.btnGerarCubo = new System.Windows.Forms.Button();
 			this.btnLimpar = new System.Windows.Forms.Button();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -53,7 +52,6 @@
 			// 
 			// groupBox1
 			// 
-			this.groupBox1.Controls.Add(this.rbnFinanceiro);
 			this.groupBox1.Controls.Add(this.rbnProfessores);
 			this.groupBox1.Controls.Add(this.rbnAlunos);
 			this.groupBox1.Controls.Add(this.rbnAulas);
@@ -64,17 +62,6 @@
 			this.groupBox1.TabIndex = 1;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Consulta";
-			// 
-			// rbnFinanceiro
-			// 
-			this.rbnFinanceiro.AutoSize = true;
-			this.rbnFinanceiro.Location = new System.Drawing.Point(7, 117);
-			this.rbnFinanceiro.Name = "rbnFinanceiro";
-			this.rbnFinanceiro.Size = new System.Drawing.Size(92, 21);
-			this.rbnFinanceiro.TabIndex = 3;
-			this.rbnFinanceiro.TabStop = true;
-			this.rbnFinanceiro.Text = "Financeiro";
-			this.rbnFinanceiro.UseVisualStyleBackColor = true;
 			// 
 			// rbnProfessores
 			// 
@@ -133,23 +120,27 @@
 			this.btnSalvar.Name = "btnSalvar";
 			this.btnSalvar.Size = new System.Drawing.Size(129, 34);
 			this.btnSalvar.TabIndex = 17;
-			this.btnSalvar.Text = "Salvar em PDF";
+			this.btnSalvar.Text = "Gerar Planilha";
 			this.btnSalvar.UseVisualStyleBackColor = false;
+			this.btnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
 			// 
 			// dgvCubo
 			// 
+			this.dgvCubo.AllowUserToAddRows = false;
+			this.dgvCubo.AllowUserToDeleteRows = false;
 			this.dgvCubo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvCubo.Location = new System.Drawing.Point(6, 19);
 			this.dgvCubo.Name = "dgvCubo";
+			this.dgvCubo.RowHeadersVisible = false;
 			this.dgvCubo.Size = new System.Drawing.Size(525, 309);
 			this.dgvCubo.TabIndex = 1;
 			// 
 			// tabFiltro
 			// 
+			this.tabFiltro.Controls.Add(this.dtpFim);
+			this.tabFiltro.Controls.Add(this.dtpInicio);
 			this.tabFiltro.Controls.Add(this.label2);
 			this.tabFiltro.Controls.Add(this.label1);
-			this.tabFiltro.Controls.Add(this.maskDataFinal);
-			this.tabFiltro.Controls.Add(this.maskDataInicial);
 			this.tabFiltro.Controls.Add(this.btnGerarCubo);
 			this.tabFiltro.Controls.Add(this.btnLimpar);
 			this.tabFiltro.Location = new System.Drawing.Point(4, 22);
@@ -159,6 +150,22 @@
 			this.tabFiltro.TabIndex = 0;
 			this.tabFiltro.Text = "Filtros";
 			this.tabFiltro.UseVisualStyleBackColor = true;
+			// 
+			// dtpFim
+			// 
+			this.dtpFim.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+			this.dtpFim.Location = new System.Drawing.Point(132, 53);
+			this.dtpFim.Name = "dtpFim";
+			this.dtpFim.Size = new System.Drawing.Size(99, 20);
+			this.dtpFim.TabIndex = 32;
+			// 
+			// dtpInicio
+			// 
+			this.dtpInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+			this.dtpInicio.Location = new System.Drawing.Point(132, 22);
+			this.dtpInicio.Name = "dtpInicio";
+			this.dtpInicio.Size = new System.Drawing.Size(99, 20);
+			this.dtpInicio.TabIndex = 31;
 			// 
 			// label2
 			// 
@@ -177,24 +184,6 @@
 			this.label1.Size = new System.Drawing.Size(119, 13);
 			this.label1.TabIndex = 29;
 			this.label1.Text = "Data Inicial de Consulta";
-			// 
-			// maskDataFinal
-			// 
-			this.maskDataFinal.Location = new System.Drawing.Point(131, 50);
-			this.maskDataFinal.Mask = "00/00/0000";
-			this.maskDataFinal.Name = "maskDataFinal";
-			this.maskDataFinal.Size = new System.Drawing.Size(114, 20);
-			this.maskDataFinal.TabIndex = 28;
-			this.maskDataFinal.ValidatingType = typeof(System.DateTime);
-			// 
-			// maskDataInicial
-			// 
-			this.maskDataInicial.Location = new System.Drawing.Point(131, 19);
-			this.maskDataInicial.Mask = "00/00/0000";
-			this.maskDataInicial.Name = "maskDataInicial";
-			this.maskDataInicial.Size = new System.Drawing.Size(114, 20);
-			this.maskDataInicial.TabIndex = 27;
-			this.maskDataInicial.ValidatingType = typeof(System.DateTime);
 			// 
 			// btnGerarCubo
 			// 
@@ -226,6 +215,7 @@
 			this.btnLimpar.TabIndex = 26;
 			this.btnLimpar.Text = "Limpar";
 			this.btnLimpar.UseVisualStyleBackColor = false;
+			this.btnLimpar.Click += new System.EventHandler(this.BtnLimpar_Click);
 			// 
 			// tabControl1
 			// 
@@ -266,15 +256,14 @@
 		private System.Windows.Forms.TabControl tabControl1;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.MaskedTextBox maskDataFinal;
-		private System.Windows.Forms.MaskedTextBox maskDataInicial;
 		private System.Windows.Forms.Button btnGerarCubo;
 		private System.Windows.Forms.Button btnLimpar;
 		private System.Windows.Forms.DataGridView dgvCubo;
 		private System.Windows.Forms.Button btnSalvar;
-		private System.Windows.Forms.RadioButton rbnFinanceiro;
 		private System.Windows.Forms.RadioButton rbnProfessores;
 		private System.Windows.Forms.RadioButton rbnAlunos;
 		private System.Windows.Forms.RadioButton rbnAulas;
+		private System.Windows.Forms.DateTimePicker dtpFim;
+		private System.Windows.Forms.DateTimePicker dtpInicio;
 	}
 }
