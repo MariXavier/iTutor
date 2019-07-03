@@ -22,7 +22,6 @@ namespace SistemaProjeto_iTutor.Cadastros
         int pkProfessor = Autenticacao.pkProfessorLogado;
         int pkProfessorSelecionado = 0;
 
-
         private void tabPage1_Click(object sender, EventArgs e)
         {
 
@@ -54,7 +53,7 @@ namespace SistemaProjeto_iTutor.Cadastros
                 
                 string sql = "SELECT p.nome, p.cpf, d.nome as disciplina, e.cep, e.rua, e.numero, e.bairro, e.cidade, e.estado, p.email, p.valorHoraAula, p.dataNascimento, p.telefone, u.usuario, u.senha, p.pkProfessor, p.fkDisciplina " +
                     "FROM professor AS p, endereco AS e, usuario AS u, disciplina AS d " +
-                    "WHERE p.pkProfessor = " + pkProfessor + " AND e.fkProfessor = " + pkProfessor + " AND u.fkProfessor = " + pkProfessor + " AND d.pkDisciplina = " + pkDisciplina + "; ";
+                    "WHERE p.pkProfessor = " + pkProfessor + " AND e.fkProfessor = " + pkProfessor + " AND u.fkProfessor = " + pkProfessor + " AND d.pkDisciplina = " + pkDisciplina + " AND u.statusCadastro = 0 and p.statusCadastro = 0 ; ";
                 SqlDataAdapter da = new SqlDataAdapter(sql, conexao);
                 DataSet ds = new DataSet();
                 conexao.Open();
@@ -72,7 +71,7 @@ namespace SistemaProjeto_iTutor.Cadastros
             {
                 string sql = "SELECT p.nome, p.cpf, d.nome as disciplina, e.cep, e.rua, e.numero, e.bairro, e.cidade, e.estado, p.email, p.valorHoraAula, p.dataNascimento, p.telefone, u.usuario, u.senha, p.pkProfessor, p.fkDisciplina " +
                     "FROM professor AS p, endereco AS e, usuario AS u, disciplina AS d " +
-                    "WHERE p.pkProfessor = e.fkProfessor AND p.pkProfessor = u.fkProfessor AND p.fkDisciplina = d.pkDisciplina; ";
+                    "WHERE p.pkProfessor = e.fkProfessor AND p.pkProfessor = u.fkProfessor AND p.fkDisciplina = d.pkDisciplina AND u.statusCadastro = 0 and p.statusCadastro = 0 ; ";
                 SqlDataAdapter da = new SqlDataAdapter(sql, conexao);
                 DataSet ds = new DataSet();
                 conexao.Open();
@@ -192,9 +191,10 @@ namespace SistemaProjeto_iTutor.Cadastros
             query.Connection = conexao;
             conexao.Open();
 
-            query.CommandText = "UPDATE professor SET statusCadastro = 999 WHERE pkProfessor = @pkProfessor";
             query.Parameters.AddWithValue("pkProfessor", pkProfessorSelecionado);
-            query.ExecuteNonQuery();
+
+            //query.CommandText = "UPDATE professor SET statusCadastro = 999 WHERE pkProfessor = @pkProfessor";
+            //query.ExecuteNonQuery();
 
             query.CommandText = "UPDATE usuario SET statusCadastro = 999 WHERE fkProfessor = @pkProfessor";
             query.ExecuteNonQuery();
