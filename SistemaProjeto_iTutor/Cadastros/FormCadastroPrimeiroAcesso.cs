@@ -123,6 +123,7 @@ namespace SistemaProjeto_iTutor.Cadastros
 
                 DateTime myDateTime = DateTime.Now;
                 string diaHoraAtual = myDateTime.ToString("yyyy-MM-dd HH:mm:ss");
+                string diaAtual = myDateTime.ToString("yyyy-MM-dd");
 
                 string cpf = AdaptarParametros.adaptarCPF(txtCPF.Text);
 
@@ -139,6 +140,7 @@ namespace SistemaProjeto_iTutor.Cadastros
                 query.Parameters.AddWithValue("@telefone", AdaptarParametros.adaptarTelefone(txtTelefone.Text));
                 query.Parameters.AddWithValue("@email", txtEmail.Text);
                 query.Parameters.AddWithValue("@valorHoraAula", txtValorHoraAula.Text);
+                query.Parameters.AddWithValue("@dataCadastro", Convert.ToDateTime(diaAtual));
 
                 query.Parameters.AddWithValue("@cep", AdaptarParametros.adaptarCEP(txtCEP.Text));
                 query.Parameters.AddWithValue("@rua", txtRua.Text);
@@ -159,7 +161,7 @@ namespace SistemaProjeto_iTutor.Cadastros
                     if (linhasAfetadas == 0)
                     {
                         query.Parameters.AddWithValue("@fkDisciplina", pkDisciplina);
-                        query.CommandText = "INSERT INTO professor (nome, dataNascimento, cpf, statusCadastro, telefone, email, fkDisciplina, valorHoraAula) values (@nome, @dataNascimento, @cpf, @statusCadastro, @telefone, @email, @fkDisciplina, @valorHoraAula)";
+                        query.CommandText = "INSERT INTO professor (nome, dataNascimento, cpf, statusCadastro, telefone, email, fkDisciplina, valorHoraAula, dataCadastro) values (@nome, @dataNascimento, @cpf, @statusCadastro, @telefone, @email, @fkDisciplina, @valorHoraAula, @dataCadastro)";
                         query.ExecuteNonQuery();
 
                         query.CommandText = "SELECT pkProfessor FROM professor where cpf = '" + cpf + "'";
@@ -188,7 +190,7 @@ namespace SistemaProjeto_iTutor.Cadastros
                     int linhasAfetadas = (int)query.ExecuteScalar();
                     if (linhasAfetadas == 0)
                     {
-                        query.CommandText = "INSERT INTO aluno (nome, dataNascimento, cpf, statusCadastro, telefone, email) values (@nome, @dataNascimento, @cpf, @statusCadastro, @telefone, @email)";
+                        query.CommandText = "INSERT INTO aluno (nome, dataNascimento, cpf, statusCadastro, telefone, email, dataCadastro) values (@nome, @dataNascimento, @cpf, @statusCadastro, @telefone, @email, @dataCadastro)";
                         query.ExecuteNonQuery();
 
                         query.CommandText = "SELECT pkAluno FROM aluno WHERE cpf = '" + cpf + "'";

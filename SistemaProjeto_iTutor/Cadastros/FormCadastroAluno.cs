@@ -76,18 +76,6 @@ namespace SistemaProjeto_iTutor.Cadastros
                     {
                         dgvAluno.Columns[i].Visible = false;
                     }
-
-                    //dgvAluno.Columns["dataNascimento"].Visible = false;
-                    //dgvAluno.Columns["responsavel"].Visible = false;
-                    //dgvAluno.Columns["telefone"].Visible = false;
-                    //dgvAluno.Columns["cep"].Visible = false;
-                    //dgvAluno.Columns["rua"].Visible = false;
-                    //dgvAluno.Columns["numero"].Visible = false;
-                    //dgvAluno.Columns["bairro"].Visible = false;
-                    //dgvAluno.Columns["estado"].Visible = false;
-                    //dgvAluno.Columns["cidade"].Visible = false;
-                    //dgvAluno.Columns["usuario"].Visible = false;
-                    //dgvAluno.Columns["senha"].Visible = false;
                 }
                 catch (Exception ex)
                 {
@@ -101,7 +89,6 @@ namespace SistemaProjeto_iTutor.Cadastros
             Limpar.limparComponentes(this);
         }
 
-
         private void dgvAluno_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -113,8 +100,6 @@ namespace SistemaProjeto_iTutor.Cadastros
             {
                 MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
-            
         }
 
         public void preencherTextBoxAluno(DataGridViewCellEventArgs e)
@@ -160,8 +145,6 @@ namespace SistemaProjeto_iTutor.Cadastros
              ****** Fazer validação dos campos para que só seja feito update nos campos que estejam preenchidos (!= "")
                  =========================================================  */
 
-
-
                 query.CommandText = "UPDATE aluno SET nome = @nome, cpf = @cpf, dataNascimento = @dataNascimento, responsavel = @responsavel, telefone = @telefone where pkAluno = @pkAluno and statusCadastro = 0";
                 query.Parameters.AddWithValue("@nome", txtNomeAluno.Text);
                 query.Parameters.AddWithValue("@dataNascimento", AdaptarParametros.adaptarDataNascimento(txtDataNascimento.Text));
@@ -199,9 +182,10 @@ namespace SistemaProjeto_iTutor.Cadastros
             query.Connection = conexao;
             conexao.Open();
 
-            query.CommandText = "UPDATE aluno SET statusCadastro = 999 where pkAluno = @pkAluno";
             query.Parameters.AddWithValue("@pkAluno", pkAluno);
-            query.ExecuteNonQuery();
+
+            //query.CommandText = "UPDATE aluno SET statusCadastro = 999 where pkAluno = @pkAluno";
+            //query.ExecuteNonQuery();
 
             query.CommandText = "UPDATE usuario SET statusCadastro = 999 where fkAluno = @pkAluno";
 
