@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace SistemaProjeto_iTutor.Cadastros
 {
@@ -25,18 +26,15 @@ namespace SistemaProjeto_iTutor.Cadastros
 
 		private void FormCadastroAula_Load(object sender, EventArgs e)
 		{
+            comboAluno();
+            comboProfessor();
+            comboDisciplina();
+            cbEndereco();
 
-			if (Autenticacao.levelPermissao == 2) //aluno
+            if (Autenticacao.levelPermissao == 2) //aluno
 			{
-				comboAluno();
-				comboProfessor();
-				comboDisciplina();
-				cbEndereco();
-
 				try
 				{
-
-
 					string sql = "SELECT a.dataAula AS 'Data Aula', a.horaInicial, a.horaFinal, s.nome, p.nome, d.nome AS 'Disciplina', e.rua, a.telefone, a.statusAula AS 'Status', pg.formaPagamento FROM aula AS a, aluno AS s, professor AS p, disciplina AS d, endereco AS e, pagamento AS pg WHERE a.fkAluno =" + pkAluno + " AND a.fkProfessor = p.pkProfessor AND a.fkDisciplina = d.pkDisciplina AND a.fkEndereco = e.pkEndereco AND a.fkPagamento = pg.pkPagamento;";
 					SqlConnection conexao = new SqlConnection(Banco.enderecoBanco());
 					SqlDataAdapter da = new SqlDataAdapter(sql, conexao);
@@ -47,11 +45,6 @@ namespace SistemaProjeto_iTutor.Cadastros
 					dgvAulasAgendadas.DataSource = ds;
 					dgvAulasAgendadas.DataMember = "aula";
 
-
-					//for (int i = 1; i < dgvAulasAgendadas.Columns.Count; i++)
-					//{
-					//	dgvAulasAgendadas.Columns[i].Visible = true;
-					//}
 					dgvAulasAgendadas.Columns[1].Visible = false;
 					dgvAulasAgendadas.Columns[2].Visible = false;
 					dgvAulasAgendadas.Columns[3].Visible = false;
@@ -59,7 +52,6 @@ namespace SistemaProjeto_iTutor.Cadastros
 					dgvAulasAgendadas.Columns[6].Visible = false;
 					dgvAulasAgendadas.Columns[7].Visible = false;
 					dgvAulasAgendadas.Columns[9].Visible = false;
-					
 				}
 				catch (Exception ex)
 				{
@@ -68,10 +60,6 @@ namespace SistemaProjeto_iTutor.Cadastros
 			}
 			else if (Autenticacao.levelPermissao == 1) //professor
 			{
-				comboAluno();
-				comboProfessor();
-				comboDisciplina();
-				cbEndereco();
 				try
 				{
 					string sql = "SELECT a.dataAula AS 'Data Aula', a.horaInicial, a.horaFinal, s.nome, p.nome, d.nome AS 'Disciplina', e.rua, a.telefone, a.statusAula AS 'Status', pg.formaPagamento FROM aula AS a, aluno AS s, professor AS p, disciplina AS d, endereco AS e, pagamento AS pg WHERE a.fkProfessor = " + pkProfessor + " AND a.fkAluno = s.pkAluno AND a.fkDisciplina = d.pkDisciplina AND a.fkEndereco = e.pkEndereco AND a.fkPagamento = pg.pkPagamento;";
@@ -104,10 +92,6 @@ namespace SistemaProjeto_iTutor.Cadastros
 				}
 			} else //admin
 			{
-				comboAluno();
-				comboProfessor();
-				comboDisciplina();
-				cbEndereco();
 				try
 				{
 					string sql = "SELECT dataAula AS 'Data Aula', a.horaInicial, a.horaFinal, s.nome, p.nome, d.nome AS 'Disciplina', e.rua, a.telefone, a.statusAula AS 'Status', pg.formaPagamento FROM aula AS a, aluno AS s, professor AS p, disciplina AS d, endereco AS e, pagamento AS pg WHERE a.fkProfessor = p.pkProfessor AND a.fkAluno = s.pkAluno AND a.fkDisciplina = d.pkDisciplina AND a.fkEndereco = e.pkEndereco AND a.fkPagamento = pg.pkPagamento;";
@@ -170,39 +154,49 @@ namespace SistemaProjeto_iTutor.Cadastros
 
 		private void BtnAgendar_Click(object sender, EventArgs e)
 		{
-			if (Autenticacao.levelPermissao == 2)
-			{
 
-				try
-				{
+            if (Autenticacao.levelPermissao == 2) //aluno
+			{
+                try
+                {
 					SqlConnection conexao = new SqlConnection(Banco.enderecoBanco());
 					SqlCommand query = new SqlCommand();
 
 					query.Connection = conexao;
 					conexao.Open();
 
-					query.Parameters.AddWithValue("@aluno", cbAluno.SelectedValue);
-					query.Parameters.AddWithValue("@professor", cbProfessor.SelectedValue);
-					query.Parameters.AddWithValue("@disciplina", cbDisciplina.SelectedValue);
+                    string diaAula = Convert.ToDateTime(dateDataAula.Text).ToString("yyyy-MM-dd");
+                    string horaInicial = Convert.ToDateTime(dateHoraInicial.Text).ToString("HH:mm");
+                    string horaFinal = Convert.ToDateTime(dateHoraFinal.Text).ToString("HH:mm");
+                    TimeSpan date = Convert.ToDateTime(dateHoraFinal.Text) - Convert.ToDateTime(dateHoraInicial.Text);
+
+                    query.Parameters.AddWithValue("@aluno", cbAluno.SelectedValue.ToString());
+					query.Parameters.AddWithValue("@professor", cbProfessor.SelectedValue.ToString());
+					query.Parameters.AddWithValue("@disciplina", cbDisciplina.SelectedValue.ToString());
 					query.Parameters.AddWithValue("@telefone", txtTelefone.Text);
-					query.Parameters.AddWithValue("@endereco", comboEndereco.SelectedValue);
-					query.Parameters.AddWithValue("@dataAula", dateDataAula.Text);
-					query.Parameters.AddWithValue("@horaInicial", dateHoraInicial.Text);
-					query.Parameters.AddWithValue("@horaFinal", dateHoraFinal.Text);
-					query.Parameters.AddWithValue("@pagamento", cbPagamento.SelectedValue);
-					query.Parameters.AddWithValue("@statusAula", cbStatusAula.SelectedValue);
+					query.Parameters.AddWithValue("@endereco", comboEndereco.SelectedValue.ToString());
+					query.Parameters.AddWithValue("@dataAula", Convert.ToDateTime(diaAula));
+					query.Parameters.AddWithValue("@horaInicial", Convert.ToDateTime(horaInicial));
+					query.Parameters.AddWithValue("@horaFinal", Convert.ToDateTime(horaFinal));
+					query.Parameters.AddWithValue("@pagamento", cbPagamento.SelectedItem.ToString());
+					query.Parameters.AddWithValue("@statusAula", cbStatusAula.SelectedItem.ToString());
 					query.Parameters.AddWithValue("@conteudo", txtConteudo.Text);
 					query.Parameters.AddWithValue("@observacao", txtObservacao.Text);
 
+                    query.Parameters.AddWithValue("@horas", date);
+                    query.Parameters.AddWithValue("@statusCadastro", 0);
 
-					query.CommandText = "INSERT INTO aula (dataAula, horaInicial, horaFinal, fkAluno, fkProfessor, fkDisciplina, fkEndereco, telefone, statusAula, fkPagamento, conteudo, observacao) values (@dataAula, @horaInicial, @horaFinal, @aluno, @professor, @disciplina, @endereco, @telefone, @statusAula, @pagamento, @conteudo, @observacao)";
-					int cont = query.ExecuteNonQuery();
+
+                    query.CommandText = "INSERT INTO pagamento (horas, diaPagamento, formaPagamento, statusCadastro, fkAluno, fkProfessor) VALUES (@horas, @dataAula, @pagamento, @statusCadastro, @aluno, @professor)";
+
+
+                    query.CommandText = "INSERT INTO aula (dataAula, horaInicial, horaFinal, fkAluno, fkProfessor, fkDisciplina, fkEndereco, telefone, statusAula, fkPagamento, conteudo, observacao) values (@dataAula, @horaInicial, @horaFinal, @aluno, @professor, @disciplina, @endereco, @telefone, @statusAula, @pagamento, @conteudo, @observacao)";
+                    int cont = query.ExecuteNonQuery();
 
 					if (cont > 0) { MessageBox.Show("Cadastro Realizado com Sucesso"); }
 					else
 					{
 						MessageBox.Show("Erro ao Cadastrar");
-
 					}
 				}
 
@@ -318,7 +312,8 @@ namespace SistemaProjeto_iTutor.Cadastros
 				cbAluno.DataSource = table;
 
 				conexao.Close();
-			}else
+			}
+            else
 			{
 				SqlConnection conexao = new SqlConnection(Banco.enderecoBanco());
 				SqlCommand cmd = new SqlCommand("SELECT nome, pkAluno FROM aluno ORDER BY nome DESC;", conexao);
