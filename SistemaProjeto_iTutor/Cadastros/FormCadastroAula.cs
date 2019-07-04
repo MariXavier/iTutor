@@ -21,18 +21,21 @@ namespace SistemaProjeto_iTutor.Cadastros
 
 		int pkAluno = Autenticacao.pkAlunoLogado;
 		int pkProfessor = Autenticacao.pkProfessorLogado;
-		
+
 
 		private void FormCadastroAula_Load(object sender, EventArgs e)
 		{
 
 			if (Autenticacao.levelPermissao == 2) //aluno
 			{
-
+				comboAluno();
+				comboProfessor();
+				comboDisciplina();
+				cbEndereco();
 
 				try
 				{
-					
+
 
 					string sql = "SELECT a.dataAula AS 'Data Aula', a.horaInicial, a.horaFinal, s.nome, p.nome, d.nome AS 'Disciplina', e.rua, a.telefone, a.statusAula AS 'Status', pg.formaPagamento FROM aula AS a, aluno AS s, professor AS p, disciplina AS d, endereco AS e, pagamento AS pg WHERE a.fkAluno =" + pkAluno + " AND a.fkProfessor = p.pkProfessor AND a.fkDisciplina = d.pkDisciplina AND a.fkEndereco = e.pkEndereco AND a.fkPagamento = pg.pkPagamento;";
 					SqlConnection conexao = new SqlConnection(Banco.enderecoBanco());
@@ -45,10 +48,10 @@ namespace SistemaProjeto_iTutor.Cadastros
 					dgvAulasAgendadas.DataMember = "aula";
 
 
-					for (int i = 1; i < dgvAulasAgendadas.Columns.Count; i++)
-					{
-						dgvAulasAgendadas.Columns[i].Visible = true;
-					}
+					//for (int i = 1; i < dgvAulasAgendadas.Columns.Count; i++)
+					//{
+					//	dgvAulasAgendadas.Columns[i].Visible = true;
+					//}
 					dgvAulasAgendadas.Columns[1].Visible = false;
 					dgvAulasAgendadas.Columns[2].Visible = false;
 					dgvAulasAgendadas.Columns[3].Visible = false;
@@ -56,7 +59,7 @@ namespace SistemaProjeto_iTutor.Cadastros
 					dgvAulasAgendadas.Columns[6].Visible = false;
 					dgvAulasAgendadas.Columns[7].Visible = false;
 					dgvAulasAgendadas.Columns[9].Visible = false;
-					cbAluno.SelectedValue = dgvAulasAgendadas.Columns[3].ToString();
+					
 				}
 				catch (Exception ex)
 				{
@@ -65,7 +68,10 @@ namespace SistemaProjeto_iTutor.Cadastros
 			}
 			else if (Autenticacao.levelPermissao == 1) //professor
 			{
-
+				comboAluno();
+				comboProfessor();
+				comboDisciplina();
+				cbEndereco();
 				try
 				{
 					string sql = "SELECT a.dataAula AS 'Data Aula', a.horaInicial, a.horaFinal, s.nome, p.nome, d.nome AS 'Disciplina', e.rua, a.telefone, a.statusAula AS 'Status', pg.formaPagamento FROM aula AS a, aluno AS s, professor AS p, disciplina AS d, endereco AS e, pagamento AS pg WHERE a.fkProfessor = " + pkProfessor + " AND a.fkAluno = s.pkAluno AND a.fkDisciplina = d.pkDisciplina AND a.fkEndereco = e.pkEndereco AND a.fkPagamento = pg.pkPagamento;";
@@ -90,6 +96,7 @@ namespace SistemaProjeto_iTutor.Cadastros
 					dgvAulasAgendadas.Columns[6].Visible = false;
 					dgvAulasAgendadas.Columns[7].Visible = false;
 					dgvAulasAgendadas.Columns[9].Visible = false;
+					//cbAluno.SelectedValue = dgvAulasAgendadas.Columns[3].ToString();
 				}
 				catch (Exception ex)
 				{
@@ -97,9 +104,13 @@ namespace SistemaProjeto_iTutor.Cadastros
 				}
 			} else //admin
 			{
+				comboAluno();
+				comboProfessor();
+				comboDisciplina();
+				cbEndereco();
 				try
 				{
-					string sql = "SELECT * FROM aula;";
+					string sql = "SELECT dataAula AS 'Data Aula', a.horaInicial, a.horaFinal, s.nome, p.nome, d.nome AS 'Disciplina', e.rua, a.telefone, a.statusAula AS 'Status', pg.formaPagamento FROM aula AS a, aluno AS s, professor AS p, disciplina AS d, endereco AS e, pagamento AS pg WHERE a.fkProfessor = p.pkProfessor AND a.fkAluno = s.pkAluno AND a.fkDisciplina = d.pkDisciplina AND a.fkEndereco = e.pkEndereco AND a.fkPagamento = pg.pkPagamento;";
 					SqlConnection conexao = new SqlConnection(Banco.enderecoBanco());
 					SqlDataAdapter da = new SqlDataAdapter(sql, conexao);
 					DataSet ds = new DataSet();
@@ -251,7 +262,6 @@ namespace SistemaProjeto_iTutor.Cadastros
 				{
 					SqlConnection conexao = new SqlConnection(Banco.enderecoBanco());
 					SqlCommand query = new SqlCommand();
-
 					query.Connection = conexao;
 					conexao.Open();
 
@@ -290,31 +300,120 @@ namespace SistemaProjeto_iTutor.Cadastros
 			}
 		}
 
-		public void Aluno(object sender, EventArgs e)
+		public void comboAluno()
 		{
-			string sql = "SELECT nome FROM aluno WHERE pkAluno =" + pkAluno + " ;";
-			SqlConnection conexao = new SqlConnection(Banco.enderecoBanco());
-			SqlDataAdapter da = new SqlDataAdapter(sql, conexao);
-			DataSet ds = new DataSet();
-			conexao.Open();
-			da.Fill(ds, "comboAluno");
-			cbAluno.DisplayMember = "comboAluno";
-			cbAluno.DataSource = ds;
-			conexao.Close();
+			if (Autenticacao.levelPermissao == 2) //aluno
+			{
+				SqlConnection conexao = new SqlConnection(Banco.enderecoBanco());
+				SqlCommand cmd = new SqlCommand("SELECT nome, pkAluno FROM aluno WHERE pkAluno = "+pkAluno+" ORDER BY nome DESC;", conexao);
+
+				conexao.Open();
+				SqlDataReader reader = cmd.ExecuteReader(); //retorna dados resultantes da consulta SQL
+				DataTable table = new DataTable(); //estrutura da tabela do banco de dados ou de outra fonte de informação 
+				table.Columns.Add("nome");
+				table.Load(reader); //carrega dados na tabela de acordo com a instrução SQL passada
+
+				cbAluno.ValueMember = "pkAluno";
+				cbAluno.DisplayMember = "nome";
+				cbAluno.DataSource = table;
+
+				conexao.Close();
+			}else
+			{
+				SqlConnection conexao = new SqlConnection(Banco.enderecoBanco());
+				SqlCommand cmd = new SqlCommand("SELECT nome, pkAluno FROM aluno ORDER BY nome DESC;", conexao);
+
+				conexao.Open();
+				SqlDataReader reader = cmd.ExecuteReader(); //retorna dados resultantes da consulta SQL
+				DataTable table = new DataTable(); //estrutura da tabela do banco de dados ou de outra fonte de informação 
+				table.Columns.Add("nome");
+				table.Load(reader); //carrega dados na tabela de acordo com a instrução SQL passada
+
+				cbAluno.ValueMember = "pkAluno";
+				cbAluno.DisplayMember = "nome";
+				cbAluno.DataSource = table;
+
+				conexao.Close();
+
+			}
+
 		}
 
-		public void Professor(object sender, EventArgs e)
+		public void comboProfessor()
 		{
-			string sql = "SELECT nome FROM professor WHERE pkProfessor =" + pkProfessor + " ;";
-			SqlConnection conexao = new SqlConnection(Banco.enderecoBanco());
-			SqlDataAdapter da = new SqlDataAdapter(sql, conexao);
-			DataSet ds = new DataSet();
-			conexao.Open();
-			da.Fill(ds, "comboProfessor");
-			cbProfessor.DisplayMember = "comboProfessor";
-			cbProfessor.DataSource = ds;
-			conexao.Close();
+			if (Autenticacao.levelPermissao == 1) //professor
+			{
+				SqlConnection conexao = new SqlConnection(Banco.enderecoBanco());
+				SqlCommand cmd = new SqlCommand("SELECT nome, pkProfessor FROM professor WHERE pkProfessor = "+pkProfessor+" ORDER BY nome DESC;", conexao);
+
+				conexao.Open();
+				SqlDataReader reader = cmd.ExecuteReader(); //retorna dados resultantes da consulta SQL
+				DataTable table = new DataTable(); //estrutura da tabela do banco de dados ou de outra fonte de informação 
+				table.Columns.Add("nome");
+				table.Load(reader); //carrega dados na tabela de acordo com a instrução SQL passada
+
+				cbProfessor.ValueMember = "pkProfessor";
+				cbProfessor.DisplayMember = "nome";
+				cbProfessor.DataSource = table;
+			}
+			else
+			{
+				SqlConnection conexao = new SqlConnection(Banco.enderecoBanco());
+				SqlCommand cmd = new SqlCommand("SELECT nome, pkProfessor FROM professor ORDER BY nome DESC;", conexao);
+
+				conexao.Open();
+				SqlDataReader reader = cmd.ExecuteReader(); //retorna dados resultantes da consulta SQL
+				DataTable table = new DataTable(); //estrutura da tabela do banco de dados ou de outra fonte de informação 
+				table.Columns.Add("nome");
+				table.Load(reader); //carrega dados na tabela de acordo com a instrução SQL passada
+
+				cbProfessor.ValueMember = "pkProfessor";
+				cbProfessor.DisplayMember = "nome";
+				cbProfessor.DataSource = table;
+
+			}
 		}
 
+		public void comboDisciplina()
+		{
+			SqlConnection conn = new SqlConnection(Banco.enderecoBanco());
+			conn.Open();
+			SqlCommand sc = new SqlCommand("SELECT nome FROM disciplina", conn);
+
+			SqlDataReader reader;
+
+			reader = sc.ExecuteReader();
+			DataTable dt = new DataTable();
+
+			dt.Columns.Add("nome");
+			dt.Load(reader);
+
+			cbDisciplina.ValueMember = "pkDisciplina";
+			cbDisciplina.DisplayMember = "nome";
+			cbDisciplina.DataSource = dt;
+
+			conn.Close();
+		}
+
+		public void cbEndereco()
+		{
+			SqlConnection conn = new SqlConnection(Banco.enderecoBanco());
+			conn.Open();
+			SqlCommand sc = new SqlCommand("SELECT rua FROM endereco", conn);
+
+			SqlDataReader reader;
+
+			reader = sc.ExecuteReader();
+			DataTable dt = new DataTable();
+
+			dt.Columns.Add("rua");
+			dt.Load(reader);
+
+			comboEndereco.ValueMember = "pkEndereco";
+			comboEndereco.DisplayMember = "rua";
+			comboEndereco.DataSource = dt;
+
+			conn.Close();
+		}
 	}
 }
